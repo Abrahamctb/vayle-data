@@ -51,14 +51,29 @@ jobs:
           console.log(`ok: ${withGap.length} stocks, snapshot_at ${d.snapshot_at} (${ageMin.toFixed(1)} min old), block ${d.block}`);
           EOF_CHECK
 
-      - name: Commit and push only if the file changed
+      - name: Append one row to history.json (skips duplicates and short snapshots)
+        run: node script/append-history.mjs
+
+      - name: Commit and push only if something changed
         run: |
-          if git diff --quiet -- gap-snapshot.json; then
-            echo "gap-snapshot.json unchanged, nothing to commit"
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add gap-snapshot.json
-          git commit -m "snapshot $(node -p "require('./gap-snapshot.json').snapshot_at")"
-          git push
+          commit_and_push() {
+            if [ -z "$(git status --porcelain -- gap-snapshot.json history.json)" ]; then
+              echo "nothing changed, nothing to commit"
+              return 0
+            fi
+            git add gap-snapshot.json history.json
+            git commit -m "snapshot $(node -p "require('./gap-snapshot.json').snapshot_at")"
+            git push
+          }
+          for attempt in 1 2 3; do
+            if commit_and_push; then exit 0; fi
+            echo "push rejected (another writer pushed first), attempt $attempt: starting again from origin/main"
+            git fetch origin main
+            git reset --hard origin/main
+            node script/gap-snapshot.mjs > /dev/null
+            node script/append-history.mjs
+          done
+          echo "could not push after 3 attempts"
+          exit 1

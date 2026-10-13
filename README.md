@@ -4,6 +4,7 @@ An hourly, read-only snapshot of how far Uniswap v4 stock-token pool prices on *
 the **Chainlink** price of the same stock.
 
 - `gap-snapshot.json`: the latest snapshot (refreshed hourly by GitHub Actions)
+- `history.json`: one compact row per snapshot, last 30 days (see below)
 - `stocks.json`: which stocks, their Chainlink feed, and the pool(s) the snapshot reads
 - `script/gap-snapshot.mjs`, `script/lib/chain.mjs`: the plain Node script (no dependencies, Node 18+)
 
@@ -14,6 +15,18 @@ Raw file: <https://raw.githubusercontent.com/Abrahamctb/vayle-data/main/gap-snap
 For each stock: Chainlink price, when the feed last updated and its age in minutes, the pool price, the gap in basis points,
 and the pool's in-range liquidity, all read at a single block, plus `snapshot_at` (that block's time). Main pool per stock
 first; other qualifying pools are listed under `other_pools`.
+
+## History
+
+`history.json` is a JSON array, oldest first, one row per snapshot:
+
+```
+{"t": <snapshot_at, unix seconds>, "b": <block>, "s": {"TSLA": [gap_bps, chainlink_usd, pool_usd, feed_age_minutes], ...}}
+```
+
+Rows older than 30 days are dropped and the file is kept under about 2 MB. A snapshot with fewer than 15 stocks, or one
+with the same block or time as the last row, is not appended. Raw file:
+<https://raw.githubusercontent.com/Abrahamctb/vayle-data/main/history.json>
 
 ## How the gap is calculated
 
