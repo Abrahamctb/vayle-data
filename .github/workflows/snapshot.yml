@@ -1,0 +1,64 @@
+name: gap-snapshot
+
+# Hourly read-only snapshot of Chainlink-vs-pool prices on Robinhood Chain (public RPC, no secrets).
+on:
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gap-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Take the snapshot (writes gap-snapshot.json at the repo root)
+        run: node script/gap-snapshot.mjs
+
+      - name: Sanity check (fails the job, and commits nothing, if the snapshot looks wrong)
+        run: |
+          node - <<'EOF_CHECK'
+          const fs = require("fs");
+          let d;
+          try {
+            d = JSON.parse(fs.readFileSync("gap-snapshot.json", "utf8"));
+          } catch (e) {
+            console.error("gap-snapshot.json does not parse:", e.message);
+            process.exit(1);
+          }
+          const withGap = (d.stocks || []).filter((s) => typeof s.gap_bps === "number" && Number.isFinite(s.gap_bps));
+          if (withGap.length < 15) {
+            console.error(`only ${withGap.length} stocks have a gap (need at least 15)`);
+            process.exit(1);
+          }
+          const ageMin = (Date.now() - Date.parse(d.snapshot_at)) / 60000;
+          if (!(ageMin >= -2 && ageMin <= 10)) {
+            console.error(`snapshot_at ${d.snapshot_at} is ${ageMin.toFixed(1)} minutes old (allowed: 10)`);
+            process.exit(1);
+          }
+          console.log(`ok: ${withGap.length} stocks, snapshot_at ${d.snapshot_at} (${ageMin.toFixed(1)} min old), block ${d.block}`);
+          EOF_CHECK
+
+      - name: Commit and push only if the file changed
+        run: |
+          if git diff --quiet -- gap-snapshot.json; then
+            echo "gap-snapshot.json unchanged, nothing to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gap-snapshot.json
+          git commit -m "snapshot $(node -p "require('./gap-snapshot.json').snapshot_at")"
+          git push

@@ -1,0 +1,3190 @@
+{
+ "generated_at": "2026-10-13T08:50:33.000Z",
+ "chain_id": 4663,
+ "pool_manager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+ "rule": "main pool = the pool with the highest TVL among pools with TVL >= $20000, >= 100 real swaps and >= 10 senders in 14 days, preferring a USDG quote, then ETH/WETH, then another Stock Token",
+ "discovery": "Pool list, TVL and swap counts come from a one-off discovery on 2026-10-08 (block 83608180); liquidity and prices are re-read live by script/gap-snapshot.mjs",
+ "counts": {
+  "stock_tokens": 194,
+  "with_feed": 36,
+  "resolved": 23,
+  "pools_total": 89,
+  "unresolved": 171
+ },
+ "quote_feeds": {
+  "USDG": {
+   "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+   "decimals": 8
+  },
+  "ETH": {
+   "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+   "decimals": 8
+  }
+ },
+ "stocks": [
+  {
+   "symbol": "DELL",
+   "name": "Dell • Robinhood Token",
+   "token": "0x941AE714EC6D8130c7B75d67160Ca08f1e7d11Dd",
+   "decimals": 18,
+   "feed": "0x1C6c8cADBe02E19129c39dDB92281cE4c0bf206b",
+   "feed_name": "Robinhood DELL-USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0x729651c09684919bdffda473141be4e908ee0e8cf8a43f41135831217fa7d3bb",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0x941AE714EC6D8130c7B75d67160Ca08f1e7d11Dd",
+     "fee": 5000,
+     "tickSpacing": 25,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/DELL",
+    "fee_setting": "5000",
+    "hook_name": "(none)"
+   },
+   "other_pools": []
+  },
+  {
+   "symbol": "SPCX",
+   "name": "Space Exploration Technologies Corp. Class A Common Stock • Robinhood Token",
+   "token": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+   "decimals": 18,
+   "feed": "0xB265810950ba6c5C0Ff821c9963014a56fD8Bffb",
+   "feed_name": "Robinhood SPCX / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0xcb6ffbcc84359535c2cc0a5688c0a76520ea6e0a4820fddd3ac8d7880e576370",
+    "pool_key": {
+     "currency0": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+     "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "fee": 10000,
+     "tickSpacing": 200,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": true,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "SPCX/USDG",
+    "fee_setting": "10000",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0xb81d873dfb2bb1aaf08804053f8940fd06bb30a2b5a0fafcdbcc7325544452b9",
+     "pool_key": {
+      "currency0": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+      "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "fee": 8388608,
+      "tickSpacing": 10,
+      "hooks": "0x5Eb87F69bE00Df39981622Fd60A8De4b7837e080"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "SPCX/USDG",
+     "fee_setting": "8388608",
+     "hook_name": "FablesRWA (verified)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x8567e70dbf639a618ba5eaf9402743452b93ca45c9bf8b97462407f07d7b7448",
+     "pool_key": {
+      "currency0": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+      "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "fee": 3000,
+      "tickSpacing": 60,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "SPCX/USDG",
+     "fee_setting": "3000",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x541942afd092e6c18ccd56bb3d9205f80a2adce77edf260c464c5f9919f37168",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+      "fee": 3000,
+      "tickSpacing": 30,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/SPCX",
+     "fee_setting": "3000",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x39910df82a4009ea98d01e9df0b9f1b5b01583cc62ea5889c6c8a8e41fbef470",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+      "fee": 10000,
+      "tickSpacing": 200,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/SPCX",
+     "fee_setting": "10000",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "SPY",
+   "name": "SPDR S&P 500 ETF Trust • Robinhood Token",
+   "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+   "decimals": 18,
+   "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+   "feed_name": "Robinhood SPY / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0xfe2a80bb5618fd14984b92ca6d45bf5ba67443ddb1435e28b2e48df2fc1526cd",
+    "pool_key": {
+     "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+     "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "fee": 3000,
+     "tickSpacing": 60,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": true,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "SPY/USDG",
+    "fee_setting": "3000",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0x8674c1c5544f3c9563565b5d4bd5916701d90b3559b072acf7cef5b4fc5b8dcd",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "fee": 8388608,
+      "tickSpacing": 10,
+      "hooks": "0xA0E8fBFf13E24Af2b5e61A72800E08a161bDe080"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/USDG",
+     "fee_setting": "8388608",
+     "hook_name": "FablesRWA (verified)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xe5923c8a8be481ec89a2ca784a2bbfa4235de6d88f92260fd66b660c4babf907",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/USDG",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x008f06cd38b13ddd7712ba63fb3caff0fc7c969aa32d0407f1868539f3f688c2",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "fee": 8388608,
+      "tickSpacing": 60,
+      "hooks": "0x64E9ae1066c47Ac4a3cc0a5bd7B135908590e088"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/USDG",
+     "fee_setting": "8388608",
+     "hook_name": "ZiaFeeHook (verified)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x509c6c6826ef06e0e29f24f18d9389533c52358a3b385d99a67a2afbb07f23c6",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "fee": 1000,
+      "tickSpacing": 10,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/SPY",
+     "fee_setting": "1000",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x8493982435e4273028008cd181c84c0d6a548f96792fdb5acddcbb6a8c82d305",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xD5f3879160bc7c32ebb4dC785F8a4F505888de68",
+      "fee": 200,
+      "tickSpacing": 2,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "QQQ",
+      "token": "0xD5f3879160bc7c32ebb4dC785F8a4F505888de68",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x80901d846d5D7B030F26B480776EE3b29374C2ae",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/QQQ",
+     "fee_setting": "200",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xda14bf8a87711e1f30dbe620f2df3fdf371f7503f1a72202d15631f657651ec0",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "fee": 250,
+      "tickSpacing": 3,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "NVDA",
+      "token": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x379EC4f7C378F34a1B47E4F3cbeBCbAC3E8E9F15",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/NVDA",
+     "fee_setting": "250",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xbc732a1a0baabce2574ec2bca24fccad8e2c38a061a37cefc17a2fd12809394f",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "NVDA",
+      "token": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x379EC4f7C378F34a1B47E4F3cbeBCbAC3E8E9F15",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/NVDA",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x68beff3b4270ffbbb78a48d7670648909b9de6736456b0f450fee242e1d10a8b",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "AMZN",
+      "token": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0xD5a1508ceD74c084eBf3cBe853e2C968fB2a651C",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/AMZN",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x6d0f67069596c7ef9d1ce6981c1b6dbcd9a91b0c5393aebe9dd07c35e412df30",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+      "fee": 250,
+      "tickSpacing": 3,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "GOOGL",
+      "token": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0xF6f373a037c30F0e5010d854385cA89185AE638b",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/GOOGL",
+     "fee_setting": "250",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x7fb585f108d921de3b197cf7e26b5aebc96b035fec13f972b868e008ea062394",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xc72b96e0E48ecd4DC75E1e45396e26300BC39681",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "INTC",
+      "token": "0xc72b96e0E48ecd4DC75E1e45396e26300BC39681",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x3f390C5C24628Ac7C489515402235FeAD71D1913",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/INTC",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xcc2a903a8744a65258bb07fbeea553a25410f731c9fef306321d0c176a09542c",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xfF080c8ce2E5feadaCa0Da81314Ae59D232d4afD",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "MU",
+      "token": "0xfF080c8ce2E5feadaCa0Da81314Ae59D232d4afD",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x425EEFdCf05ed6526C3cE61Af99429A228a6d596",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/MU",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x3ea70ce0b34473692549f97e630a1d82dc05cea94fa55f81b50f10c8c6d8186f",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "fee": 350,
+      "tickSpacing": 4,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "TSLA",
+      "token": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x4A1166a659A55625345e9515b32adECea5547C38",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/TSLA",
+     "fee_setting": "350",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+      "fee": 300,
+      "tickSpacing": 3,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "MSFT",
+      "token": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x45C3C877C15E6BA2EBB19eA114Ea508d14C1Af2E",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/MSFT",
+     "fee_setting": "300",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xeab0adac76db99a233ed077ca6be7a3f708baee6f98b17df69f7e1a07d1dc2e4",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+      "fee": 350,
+      "tickSpacing": 4,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "AAPL",
+      "token": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x6B22A786bAa607d76728168703a39Ea9C99f2cD0",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/AAPL",
+     "fee_setting": "350",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xb8d9b6b622bb03dd06d95790553f327710a73d85d845a59fa9e652638ca96ae6",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "PLTR",
+      "token": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x820ABedFF239034956B7A9d2F0a331f9F075eB4c",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/PLTR",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x8dc0387af606d84be8e4c2fc1da7bdc6d467337e9f3e075113f968922a190847",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xc0D6457C16Cc70d6790Dd43521C899C87ce02f35",
+      "fee": 350,
+      "tickSpacing": 4,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "META",
+      "token": "0xc0D6457C16Cc70d6790Dd43521C899C87ce02f35",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x7C38C00C30BEe9378381E7B6135d7283356D71b1",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/META",
+     "fee_setting": "350",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xe6e17efdbdd916526293cf1b509171be4ffb04f47c4a5fe1a7367acdaa6ffd82",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x86923f96303D656E4aa86D9d42D1e57ad2023fdC",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "AMD",
+      "token": "0x86923f96303D656E4aa86D9d42D1e57ad2023fdC",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x943A29E7ae51A4798823ca9eEd2ed533B2A22C72",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/AMD",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x4c862e5846659b086fe73896bbb9058513417e4e6938a1be93aeb7a768fa5754",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x58FfE4a942d3885bAa22D7520691F611EF09e7AA",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "TSM",
+      "token": "0x58FfE4a942d3885bAa22D7520691F611EF09e7AA",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x874cF94aa8eC88Fd9560094dD065f2fB3E41Fc2F",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/TSM",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xa821b3724b451b22476c5347471b2a96d185b86af8760f226273e34ab4b2b8a0",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "TSLA",
+      "token": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x4A1166a659A55625345e9515b32adECea5547C38",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/TSLA",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x2bca43d9d8c75399e3c6ba14e9dc88f44ca8968bb4694a8be4f80bd5a550df2e",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "GOOGL",
+      "token": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0xF6f373a037c30F0e5010d854385cA89185AE638b",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/GOOGL",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xf38009b348295f907c1f2e22aba84d731de3b7360d312881df1c206e85ea3b0b",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xD5f3879160bc7c32ebb4dC785F8a4F505888de68",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "QQQ",
+      "token": "0xD5f3879160bc7c32ebb4dC785F8a4F505888de68",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x80901d846d5D7B030F26B480776EE3b29374C2ae",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/QQQ",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "MSFT",
+      "token": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x45C3C877C15E6BA2EBB19eA114Ea508d14C1Af2E",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/MSFT",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "GLD",
+   "name": "SPDR Gold Trust • Robinhood Token",
+   "token": "0xC9a981FEE1F9DEc688bb123ccDeCc63D0deBFC4e",
+   "decimals": 18,
+   "feed": "0x470A51258068043bd43dC0a56245625C9fE86eB0",
+   "feed_name": "GLD / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0xfe281bbfa9aa658c1aa9c2ad1b0c62c4286f96c7cb1074296b54e869935a7a3a",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0xC9a981FEE1F9DEc688bb123ccDeCc63D0deBFC4e",
+     "fee": 8388608,
+     "tickSpacing": 10,
+     "hooks": "0xB608a78761f179f7C56f15E7D13921B92F00a080"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/GLD",
+    "fee_setting": "8388608",
+    "hook_name": "FablesRWA (verified)"
+   },
+   "other_pools": []
+  },
+  {
+   "symbol": "QQQ",
+   "name": "Invesco QQQ • Robinhood Token",
+   "token": "0xD5f3879160bc7c32ebb4dC785F8a4F505888de68",
+   "decimals": 18,
+   "feed": "0x80901d846d5D7B030F26B480776EE3b29374C2ae",
+   "feed_name": "Robinhood QQQ / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0x8493982435e4273028008cd181c84c0d6a548f96792fdb5acddcbb6a8c82d305",
+    "pool_key": {
+     "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+     "currency1": "0xD5f3879160bc7c32ebb4dC785F8a4F505888de68",
+     "fee": 200,
+     "tickSpacing": 2,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "SPY",
+     "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+     "decimals": 18,
+     "kind": "stock",
+     "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+     "feed_decimals": 8
+    },
+    "pair": "SPY/QQQ",
+    "fee_setting": "200",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0xf38009b348295f907c1f2e22aba84d731de3b7360d312881df1c206e85ea3b0b",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xD5f3879160bc7c32ebb4dC785F8a4F505888de68",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/QQQ",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "TSM",
+   "name": "Taiwan Semiconductor Manufacturing • Robinhood Token",
+   "token": "0x58FfE4a942d3885bAa22D7520691F611EF09e7AA",
+   "decimals": 18,
+   "feed": "0x874cF94aa8eC88Fd9560094dD065f2fB3E41Fc2F",
+   "feed_name": "Robinhood TSM / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0x0ba5d53d2f6255f334b7c8ead4f56b6aef5af3402c5e4d11180afd38c6b85fb1",
+    "pool_key": {
+     "currency0": "0x58FfE4a942d3885bAa22D7520691F611EF09e7AA",
+     "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "fee": 7500,
+     "tickSpacing": 75,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": true,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "TSM/USDG",
+    "fee_setting": "7500",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0x4c862e5846659b086fe73896bbb9058513417e4e6938a1be93aeb7a768fa5754",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x58FfE4a942d3885bAa22D7520691F611EF09e7AA",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/TSM",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "INTC",
+   "name": "Intel • Robinhood Token",
+   "token": "0xc72b96e0E48ecd4DC75E1e45396e26300BC39681",
+   "decimals": 18,
+   "feed": "0x3f390C5C24628Ac7C489515402235FeAD71D1913",
+   "feed_name": "Robinhood INTC / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0xf2e329e631d0fb315a5c563ee3a9120f24822b5ef6c502a91cb56b174d5d8c22",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0xc72b96e0E48ecd4DC75E1e45396e26300BC39681",
+     "fee": 10000,
+     "tickSpacing": 200,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/INTC",
+    "fee_setting": "10000",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0x5e4c353496e4c82a406a38ca1eaad6d2d4cdb8d405d422faff84bcb6f548d97e",
+     "pool_key": {
+      "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "currency1": "0xc72b96e0E48ecd4DC75E1e45396e26300BC39681",
+      "fee": 8388608,
+      "tickSpacing": 60,
+      "hooks": "0x5Eb87F69bE00Df39981622Fd60A8De4b7837e080"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "USDG/INTC",
+     "fee_setting": "8388608",
+     "hook_name": "FablesRWA (verified)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x7fb585f108d921de3b197cf7e26b5aebc96b035fec13f972b868e008ea062394",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xc72b96e0E48ecd4DC75E1e45396e26300BC39681",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/INTC",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "MSFT",
+   "name": "Microsoft • Robinhood Token",
+   "token": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+   "decimals": 18,
+   "feed": "0x45C3C877C15E6BA2EBB19eA114Ea508d14C1Af2E",
+   "feed_name": "Robinhood MSFT / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0x9194a557b6a6bb2236b49ea7e2bbccec5d3eeb705aef00903be4b3de1d949579",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+     "fee": 3000,
+     "tickSpacing": 60,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/MSFT",
+    "fee_setting": "3000",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+      "fee": 300,
+      "tickSpacing": 3,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/MSFT",
+     "fee_setting": "300",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/MSFT",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "META",
+   "name": "Meta Platforms • Robinhood Token",
+   "token": "0xc0D6457C16Cc70d6790Dd43521C899C87ce02f35",
+   "decimals": 18,
+   "feed": "0x7C38C00C30BEe9378381E7B6135d7283356D71b1",
+   "feed_name": "Robinhood META / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0x5875d407a42965b0e768c8925cea290e06fa50603ef34fc99eb92a1050e6ae36",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0xc0D6457C16Cc70d6790Dd43521C899C87ce02f35",
+     "fee": 3000,
+     "tickSpacing": 60,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/META",
+    "fee_setting": "3000",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0xc58bb68060bcb7b3ea0f6d4a4afef1e57f628722e808db12afb6d1733552872f",
+     "pool_key": {
+      "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "currency1": "0xc0D6457C16Cc70d6790Dd43521C899C87ce02f35",
+      "fee": 310,
+      "tickSpacing": 3,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "USDG/META",
+     "fee_setting": "310",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xf89d70906c1464e5f0853fbb0601c111bfb48ef54537c0527694a559b33dd801",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0xc0D6457C16Cc70d6790Dd43521C899C87ce02f35",
+      "fee": 2100,
+      "tickSpacing": 21,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/META",
+     "fee_setting": "2100",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x8dc0387af606d84be8e4c2fc1da7bdc6d467337e9f3e075113f968922a190847",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xc0D6457C16Cc70d6790Dd43521C899C87ce02f35",
+      "fee": 350,
+      "tickSpacing": 4,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/META",
+     "fee_setting": "350",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "SNDK",
+   "name": "Sandisk Corporation • Robinhood Token",
+   "token": "0xB90A19fF0Af67f7779afF50A882A9CfF42446400",
+   "decimals": 18,
+   "feed": "0xfb133Fa4B7b385802B693a293606682Df47109A3",
+   "feed_name": "Robinhood SNDK / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0x2707cb88a6a40fa0f948f58958051ba097d6f6a3cf7f87929bd68ccc5becea24",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0xB90A19fF0Af67f7779afF50A882A9CfF42446400",
+     "fee": 10000,
+     "tickSpacing": 200,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/SNDK",
+    "fee_setting": "10000",
+    "hook_name": "(none)"
+   },
+   "other_pools": []
+  },
+  {
+   "symbol": "AMZN",
+   "name": "Amazon • Robinhood Token",
+   "token": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+   "decimals": 18,
+   "feed": "0xD5a1508ceD74c084eBf3cBe853e2C968fB2a651C",
+   "feed_name": "Robinhood AMZN / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0xefc94885c96b02696b9b45de43eeeb8ac53c0199cab42b4daae4911b96fb8825",
+    "pool_key": {
+     "currency0": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+     "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "fee": 2400,
+     "tickSpacing": 24,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": true,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "AMZN/USDG",
+    "fee_setting": "2400",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0x5619cb8420678b47997f20925eb01be8750c907d6226a0df5d7eafeff966346f",
+     "pool_key": {
+      "currency0": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+      "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "fee": 8388608,
+      "tickSpacing": 60,
+      "hooks": "0x5Eb87F69bE00Df39981622Fd60A8De4b7837e080"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "AMZN/USDG",
+     "fee_setting": "8388608",
+     "hook_name": "FablesRWA (verified)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x751e89b1e830a959e282377cf53bacc046ff7d6b67c6209504c3db692992c3cd",
+     "pool_key": {
+      "currency0": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+      "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "fee": 2500,
+      "tickSpacing": 25,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "AMZN/USDG",
+     "fee_setting": "2500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x68beff3b4270ffbbb78a48d7670648909b9de6736456b0f450fee242e1d10a8b",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/AMZN",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "CRCL",
+   "name": "Circle Internet Group • Robinhood Token",
+   "token": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
+   "decimals": 18,
+   "feed": "0x6652eDf64bA3731C4F2D3ce821A0Fb1f1f6b482a",
+   "feed_name": "Robinhood CRCL / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0xdb9c34002d173981250969293af6f43f42a26f2110f19893bbe2ad373375e9e6",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
+     "fee": 8388608,
+     "tickSpacing": 60,
+     "hooks": "0x5Eb87F69bE00Df39981622Fd60A8De4b7837e080"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/CRCL",
+    "fee_setting": "8388608",
+    "hook_name": "FablesRWA (verified)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0x628c98ab436ee34a6a7decd606242890582591bdf7c9a35d90e0d08021c31ea0",
+     "pool_key": {
+      "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "currency1": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
+      "fee": 3000,
+      "tickSpacing": 30,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "USDG/CRCL",
+     "fee_setting": "3000",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xc73a455650cc4ed91c893d5b26ea79a5278fbf77a7775282c6a190b635e554ee",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
+      "fee": 8000,
+      "tickSpacing": 80,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/CRCL",
+     "fee_setting": "8000",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x10906975ba92bce9209431984d3e3e4b0eac706db274e8d1a29358331a555987",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
+      "fee": 2500,
+      "tickSpacing": 25,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/CRCL",
+     "fee_setting": "2500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x6d9af55c4cb0d740dc5237e8fe2d60e017412fb1af4e2d81e948124797e56748",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
+      "fee": 1500,
+      "tickSpacing": 15,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/CRCL",
+     "fee_setting": "1500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xe77cc864a0284f3dc420e504dd565e5d6f965cc86f5b4fa145b00b9ccabc3cd7",
+     "pool_key": {
+      "currency0": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+      "currency1": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
+      "fee": 2500,
+      "tickSpacing": 25,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "GOOGL",
+      "token": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0xF6f373a037c30F0e5010d854385cA89185AE638b",
+      "feed_decimals": 8
+     },
+     "pair": "GOOGL/CRCL",
+     "fee_setting": "2500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "GOOGL",
+   "name": "Alphabet Class A • Robinhood Token",
+   "token": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+   "decimals": 18,
+   "feed": "0xF6f373a037c30F0e5010d854385cA89185AE638b",
+   "feed_name": "Robinhood GOOGL / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0xd4ecb79fdc521d7725d22b33ed43cb4e47aa96bfad76aa29577e3151f723ac5e",
+    "pool_key": {
+     "currency0": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+     "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "fee": 3000,
+     "tickSpacing": 60,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": true,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "GOOGL/USDG",
+    "fee_setting": "3000",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0x5182d37e70a1c2e1060f8671739ae929913ceabcf2bd80a1a2a6356eafd4b506",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+      "fee": 10000,
+      "tickSpacing": 200,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/GOOGL",
+     "fee_setting": "10000",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x6d0f67069596c7ef9d1ce6981c1b6dbcd9a91b0c5393aebe9dd07c35e412df30",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+      "fee": 250,
+      "tickSpacing": 3,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/GOOGL",
+     "fee_setting": "250",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x2bca43d9d8c75399e3c6ba14e9dc88f44ca8968bb4694a8be4f80bd5a550df2e",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/GOOGL",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xe77cc864a0284f3dc420e504dd565e5d6f965cc86f5b4fa145b00b9ccabc3cd7",
+     "pool_key": {
+      "currency0": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+      "currency1": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
+      "fee": 2500,
+      "tickSpacing": 25,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "CRCL",
+      "token": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x6652eDf64bA3731C4F2D3ce821A0Fb1f1f6b482a",
+      "feed_decimals": 8
+     },
+     "pair": "GOOGL/CRCL",
+     "fee_setting": "2500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "PLTR",
+   "name": "Palantir Technologies • Robinhood Token",
+   "token": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
+   "decimals": 18,
+   "feed": "0x820ABedFF239034956B7A9d2F0a331f9F075eB4c",
+   "feed_name": "Robinhood PLTR / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0xee430ee1003e1985e1828a01b9a20dad67ad4302994fe2abb4a173de4ac54623",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
+     "fee": 10000,
+     "tickSpacing": 200,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/PLTR",
+    "fee_setting": "10000",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0xc59eaeda6d1a6f031bc7e1d039772f2d675e7b4de2c8668610f4471bd60b3802",
+     "pool_key": {
+      "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "currency1": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
+      "fee": 1500,
+      "tickSpacing": 15,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "USDG/PLTR",
+     "fee_setting": "1500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xb8d9b6b622bb03dd06d95790553f327710a73d85d845a59fa9e652638ca96ae6",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/PLTR",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "MU",
+   "name": "Micron Technology • Robinhood Token",
+   "token": "0xfF080c8ce2E5feadaCa0Da81314Ae59D232d4afD",
+   "decimals": 18,
+   "feed": "0x425EEFdCf05ed6526C3cE61Af99429A228a6d596",
+   "feed_name": "Robinhood MU / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0x6fa3ee0048e78bf0a513eb0ab56f482944a767c21db990fcf555605e69f05659",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0xfF080c8ce2E5feadaCa0Da81314Ae59D232d4afD",
+     "fee": 10000,
+     "tickSpacing": 200,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/MU",
+    "fee_setting": "10000",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0xcc2a903a8744a65258bb07fbeea553a25410f731c9fef306321d0c176a09542c",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xfF080c8ce2E5feadaCa0Da81314Ae59D232d4afD",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/MU",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "AMD",
+   "name": "AMD • Robinhood Token",
+   "token": "0x86923f96303D656E4aa86D9d42D1e57ad2023fdC",
+   "decimals": 18,
+   "feed": "0x943A29E7ae51A4798823ca9eEd2ed533B2A22C72",
+   "feed_name": "Robinhood AMD / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0xde9f85fdd9e05a943a52f2c69ffafe3064a3287df03d02c9b431bc92d4781274",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0x86923f96303D656E4aa86D9d42D1e57ad2023fdC",
+     "fee": 10000,
+     "tickSpacing": 200,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/AMD",
+    "fee_setting": "10000",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0xe6e17efdbdd916526293cf1b509171be4ffb04f47c4a5fe1a7367acdaa6ffd82",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x86923f96303D656E4aa86D9d42D1e57ad2023fdC",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/AMD",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "NVDA",
+   "name": "NVIDIA • Robinhood Token",
+   "token": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+   "decimals": 18,
+   "feed": "0x379EC4f7C378F34a1B47E4F3cbeBCbAC3E8E9F15",
+   "feed_name": "Robinhood NVDA / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0x6444a8e0b267406a15db74ca00c4a24bdfa81ed3180f5b6d0851f8ed6f4f29c5",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+     "fee": 100,
+     "tickSpacing": 1,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/NVDA",
+    "fee_setting": "100",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0x3bb34a44f1b2b5f32c034c38a53065a521a47b199700fa9bd19d60985ff24bf1",
+     "pool_key": {
+      "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "fee": 3000,
+      "tickSpacing": 60,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "USDG/NVDA",
+     "fee_setting": "3000",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x7990aad9e8fb048f49a155a7df5603db0366f0657035b78eb4196395cccb3dcd",
+     "pool_key": {
+      "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "fee": 8388608,
+      "tickSpacing": 10,
+      "hooks": "0x66622f77B797D506e5376F7798b67ab288966080"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "USDG/NVDA",
+     "fee_setting": "8388608",
+     "hook_name": "FablesRWA (verified)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x1d6b86ca25e01a320aa392d6b64e68c364245c2071a7315e80e3e0ccb7e87cc3",
+     "pool_key": {
+      "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "fee": 50,
+      "tickSpacing": 1,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "USDG/NVDA",
+     "fee_setting": "50",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xaa8039d8e39d2bbcae23762e71f5a12162875a61848f0d96914c827f61877ef6",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "fee": 50000,
+      "tickSpacing": 1000,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/NVDA",
+     "fee_setting": "50000",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x71f9660f9535e3e81d720696a58ea80274da8b2c6eb7c3acb22611d977439a5c",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "fee": 500,
+      "tickSpacing": 10,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/NVDA",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xda14bf8a87711e1f30dbe620f2df3fdf371f7503f1a72202d15631f657651ec0",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "fee": 250,
+      "tickSpacing": 3,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/NVDA",
+     "fee_setting": "250",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xbc732a1a0baabce2574ec2bca24fccad8e2c38a061a37cefc17a2fd12809394f",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/NVDA",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "USO",
+   "name": "United States Oil Fund • Robinhood Token",
+   "token": "0xa30FA36Db767ad9eD3f7a60fC79526fB4d56D344",
+   "decimals": 18,
+   "feed": "0x75a9c76Ef439e2C7c2E5a34Ab105EcFe3766431c",
+   "feed_name": "Robinhood USO / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0x1f2ad5a274a776d8e1408292bde1d92d8fa7b6444acf14ad60b9c3e4e5b66420",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0xa30FA36Db767ad9eD3f7a60fC79526fB4d56D344",
+     "fee": 1200,
+     "tickSpacing": 15,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/USO",
+    "fee_setting": "1200",
+    "hook_name": "(none)"
+   },
+   "other_pools": []
+  },
+  {
+   "symbol": "COIN",
+   "name": "Coinbase • Robinhood Token",
+   "token": "0x6330D8C3178a418788dF01a47479c0ce7CCF450b",
+   "decimals": 18,
+   "feed": "0xA3a468A452940B7D6b69991207B508c609a98Ef2",
+   "feed_name": "Robinhood COIN / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0x007a13fa152f6dc383cad20a8eaab4e1e2538b606936eae2a424f8aa47d6db31",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0x6330D8C3178a418788dF01a47479c0ce7CCF450b",
+     "fee": 10000,
+     "tickSpacing": 200,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/COIN",
+    "fee_setting": "10000",
+    "hook_name": "(none)"
+   },
+   "other_pools": []
+  },
+  {
+   "symbol": "ORCL",
+   "name": "Oracle • Robinhood Token",
+   "token": "0xb0992820E760d836549ba69BC7598b4af75dEE03",
+   "decimals": 18,
+   "feed": "0x0e6a64a2B58A6693a531E6c555f3A5d042eEA844",
+   "feed_name": "Robinhood ORCL / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0xc2ce4784e1e72cf0221b51b30c8aaadf6c0b12863cf03ab3687854fb7b1d850a",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0xb0992820E760d836549ba69BC7598b4af75dEE03",
+     "fee": 10000,
+     "tickSpacing": 200,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/ORCL",
+    "fee_setting": "10000",
+    "hook_name": "(none)"
+   },
+   "other_pools": []
+  },
+  {
+   "symbol": "AAPL",
+   "name": "Apple • Robinhood Token",
+   "token": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+   "decimals": 18,
+   "feed": "0x6B22A786bAa607d76728168703a39Ea9C99f2cD0",
+   "feed_name": "Robinhood AAPL / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+     "fee": 3000,
+     "tickSpacing": 60,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/AAPL",
+    "fee_setting": "3000",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+     "pool_key": {
+      "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+      "fee": 8388608,
+      "tickSpacing": 10,
+      "hooks": "0x70a9A88402989226847Ec122043CE5e7FF462080"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "USDG/AAPL",
+     "fee_setting": "8388608",
+     "hook_name": "FablesRWA (verified)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xeab0adac76db99a233ed077ca6be7a3f708baee6f98b17df69f7e1a07d1dc2e4",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+      "fee": 350,
+      "tickSpacing": 4,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/AAPL",
+     "fee_setting": "350",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "MSTR",
+   "name": "Strategy Inc. • Robinhood Token",
+   "token": "0xec262a75e413fAfD0dF80480274532C79D42da09",
+   "decimals": 18,
+   "feed": "0x396118bdFB181e6240E74D243F266B061c0edc3D",
+   "feed_name": "Robinhood MSTR / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0x319bac87e616a89e241c10aeb8afd4892a852cdd8b373cd9765ecddc40b87cfe",
+    "pool_key": {
+     "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "currency1": "0xec262a75e413fAfD0dF80480274532C79D42da09",
+     "fee": 2500,
+     "tickSpacing": 25,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": false,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "USDG/MSTR",
+    "fee_setting": "2500",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0xc105b8300ff65d750a0e4e63c7a879e20504069b770713464a5315e797735326",
+     "pool_key": {
+      "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "currency1": "0xec262a75e413fAfD0dF80480274532C79D42da09",
+      "fee": 2400,
+      "tickSpacing": 24,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "USDG/MSTR",
+     "fee_setting": "2400",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xe1c3e133c917674bd51704e47c7dfe7f0d66375c89ceb30b083de95f9a1dc5ea",
+     "pool_key": {
+      "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "currency1": "0xec262a75e413fAfD0dF80480274532C79D42da09",
+      "fee": 8388608,
+      "tickSpacing": 60,
+      "hooks": "0x5Eb87F69bE00Df39981622Fd60A8De4b7837e080"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "USDG/MSTR",
+     "fee_setting": "8388608",
+     "hook_name": "FablesRWA (verified)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x1dae69f15c48eef452c79360cc8df58f5d5c3c1e6324ff8777d58c1feb053cdc",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0xec262a75e413fAfD0dF80480274532C79D42da09",
+      "fee": 2500,
+      "tickSpacing": 25,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/MSTR",
+     "fee_setting": "2500",
+     "hook_name": "(none)"
+    }
+   ]
+  },
+  {
+   "symbol": "TSLA",
+   "name": "Tesla • Robinhood Token",
+   "token": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+   "decimals": 18,
+   "feed": "0x4A1166a659A55625345e9515b32adECea5547C38",
+   "feed_name": "Robinhood TSLA / USD",
+   "feed_decimals": 8,
+   "main_pool": {
+    "main": true,
+    "pool_id": "0x8517f8071ae5b831b738052f12125e8e3d6c158b78728aa44ce3b25e5104d32e",
+    "pool_key": {
+     "currency0": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+     "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "fee": 3000,
+     "tickSpacing": 60,
+     "hooks": "0x0000000000000000000000000000000000000000"
+    },
+    "stock_is_currency0": true,
+    "quote": {
+     "symbol": "USDG",
+     "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+     "decimals": 6,
+     "kind": "usdg",
+     "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+     "feed_decimals": 8
+    },
+    "pair": "TSLA/USDG",
+    "fee_setting": "3000",
+    "hook_name": "(none)"
+   },
+   "other_pools": [
+    {
+     "main": false,
+     "pool_id": "0xd5effce87036cd858146c0c15fa825c231a9de1843200ca108e431e431331e8e",
+     "pool_key": {
+      "currency0": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "fee": 8388608,
+      "tickSpacing": 10,
+      "hooks": "0x67D86050d22D574Df046F3D90F722045F714e080"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "USDG",
+      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "kind": "usdg",
+      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
+      "feed_decimals": 8
+     },
+     "pair": "TSLA/USDG",
+     "fee_setting": "8388608",
+     "hook_name": "FablesRWA (verified)"
+    },
+    {
+     "main": false,
+     "pool_id": "0x3ea70ce0b34473692549f97e630a1d82dc05cea94fa55f81b50f10c8c6d8186f",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "fee": 350,
+      "tickSpacing": 4,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/TSLA",
+     "fee_setting": "350",
+     "hook_name": "(none)"
+    },
+    {
+     "main": false,
+     "pool_id": "0xa821b3724b451b22476c5347471b2a96d185b86af8760f226273e34ab4b2b8a0",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "SPY",
+      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/TSLA",
+     "fee_setting": "500",
+     "hook_name": "(none)"
+    }
+   ]
+  }
+ ],
+ "unresolved": [
+  {
+   "symbol": "CRM",
+   "token": "0xd95B44124e475743a7589e68F3D74008A5536D44",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "P",
+   "token": "0x1Cdad396DB64BDa184d5182A97Dd9B3C62100b7D",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CIEN",
+   "token": "0x44f6D488021f8233B9416294d1FE9b1fEe28382d",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "ON",
+   "token": "0xbBD09F72b025360FeE5C928053Dca6248d35be54",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "APLD",
+   "token": "0xb8DBf92F9741c9ac1c32115E78581f23509916FD",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "AEHR",
+   "token": "0x5F604fBA1162193A4388A5DFa56F556f3E133cC2",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "TEAM",
+   "token": "0x5B97476b922F3305131B8f0B9D333172E87f4aaE",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "QBTS",
+   "token": "0xC583c60aeF9Dc401Da72cEC1B404743a93cea1Cc",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SATS",
+   "token": "0x95052ddcd5DC25641657424A8Cf04834997E1730",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "FIX",
+   "token": "0x93Dbb1d2Dc5D63F4abACFF30485273f538Df68Ac",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "MTSI",
+   "token": "0xC93f4d80e268AB922e871bd169156C3CC41894e6",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SMCI",
+   "token": "0xc01aA1fECeC0605b13bc84874ff7256C0f5F562a",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "MXL",
+   "token": "0x48961813349333209994750ffA89b3c5C22eC969",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "RUN",
+   "token": "0x756Bc80af765C82da966a788858d65aDF14f3793",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "WDAY",
+   "token": "0x82DA4646242e1D962e96e932269Dc644c94a9CaA",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "GLXY",
+   "token": "0x2D427692E928fa156ec22acfaBaFA0447C5805B7",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CRWD",
+   "token": "0xea72Ecca2d0f6bFA1394DBBCff85b52CD4233931",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "AVGO",
+   "token": "0x156E175DD063a8cE274C50654eF40e0032b3fbcF",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CCL",
+   "token": "0x9651342CeA770aE9a2969Ba2A52611523146aef9",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SNOW",
+   "token": "0xBa0CAB75495255d0cB58E22B648bFED4ECD1F47E",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "FICO",
+   "token": "0xa48F22A46C0F1C46CA7D111CB6c137c271987180",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "PR",
+   "token": "0x4189F0c66EBBB0bfeF1C31f763131361EF32f77C",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "WYFI",
+   "token": "0x9e7ABD3C9139D14E4c86DcE0e455AAB7A0C2FB3E",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "NNE",
+   "token": "0xBEF75684C43c4ea7BD18Dd532a2244674Ee8b926",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "GE",
+   "token": "0x63b814DDBd6BF339f25Fed8c36158a008D5B373e",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SNAP",
+   "token": "0xF6589F11Bc40b669e584073F428B05562F568733",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SKHY",
+   "token": "0x84CAb63bc87912E71ad199ff14A0bA45de68FeF8",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CBRS",
+   "token": "0x5c90450Bbb4273D7b2f17CF6917AEB237A569679",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "FUTU",
+   "token": "0xeB30663bDFf0622Ef4e4E5cBb4E975F19f33f51D",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "NU",
+   "token": "0x408c14038a04f7bD235329E26d2bf569ee20e250",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "RCAT",
+   "token": "0xFDE6b5d9BB419B10C23268c74e369AbFF39C0460",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "RGTI",
+   "token": "0x284358abc07F9359f19f4b5b4aC91901Be2597Ba",
+   "feed": "0x2A045cF1C49c61c166C036d2f06FA2D2d984f765",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "TTWO",
+   "token": "0x5e81213613b6B86EaB4c6c50d718d34359459786",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "VICR",
+   "token": "0x6006ed4B2F94110851ff7509D97D034f0EeD9226",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "TSEM",
+   "token": "0x89776d4Cd68193597A2fC132cfaC1fDe36CCeA8a",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "RDDT",
+   "token": "0x05b37Fb53A299a1b874A619e1c4C404D52C36F4C",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "GLW",
+   "token": "0x7c04E6A3368F2A1DE3874f0e80d2e0A1a9915da6",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "UPS",
+   "token": "0xf23250dac154D05Bb671CB0d0eBEf3c635c79CE2",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "PANW",
+   "token": "0xB039597eD45CBa7B6E2fb9E8BE51802969CEe5Be",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "LHX",
+   "token": "0x48d60243c66437c6ac3c2495Be94747aEd5Dfe25",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "FLY",
+   "token": "0x03BC731Ffb162cdd7B98D3C6542bFC291126075d",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "BA",
+   "token": "0x4D21483a44Bf67a86b77E3dA301411880797D452",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "INTU",
+   "token": "0x56d23beE5f41A7120170b0c603Dae30128e460e9",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "ELF",
+   "token": "0x39EC44Bee4F6A116c6F9B8De566848a985C53C60",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "NFLX",
+   "token": "0xE0444EF8BF4eD74f74FD73686e2ddF4C1c5591E8",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "USAR",
+   "token": "0xd917B029C761D264c6A312BBbcDA868658eF86a6",
+   "feed": "0xA994d3684e8400A6c8078226925779FdeE682DD9",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "VST",
+   "token": "0x561e2a49212b7cCF47f2744Ccb83e200722fADBc",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CSCO",
+   "token": "0xF543967EEBB6f1917992eF0E68De63ab07a5a0dA",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "FISV",
+   "token": "0x9ECe29A4A2397C0a35fb5fA8EE2b9509130a98cc",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "BB",
+   "token": "0x48E39E56aCdbA37b09020C0b734A613C9a2f100A",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CVNA",
+   "token": "0xa4f319104089FE321dc8093C6E707d4fE190A988",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "AXTI",
+   "token": "0x141eEa040c2250eEc0314e336975e81f85f6585e",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "MOD",
+   "token": "0xc6Cbad1016b38B797610c25E1dc7D95988B1f362",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "LULU",
+   "token": "0x4e62068525Ab11FE768e29dfD00ef909B9803016",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "LMT",
+   "token": "0x329fcACEb9AD6F9580DD5F643fed0646900D043c",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "INFQ",
+   "token": "0xB853bC83a753342a4f8320ea680b4B1E84118D21",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SGOV",
+   "token": "0x92FD66527192E3e61d4DDd13322Aa222DE86F9B5",
+   "feed": "0xa0DF4ee0fFf975306345875E3548Fcc519577A11",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "OUST",
+   "token": "0x40E7a279850e443f582059ae5dC1c3b6563E6395",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "IREN",
+   "token": "0xF0AB0c93bE6F41369d302e55db1A96b3c430212D",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "MRNA",
+   "token": "0x43B07D15cE533bEc5476d70C22a78a1B2B662155",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "LRCX",
+   "token": "0x57b0030166DB0C31690d1A5aA167e2e26e2C29a4",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "BND",
+   "token": "0x2F62fC9fAbb470C690f141c28340eD832bB27020",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CEG",
+   "token": "0xaE517A2903E68bd929Dfd15be875F8369D53e94a",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "ALAB",
+   "token": "0x748c32c3ca24eDf31ea597Db1F3d330a7a6DA3Dc",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "TEM",
+   "token": "0xB1CC0EC7Db69Cf43539119814df40071b9d61793",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "BULL",
+   "token": "0xceF9027c7d6985b85f0BA431125073529A947A68",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "UNH",
+   "token": "0xcF364ea52787e289De6F32077834056E3E70D6A8",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CLOV",
+   "token": "0x62200915e7DEab1eC7f79fb246daDbB80eACdDd0",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "BABA",
+   "token": "0xad25Ac6C84D497db898fa1E8387bf6Af3532a1c4",
+   "feed": "0x62Cc8F9b5f56a33c9C8A60c8B92779f523c4E984",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "SIMO",
+   "token": "0x77E655E37F4d913fB9540e0d541D824171a60e81",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "WDC",
+   "token": "0xF52597345A8Edf418bc4071b4a35112472277D3e",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CLSK",
+   "token": "0xcBB95BBF36099d34dA091dc6Fa6F49EfA257Cee3",
+   "feed": "0x810c12D3a554Bc47fd39597Fe3b3AAC4941F50eF",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "ASTS",
+   "token": "0x1AF6446f07eb1d97c546AFC8c9544cBDF3AD5137",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "POWL",
+   "token": "0x237c16D66590F67B886d978ACD362EAeaD8B18c7",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "VTI",
+   "token": "0x0594134DF3f171a354D9C85eBD65b7A6148F6D09",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "RKLB",
+   "token": "0x3b14C39E89D60D627b42a1A4CA45b5bb45Fc12e2",
+   "feed": "0x045477BF65Aef6f4F2386ad0164579e48381CC74",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "TER",
+   "token": "0x2778C5024D5cA2CdB0f8eAD671ffc69963AdCD9C",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CRWV",
+   "token": "0x5f10A1C971B69e47e059e1dC91901B59b3fB49C3",
+   "feed": "0xe1b3aABCAFAd1c94708dc1367dcfF8Aa4407487C",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "CLS",
+   "token": "0xBf449977089c718C004a66C554B26B94ef3Ad4De",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "FIG",
+   "token": "0x41F4267525a8AFf329540eF24fD83d9044758B33",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "EWY",
+   "token": "0x7f0aBeF0C07280F82c6a08ead09dEd6BAE2C13Fc",
+   "feed": "0xEFdf54610B62A7753Ec30bDc380847c12D32e1D1",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "SLS",
+   "token": "0x285b231728c7E4333799183DF1094d775246a535",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CRDO",
+   "token": "0x4D67253bc223e6b0e104F1084c1fb2b669dDC41b",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SMH",
+   "token": "0x072f979c2CAc8e1391B0162a87Fee094bF8744a0",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "VRT",
+   "token": "0xFA78C12E6488814A0262E4e802749a4a737d5fB7",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "NOW",
+   "token": "0x0C3260aF4B8f13a69c4c2dFb84fD667890CDFa14",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "XLK",
+   "token": "0x15Cd20759CE7F3285c29A319dE2D1A2e098c6f43",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "AMBA",
+   "token": "0x99D9D8663545151603863C5AcbD6FC3218899009",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "JOBY",
+   "token": "0xb334C5cE741B80B5B671F47F5C269Cb193fe8E24",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "QUBT",
+   "token": "0x59818904ab4cE163b3cE4FfB64f2D6Ca02c434B4",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "PWR",
+   "token": "0x9Ab02Ead789b6903c3c44d0ED32F9c707CDF12FD",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "F",
+   "token": "0x25C288E6D899b9BC30160965aD9644c67e73bE0C",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "ZS",
+   "token": "0x7dc013eB55e436f30d7ED1AFE4E36d6e45e3c3f7",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "XOM",
+   "token": "0xf9B46d3D1B22199D4D1025a9cEDB540A33F1a2d5",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "NBIS",
+   "token": "0x9D9c6684F596F66a64C030B93A886D51Fd4D7931",
+   "feed": "0xE1D87B116Ba0fe898998f1D140339D1fA1E09705",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "SHY",
+   "token": "0xBE274710Bf3d9567e1B290eF6a5F9f90ca016FD8",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SMR",
+   "token": "0x1Eebee7F74517e0279dFb09d25B0407bEEc3FDd6",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SOUN",
+   "token": "0x6E3Dfd9f7e1649BaA14D25cac18C94d62dB10A54",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "POET",
+   "token": "0xcf6B2D875361be807EAfa57458c80f28521F9333",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "APP",
+   "token": "0xA249BAF1063Af884807C1E1400AEf7784836917E",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "AAOI",
+   "token": "0x521Cf887E6531c6F667b5BC4D896E5d9bfE8EB2E",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "LITE",
+   "token": "0x8eF20885F94e3D9bc7eB3080279188Bd5ED7c08C",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "AEIS",
+   "token": "0xfAf9cb261B5FCC1f404Bb10CD39C5c6C1974E612",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "KTOS",
+   "token": "0x7FD06a4d81cCfA3F351394E144d5191874C31313",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "AMAT",
+   "token": "0x36046893810a7E7fCE501229d57dc3FC8c8716d0",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "MRVL",
+   "token": "0x62fd0668e10D8B72339BE2DCF7643001688ff13B",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "JBL",
+   "token": "0xEAf2512dFC1bEAc608F8794B3793CD4E02894Aa6",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "LLY",
+   "token": "0x8005d266423c7ea827372c9c864491e5786600ea",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "QCOM",
+   "token": "0x0f17206447090e464C277571124dD2688E48AEA9",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "JNJ",
+   "token": "0x03DfbBE0AC4E7bCDaFd08eD41A400326B77D8c80",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "KSS",
+   "token": "0x12e3c047bf9AeCAF9dDC98c05C31BFD1dd043993",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "ANET",
+   "token": "0x28bABD556b60E53663B8615036479a29c2CDd1Bf",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CTSH",
+   "token": "0x63D5a3b6939a33f1e75d8Bcd85759858239600DB",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "PL",
+   "token": "0xAA4d64474c172010aB57719cb9951E6142a100d3",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "IONQ",
+   "token": "0x558378E000D634A36593E338eBacdd6207640EfE",
+   "feed": "0x22EfeC4919baf55F360E0EDee4AbEB26DE4971eb",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "TE",
+   "token": "0xb1969f6604CA1AE7a2cD3F1827876e914594CA2D",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SHOP",
+   "token": "0xF53F66751B1Eff985311b693531E3290F600c410",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "NVTS",
+   "token": "0xbE6702d7b70315376dC48a3293f24f0982F86386",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "PATH",
+   "token": "0xfb2664f07B6Aadd29ea7a59D8859b1AeB8645cDa",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "UMC",
+   "token": "0x0E6e67Ba88e7b5d9B67636A215c76779B948dE79",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "COHR",
+   "token": "0x92F9F459F1a9a5AD266b182BE7Bffd1C6c666894",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "GEV",
+   "token": "0x94B8AAE43A1cCc08Aa64B7D1F29b4D920aF4a0C9",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "AUR",
+   "token": "0x373C06c4f7BDe527D7Dae4BA169E42b55E393CeD",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "IBM",
+   "token": "0x980dcf6766FA79f5Cf0c4AAdb3ab477ff15a9619",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "NAVN",
+   "token": "0xf7181b63Fdb858558A74ba96BC42732684cd7965",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "INOD",
+   "token": "0xf1953DAB6FaD537488d5A022361FfAa8B4c95eC6",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "AMC",
+   "token": "0x05a3d1Cd21d0C88145E82600E62e7E496e0F222B",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "RIVN",
+   "token": "0xB1BF26c1D20ff267A4f93550d1E0d06ac40a114B",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "GME",
+   "token": "0x1b0E319c6A659F002271B69dB8A7df2F911c153E",
+   "feed": "0x27C71df6A64fB476468EdF256CF72c038baB5B67",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "MPWR",
+   "token": "0x52D50D0280AD1054b43f052bD70a49a212A1b128",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "PENG",
+   "token": "0x9b23573b156B52565012F5cE02CDF60AFBaa70Be",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "NET",
+   "token": "0x116F00968269B7bfbaD4109cE591d6E74c0601d4",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SCHD",
+   "token": "0xd63ABB2C13d7a8421a8017a712802053568e3C1D",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "LUNR",
+   "token": "0xa5D4968421bA94814Be3B136b15cf422101aC1a3",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "ABCL",
+   "token": "0x3139D77Ace0cbAA5bDfD38bD1F1911a794AF0B0e",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "AXON",
+   "token": "0xC27dBD474aF5181c5A8777903690D8D262D12648",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "EWT",
+   "token": "0x1c690498150252222C275A5CEd69d3A6b1f52D5E",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "FTNT",
+   "token": "0x3FB8976980d486084b2eb4a404BD12e72823958f",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "HPE",
+   "token": "0x59dd09d4900C2E4B5F75b7c0d4E6796fcc234Cb1",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "VSAT",
+   "token": "0x26dCbfb34FC83CAbD6990f449674efDc6097fF85",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "ADBE",
+   "token": "0x232B8ed6377BE97813853B0Ac104c4Cda8378d1B",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "XNDU",
+   "token": "0xA8eB3BCcbf2017eE7CBfb652eB51CF2E1B153289",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "DDOG",
+   "token": "0x27c99fBde9D0d2AA4f4Bfb4943f237843DdF6958",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "RDW",
+   "token": "0x92Ef19E82bD8fF36661DE838D5eaE7e5CEF0EfFE",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "BE",
+   "token": "0x822CC93fFD030293E9842c30BBD678F530701867",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "DJT",
+   "token": "0x1D11f0496982706C5e14A514D4E79F2e6BdE4516",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "OKLO",
+   "token": "0x8B2f88497f15A18E9D4FFa1a8fFB8538399aE774",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "ZM",
+   "token": "0x44c4F142009036cF477eD2d09932051843137CF1",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "FLNC",
+   "token": "0x282e87451E10fA6679BC7D76C69BE44cD3fC777C",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SLV",
+   "token": "0x411eFb0E7f985935DAec3D4C3ebaEa0d0AD7D89f",
+   "feed": "0x209b73908e92Ae021826eD79609845451Ecba2ce",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "SOFI",
+   "token": "0x98E75885157C80992A8D41b696D8c9C6Fb30A926",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "DOCN",
+   "token": "0xc02f12B9fe9E707079EC0d546f3050d3F6C1F8bD",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "WULF",
+   "token": "0x348Be1A8663f15edDe5CDf8A96BB69078f7aB6Fd",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "COST",
+   "token": "0x4EA005168D7F09a7A0Ba9D1DEf21a479950E44C2",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "TTD",
+   "token": "0x0b5fb4031cae9163db10B169Ee72685F0EdC8545",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "HWM",
+   "token": "0xAEa445c5F3DB1a462998ccC422A875A361ee5d99",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "HIMS",
+   "token": "0xCceE82fE024c36fA15E1005edE3E9e4787e23D09",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "CELH",
+   "token": "0x8cF07C5A878945185d327aAa6e33FAa95F95e7bF",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "RBLX",
+   "token": "0xF0C4BF4C582cb3836e98394b1d4e7B7281101bE8",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SPMO",
+   "token": "0xAd622320e520de39e72d41EF07438C3Fd3354875",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "AMKR",
+   "token": "0xDd356AA38F40A7b7076755aC854B6FBb1F0D305B",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "ONTO",
+   "token": "0x8ff63eAeEe3fE54Ba450c4F5538064Ec5A893Aef",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "SOXX",
+   "token": "0x75742c18BC1f1C5c5f448f4C9D9C6F66dafAAa38",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "ASML",
+   "token": "0x47F93d52cBeC7C6D2CfC080e154002370a60dAEA",
+   "feed": "0xB4106147E8cce40b7d46124090d373A71b70f87D",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders (in the 2026-10-08 top-80 discovery) against a token with a Chainlink USD feed"
+  },
+  {
+   "symbol": "HII",
+   "token": "0xEB61c0Ed490A367d4E3631cCf8a74B3bfc7E775D",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "AVAV",
+   "token": "0xF6290b5e7C26502e2dA514C31509849718EA76A5",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "INDA",
+   "token": "0xACEF2e09adb47aD6aBeBAD9fF06689E60615C2B6",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "MDB",
+   "token": "0xDdf2266b79abf0B48898959B0ed6E6adf512be74",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "PFE",
+   "token": "0x7066A64c24e4206CD62E83bf198c1E7EB361F51e",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "KLAC",
+   "token": "0x96b933C74eCB4A0926b9210cef7b743EF46be2E9",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "IBRX",
+   "token": "0x7c148F74ac7445D1F28366b7FcDC6792a9Fcd0Cf",
+   "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  }
+ ]
+}
