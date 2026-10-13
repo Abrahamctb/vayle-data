@@ -1,9 +1,9 @@
 name: gap-snapshot
 
-# Hourly read-only snapshot of Chainlink-vs-pool prices on Robinhood Chain (public RPC, no secrets).
+# Read-only snapshot (every 30 minutes) of Chainlink-vs-pool prices on Robinhood Chain (public RPC, no secrets).
 on:
   schedule:
-    - cron: "7 * * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
