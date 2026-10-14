@@ -1,0 +1,52 @@
+name: refresh-stocks
+
+# Weekly, read-only refresh of the tracked-stock list (stocks.json). Public RPC, no secrets.
+# Rules and safety: see script/refresh-stocks.mjs and the README ("Keeping the stock list fresh").
+on:
+  schedule:
+    - cron: "17 5 * * 1"   # Mondays 05:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Its own group: a 20+ minute refresh must never hold up the hourly snapshot workflow. The two write different files
+# (stocks*.json here; gap-snapshot.json, history.json, alert-state.json there), so they can run side by side and each
+# rebases onto the other's commits before pushing.
+concurrency:
+  group: refresh-stocks
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Refresh the list (keeps the old list and exits 0 if anything looks wrong)
+        run: node script/refresh-stocks.mjs
+
+      - name: Commit and push only the list files, and only if they changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          FILES="stocks.json stocks-state.json stocks-changes.json"
+          if [ -z "$(git status --porcelain -- $FILES)" ]; then
+            echo "nothing changed, nothing to commit"
+            exit 0
+          fi
+          git add $FILES
+          git commit -m "refresh stock list $(date -u +%Y-%m-%d)"
+          # the snapshot workflow (or the local fallback) may have pushed meanwhile: they touch other files, so rebase is safe
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push; then exit 0; fi
+            echo "push attempt $attempt failed, retrying"
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          exit 1

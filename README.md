@@ -6,6 +6,7 @@ the **Chainlink** price of the same stock.
 - `gap-snapshot.json`: the latest snapshot (refreshed hourly by GitHub Actions)
 - `script/alert.mjs`, `alert-state.json`: Telegram gap alerts (see below)
 - `history.json`: one compact row per snapshot, last 30 days (see below)
+- `stocks-changes.json`, `stocks-state.json`: change log and internal state of the weekly list refresh
 - `stocks.json`: which stocks, their Chainlink feed, and the pool(s) the snapshot reads
 - `script/gap-snapshot.mjs`, `script/lib/chain.mjs`: the plain Node script (no dependencies, Node 18+)
 
@@ -59,6 +60,28 @@ node script/alert.mjs --dry-run  # never sends, even when the variables are set
 
 The local Task Scheduler fallback does not send alerts (it has no secrets); only the GitHub workflow does.
 
+## Keeping the stock list fresh
+
+`stocks.json` is refreshed weekly by `.github/workflows/refresh-stocks.yml` (`script/refresh-stocks.mjs`). It re-runs the
+discovery rules from the chain with the public RPC (no key, no secret):
+
+- the stock token has a Chainlink USD feed, and
+- one of its Uniswap v4 pools (against USDG, ETH/WETH or another feed stock) has **TVL of at least $20,000**,
+  **100 or more real swaps** and **10 or more distinct swap senders** over the last 14 days.
+
+Safety rules:
+
+- A tracked stock that fails is **not** removed at once. It is marked `failing` with `failing_since`, and removed only after
+  **3 refreshes in a row** fail (about 3 weeks).
+- A new stock is added only after it **passes 2 refreshes in a row**.
+- If a data source errors, or far fewer results than last time come back (under 50%), the old list is kept unchanged and the
+  job still finishes successfully, so the snapshot workflow is never affected.
+- `gap-snapshot.json` and `history.json` are never edited; history of removed stocks stays.
+
+Files: `stocks.json` (the list, with `status`, `tracked_since`, `failing_since`, `last_refreshed`), `stocks-changes.json`
+(every add, flag, recovery and removal with its date, and `last_refreshed`) and `stocks-state.json` (pool index and positions
+the refresh needs; it is internal).
+
 ## How the gap is calculated
 
 ```
@@ -80,8 +103,7 @@ runs with the repository's built-in token and only commits `gap-snapshot.json`.
 
 ## Limits
 
-- Pool list, TVL and swap counts in `stocks.json` come from a one-off discovery on 2026-10-08; new pools are not picked up
-  automatically.
+- The tracked list is refreshed weekly (see above); between refreshes, new pools or stocks are not picked up.
 - A large gap can be a stale or slow feed (Chainlink updates on a price-deviation threshold or a heartbeat, so a feed can be
   hours old), a thin pool, or a real mispricing. The snapshot does not say which.
 - Public RPC rate limits can make a run fail; the workflow then commits nothing.

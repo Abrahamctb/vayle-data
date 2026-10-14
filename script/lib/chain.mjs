@@ -10,10 +10,15 @@ export const WETH = "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73";
 export const ZERO = "0x0000000000000000000000000000000000000000";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const READ_ONLY = new Set(["eth_call", "eth_blockNumber", "eth_getBlockByNumber", "eth_chainId"]);
+const READ_ONLY = new Set(["eth_call", "eth_blockNumber", "eth_getBlockByNumber", "eth_chainId", "eth_getLogs"]);
+
+/** How much RPC work a script did (for reporting). */
+export const stats = { requests: 0, subcalls: 0, splits: 0 };
 
 async function post(body) {
   let lastErr;
+  stats.requests++;
+  stats.subcalls += Array.isArray(body) ? body.length : 1;
   for (let i = 0; i < 7; i++) {
     try {
       const res = await fetch(RPC, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
@@ -147,3 +152,50 @@ export const slotPlus = (slotHex, n) => "0x" + pad32((BigInt(slotHex) + BigInt(n
 export const EXTSLOAD = "0x1e2eaeaf"; // extsload(bytes32)
 export const LATEST_ROUND_DATA = "0xfeaf968c";
 export const DECIMALS = "0x313ce567";
+
+// ---- logs ------------------------------------------------------------------------------------------------------------
+export const TOPIC = {
+  Initialize: keccakUtf8("Initialize(bytes32,address,address,uint24,int24,address,uint160,int24)"),
+  ModifyLiquidity: keccakUtf8("ModifyLiquidity(bytes32,address,int24,int24,int256,bytes32)"),
+  Swap: keccakUtf8("Swap(bytes32,address,int128,int128,uint160,uint128,int24,uint24)"),
+};
+export const addrTopic = (a) => "0x" + a.toLowerCase().replace(/^0x/, "").padStart(64, "0");
+export const topicAddr = (t) => "0x" + t.slice(26);
+const hexn = (n) => "0x" + BigInt(n).toString(16);
+
+/**
+ * eth_getLogs over [from, to] in chunks of at most `span` blocks. If the RPC refuses a range (block-range or result-size
+ * limit) the chunk is halved and retried, down to 2,000 blocks, then the error is surfaced. Only shrinks requests; it
+ * never rotates endpoints or evades rate limits. `address` and `topics` are as in eth_getLogs.
+ */
+export async function getLogsChunked({ address, topics }, from, to, span = 5_000_000, pauseMs = 120) {
+  const out = [];
+  for (let a = BigInt(from); a <= BigInt(to); a += BigInt(span)) {
+    const b = a + BigInt(span) - 1n < BigInt(to) ? a + BigInt(span) - 1n : BigInt(to);
+    try {
+      const logs = await rpc("eth_getLogs", [{ address, topics, fromBlock: hexn(a), toBlock: hexn(b) }]);
+      for (const l of logs) out.push(l);
+    } catch (e) {
+      if (span <= 2000) throw new Error(`RPC refuses even a ${span}-block range: ${String(e.message).slice(0, 120)}`);
+      stats.splits++;
+      for (const l of await getLogsChunked({ address, topics }, a, b, Math.floor(span / 2), pauseMs)) out.push(l);
+    }
+    await sleep(pauseMs);
+  }
+  return out;
+}
+
+const s256 = (x) => (x >= 1n << 255n ? x - (1n << 256n) : x);
+const s24 = (x) => { const v = Number(x & 0xffffffn); return v >= 1 << 23 ? v - (1 << 24) : v; };
+export function decodeInitialize(l) {
+  const w = words(l.data);
+  return { id: l.topics[1], c0: topicAddr(l.topics[2]), c1: topicAddr(l.topics[3]), fee: Number(w[0]), tickSpacing: s24(w[1]), hooks: "0x" + w[2].toString(16).padStart(40, "0"), block: parseInt(l.blockNumber, 16) };
+}
+export function decodeModify(l) {
+  const w = words(l.data);
+  return { id: l.topics[1], sender: topicAddr(l.topics[2]), lo: s24(w[0]), hi: s24(w[1]), delta: s256(w[2]), salt: "0x" + w[3].toString(16).padStart(64, "0"), block: parseInt(l.blockNumber, 16) };
+}
+export function decodeSwap(l) {
+  const w = words(l.data);
+  return { id: l.topics[1], sender: topicAddr(l.topics[2]), a0: s256(w[0]), a1: s256(w[1]), block: parseInt(l.blockNumber, 16) };
+}

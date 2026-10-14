@@ -61,30 +61,34 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: node script/alert.mjs
 
-      - name: Commit and push only if something changed
+      - name: Commit and push only if something changed (rebase and retry up to 3 times)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           FILES="gap-snapshot.json history.json alert-state.json"
-          commit_and_push() {
-            if [ -z "$(git status --porcelain -- $FILES)" ]; then
-              echo "nothing changed, nothing to commit"
-              return 0
-            fi
-            git add $FILES
-            git commit -m "snapshot $(node -p "require('./gap-snapshot.json').snapshot_at")"
-            git push
-          }
+          if [ -z "$(git status --porcelain -- $FILES)" ]; then
+            echo "nothing changed, nothing to commit"
+            exit 0
+          fi
+          git add $FILES
+          git commit -m "snapshot $(node -p "require('./gap-snapshot.json').snapshot_at")"
           for attempt in 1 2 3; do
-            if commit_and_push; then exit 0; fi
-            echo "push rejected (another writer pushed first), attempt $attempt: starting again from origin/main"
-            # keep this run's alert state: the alerts were already sent, so they must not be forgotten
-            cp alert-state.json /tmp/alert-state.json
+            if git push; then exit 0; fi
+            echo "push rejected (another writer pushed first), attempt $attempt: rebasing onto origin/main"
+            if git pull --rebase origin main; then
+              continue   # rebased cleanly (the other writer touched other files): push again
+            fi
+            # a real conflict (the same data file was changed upstream, e.g. by the local fallback): rebuild from origin/main
+            echo "rebase conflict: rebuilding this run's rows on top of origin/main"
+            git rebase --abort || true
+            cp alert-state.json /tmp/alert-state.json   # the alerts were already sent: keep their cooldown state
             git fetch origin main
             git reset --hard origin/main
             cp /tmp/alert-state.json alert-state.json
             node script/gap-snapshot.mjs > /dev/null
             node script/append-history.mjs
+            git add $FILES
+            git diff --cached --quiet || git commit -m "snapshot $(node -p "require('./gap-snapshot.json').snapshot_at")"
           done
           echo "could not push after 3 attempts"
           exit 1
