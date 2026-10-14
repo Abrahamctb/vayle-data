@@ -197,3 +197,20 @@ export function applyHysteresis(current, passBySym, st, date, failNote = () => "
   }
   return { nextStocks, events };
 }
+
+// ---- which pools to re-read each run --------------------------------------------------------------------------------------
+/**
+ * Pools to read live price/liquidity for this run: every pool that had liquidity last time (`liq` true), every pool with no
+ * reading yet (`liq` undefined: new, or not yet seen), plus a rotating `1/every` sample of the rest, so no pool is ignored for
+ * more than `every` runs. `rotation` is a counter kept in the state and incremented once per completed run.
+ */
+export function selectPoolsToRead(ids, pools, rotation, every = 10) {
+  const sorted = [...ids].sort();
+  const out = [];
+  sorted.forEach((id, i) => {
+    const p = pools[id];
+    if (p.liq === true || p.liq === undefined || p.liq === null) out.push(id);
+    else if (i % every === rotation % every) out.push(id);
+  });
+  return out;
+}

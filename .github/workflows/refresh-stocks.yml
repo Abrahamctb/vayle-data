@@ -20,7 +20,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -28,8 +28,14 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Refresh the list (keeps the old list and exits 0 if anything looks wrong)
-        run: node script/refresh-stocks.mjs
+      - name: Refresh the list (keeps the old list and exits 0 if anything looks wrong; one retry after 30 minutes)
+        run: |
+          node script/refresh-stocks.mjs | tee refresh-1.log
+          if grep -qiE "old list kept|KEEPING THE OLD LIST" refresh-1.log; then
+            echo "first attempt kept the old list; waiting 30 minutes for the RPC to cool, then trying once more (progress is saved in stocks-state.json)"
+            sleep 1800
+            node script/refresh-stocks.mjs | tee refresh-2.log
+          fi
 
       - name: Commit and push only the list files, and only if they changed
         run: |

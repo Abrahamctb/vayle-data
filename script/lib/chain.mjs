@@ -13,21 +13,52 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const READ_ONLY = new Set(["eth_call", "eth_blockNumber", "eth_getBlockByNumber", "eth_chainId", "eth_getLogs"]);
 
 /** How much RPC work a script did (for reporting). */
-export const stats = { requests: 0, subcalls: 0, splits: 0 };
+export const stats = { requests: 0, subcalls: 0, splits: 0, throttled: 0, waitedMs: 0, paceMs: 0 };
+
+// Politeness. Every request waits for its slot; `pace` is the gap between requests. It doubles on every throttle response
+// (429/403) up to MAX_PACE_MS and eases back after a run of successes: effectively lower concurrency while the RPC is unhappy.
+// RH_BACKOFF_SCALE (default 1) scales all waits; tests set it near 0 so a simulated 429 does not take minutes.
+const SCALE = Number(process.env.RH_BACKOFF_SCALE ?? 1);
+const BASE_PACE_MS = 100, MAX_PACE_MS = 4000, MAX_WAIT_MS = 180_000, ATTEMPTS = 8;
+let pace = BASE_PACE_MS, okStreak = 0, nextSlot = 0;
+async function gate() {
+  const now = Date.now();
+  const at = Math.max(now, nextSlot);
+  nextSlot = at + pace * SCALE;
+  if (at > now) await sleep(at - now);
+}
 
 async function post(body) {
   let lastErr;
   stats.requests++;
   stats.subcalls += Array.isArray(body) ? body.length : 1;
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < ATTEMPTS; i++) {
     try {
+      await gate();
       const res = await fetch(RPC, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
-      if (res.status === 429 || res.status === 403 || res.status >= 500) throw new Error(`HTTP ${res.status}`);
+      if (res.status === 429 || res.status === 403 || res.status >= 500) {
+        // throttled or unwell: wait as long as the server asks (Retry-After), else back off exponentially (up to 3 minutes),
+        // and slow every later request down too. Never rotates endpoints or spoofs anything.
+        if (res.status === 429 || res.status === 403) {
+          stats.throttled++;
+          pace = Math.min(MAX_PACE_MS, pace * 2);
+          okStreak = 0;
+        }
+        const ra = Number(res.headers.get("retry-after"));
+        const wait = (Number.isFinite(ra) && ra > 0 ? Math.min(ra * 1000, MAX_WAIT_MS) : Math.min(MAX_WAIT_MS, 2000 * 2 ** i)) * SCALE;
+        lastErr = new Error(`HTTP ${res.status}`);
+        stats.waitedMs += wait;
+        stats.paceMs = pace;
+        await sleep(wait + Math.floor(Math.random() * 500 * SCALE));
+        continue;
+      }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (++okStreak >= 20 && pace > BASE_PACE_MS) { pace = Math.max(BASE_PACE_MS, Math.floor(pace * 0.75)); okStreak = 0; }
+      stats.paceMs = pace;
       return await res.json();
     } catch (e) {
       lastErr = e;
-      await sleep(800 * (i + 1) ** 2);
+      await sleep(800 * (i + 1) ** 2 * SCALE);
     }
   }
   throw lastErr;
@@ -198,4 +229,23 @@ export function decodeModify(l) {
 export function decodeSwap(l) {
   const w = words(l.data);
   return { id: l.topics[1], sender: topicAddr(l.topics[2]), a0: s256(w[0]), a1: s256(w[1]), block: parseInt(l.blockNumber, 16) };
+}
+
+/**
+ * Reads many PoolManager storage slots with extsload(bytes32[]): ONE eth_call per `per` slots instead of one JSON-RPC
+ * sub-call per slot. Returns an array of 0x-prefixed 32-byte words in the same order.
+ */
+export async function extsloadMany(slots, block, per = 250, pauseMs = 150) {
+  const sel = selector("extsload(bytes32[])");
+  const out = [];
+  for (let i = 0; i < slots.length; i += per) {
+    const chunk = slots.slice(i, i + per);
+    const data = sel + pad32("20") + pad32(chunk.length.toString(16)) + chunk.map((x) => x.replace(/^0x/, "")).join("");
+    const res = await rpc("eth_call", [{ to: POOL_MANAGER, data }, block]);
+    const w = words(res); // [offset, length, item0, item1, ...]
+    if (w.length < 2 + chunk.length) throw new Error("extsload(bytes32[]) returned too few words");
+    for (let k = 0; k < chunk.length; k++) out.push("0x" + w[2 + k].toString(16).padStart(64, "0"));
+    await sleep(pauseMs);
+  }
+  return out;
 }

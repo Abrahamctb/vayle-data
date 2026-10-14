@@ -16,10 +16,10 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import {
-  rpc, batch, ethCall, words, selfTestKeccak, poolSlot, slotPlus, getLogsChunked, stats, EXTSLOAD, TOPIC, addrTopic,
+  rpc, extsloadMany, selfTestKeccak, poolSlot, slotPlus, getLogsChunked, stats, TOPIC, addrTopic,
   decodeInitialize, decodeModify, decodeSwap, POOL_MANAGER, USDG, WETH, ZERO, CHAIN_ID, RPC,
 } from "./lib/chain.mjs";
-import { RULES, low, fetchAssets, fetchFeedDirectory, validateFeeds, describeToken, usable, positionAmounts, selectStocks, applyHysteresis } from "./lib/stocks.mjs";
+import { RULES, low, fetchAssets, fetchFeedDirectory, validateFeeds, describeToken, usable, positionAmounts, selectStocks, applyHysteresis, selectPoolsToRead } from "./lib/stocks.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const arg = (n, d) => { const i = process.argv.indexOf(n); return i > 0 && !process.argv[i + 1]?.startsWith("--") ? process.argv[i + 1] : d; };
@@ -31,6 +31,16 @@ const MIN_RESULT_RATIO = 0.5;
 const iso = (t) => new Date(t * 1000).toISOString();
 const today = () => new Date().toISOString().slice(0, 10);
 const t0 = Date.now();
+let stage = "starting";
+let stateRef = null;   // the loaded state, so progress can be saved if the run fails part-way
+let dirty = false;     // true once the run learned something worth keeping (new pools, positions, liquidity flags)
+/** Saves progress (pool index, positions, liquidity flags) WITHOUT touching stocks.json, the change log or the per-stock counters. */
+function saveProgress() {
+  if (DRY || !stateRef || !dirty) return false;
+  writeFileSync(PATHS.state, JSON.stringify(stateRef));
+  return true;
+}
+const statLine = () => `after ${((Date.now() - t0) / 1000).toFixed(0)} s, stage "${stage}": ${stats.requests} requests (${stats.subcalls} calls), ${stats.throttled} throttled (429/403), waited ${(stats.waitedMs / 1000).toFixed(0)} s, ${stats.splits} range splits`;
 const log = (m) => console.log(m);
 
 /** Anything that must stop the refresh WITHOUT changing the list. */
@@ -40,6 +50,8 @@ async function main() {
   selfTestKeccak();
   if (!existsSync(PATHS.state) || !existsSync(PATHS.stocks)) throw new Keep("stocks-state.json or stocks.json is missing (run script/seed-stocks-state.mjs once)");
   const state = JSON.parse(readFileSync(PATHS.state, "utf8"));
+  stateRef = state;
+  state.rotation ??= 0;
   const current = JSON.parse(readFileSync(PATHS.stocks, "utf8"));
   const changes = existsSync(PATHS.changes) ? JSON.parse(readFileSync(PATHS.changes, "utf8")) : { last_refreshed: null, events: [] };
 
@@ -52,6 +64,7 @@ async function main() {
   const BLOCK = "0x" + headNum.toString(16);
   log(`chain ${chainId}, head ${headNum} (${iso(headTs)}), RPC ${RPC}${DRY ? ", DRY RUN" : ""}`);
 
+  stage = "assets and feeds";
   // ---- 1. assets and feeds ------------------------------------------------------------------------------------------
   let assets;
   try { assets = await fetchAssets(); } catch (e) { throw new Keep(`Robinhood asset list unavailable: ${e.message}`); }
@@ -73,6 +86,7 @@ async function main() {
   };
   const feedStockAddrs = new Set(stockFeeds.map((a) => low(a.address)));
 
+  stage = "pool index (Initialize events)";
   // ---- 2. pool index: new pools since the last scan, and pools of stocks that just got a feed ---------------------------
   const pools = state.pools;
   let added = 0;
@@ -86,11 +100,16 @@ async function main() {
     added++;
   };
   const initTopics = (pos, addrs) => (pos === 0 ? [TOPIC.Initialize, null, addrs, null] : [TOPIC.Initialize, null, null, addrs]);
-  const from = (state.init_scanned_block ?? 0) + 1;
   const addrTopics = [...feedStockAddrs].map(addrTopic);
-  for (const pos of [0, 1]) {
-    const logs = await getLogsChunked({ address: POOL_MANAGER, topics: initTopics(pos, addrTopics) }, from, headNum, 100_000);
-    for (const l of logs) addPool(decodeInitialize(l));
+  const WINDOW = 1_000_000;
+  for (let lo = (state.init_scanned_block ?? 0) + 1; lo <= headNum; lo += WINDOW) {
+    const hi = Math.min(lo + WINDOW - 1, headNum);
+    for (const pos of [0, 1]) {
+      const logs = await getLogsChunked({ address: POOL_MANAGER, topics: initTopics(pos, addrTopics) }, lo, hi, 100_000);
+      for (const l of logs) addPool(decodeInitialize(l));
+    }
+    state.init_scanned_block = hi; // a window is only marked done once both position filters returned
+    dirty = true;
   }
   // stocks that gained a feed since the last refresh: their older pools are not in the index yet
   const known = new Set((state.feed_stocks ?? []).map(low)); // compare lower-case: the seeded list is checksummed
@@ -106,18 +125,22 @@ async function main() {
   log(`pool index: ${Object.keys(pools).length} priced pairs (+${added} new); stocks that gained a feed: ${gained.map((g) => g.symbol).join(",") || "none"}`);
 
   // ---- 3. live price and in-range liquidity of every indexed pool ------------------------------------------------------
+  // extsload(bytes32[]): 250 slots per eth_call, so ~9,000 slot reads are ~40 calls (a JSON-RPC batch of 50 was ~180 requests
+  // and ~9,000 sub-calls, which the public RPC throttled).
+  stage = "reading pool state";
   const ids = Object.keys(pools);
-  const calls = ids.flatMap((id) => { const s = poolSlot(id); return [ethCall(POOL_MANAGER, EXTSLOAD + s.slice(2), BLOCK), ethCall(POOL_MANAGER, EXTSLOAD + slotPlus(s, 3).slice(2), BLOCK)]; });
-  const res = await batch(calls, 50, 100);
+  const toRead = selectPoolsToRead(ids, pools, state.rotation);
+  const slotList = toRead.flatMap((id) => { const s0 = poolSlot(id); return [s0, slotPlus(s0, 3)]; });
+  log(`reading live state of ${toRead.length} of ${ids.length} pools (had liquidity, new/unseen, or in this run's 1/10 sample)`);
+  let words32;
+  try { words32 = await extsloadMany(slotList, BLOCK); } catch (e) { throw new Keep(`pool state reads failed: ${String(e.message).slice(0, 120)}`); }
   const live = new Map();
-  let readErrors = 0;
-  ids.forEach((id, i) => {
-    const a = res[2 * i], b = res[2 * i + 1];
-    if (a.error || b.error) { readErrors++; return; }
-    const w0 = BigInt(a.result), wl = BigInt(b.result);
+  toRead.forEach((id, i) => {
+    const w0 = BigInt(words32[2 * i]), wl = BigInt(words32[2 * i + 1]);
     live.set(id, { sqrtP: Number(w0 & ((1n << 160n) - 1n)) / 2 ** 96, L: wl & ((1n << 128n) - 1n) });
+    pools[id].liq = (wl & ((1n << 128n) - 1n)) > 0n;
   });
-  if (readErrors > 0.2 * ids.length) throw new Keep(`${readErrors} of ${ids.length} pool state reads failed`);
+  dirty = true;
 
   // ---- 4. shortlist: liquidity now and in-range depth >= $1,000 --------------------------------------------------------
   const tokenMeta = (addr) => describeToken(addr, ctx);
@@ -133,6 +156,7 @@ async function main() {
   const capped = shortlist.slice(0, MAX_POOLS);
   log(`pools with liquidity and in-range depth >= $${RULES.minDepthUsd}: ${shortlist.length}${shortlist.length > MAX_POOLS ? ` (evaluating the ${MAX_POOLS} deepest)` : ""}`);
 
+  stage = "positions (ModifyLiquidity)";
   // ---- 5. positions (incremental ModifyLiquidity) -> TVL ---------------------------------------------------------------------
   for (const { id } of capped) {
     const p = pools[id];
@@ -145,6 +169,7 @@ async function main() {
       p.ranges[k] = (BigInt(p.ranges[k] ?? "0") + m.delta).toString();
     }
     p.mod_block = headNum;
+    dirty = true;
   }
   const tvlOf = (id) => {
     const p = pools[id], s = live.get(id);
@@ -161,6 +186,7 @@ async function main() {
     return a0 * pa + a1 * pb;
   };
 
+  stage = "swaps and senders";
   // ---- 6. swaps and senders over 14 days (newest first, stop as soon as both thresholds are met) -----------------------------
   const refBlock = headNum - 5_000_000;
   const refTs = parseInt((await rpc("eth_getBlockByNumber", ["0x" + refBlock.toString(16), false])).timestamp, 16);
@@ -250,6 +276,7 @@ async function main() {
   log(`\nelapsed ${elapsed.toFixed(0)} s; RPC requests ${stats.requests} (${stats.subcalls} calls incl. batched); range splits ${stats.splits}`);
   if (DRY) { log("DRY RUN: nothing written"); return; }
   state.init_scanned_block = headNum;
+  state.rotation += 1;
   state.last_refresh_block = headNum;
   state.updated_at = iso(headTs);
   state.assets_count = assets.length;
@@ -302,8 +329,12 @@ function failReason(stock, evalById, pools, live, feedInfo) {
 main().catch((e) => {
   if (e instanceof Keep) {
     console.log(`refresh: KEEPING THE OLD LIST. Reason: ${e.message}`);
+    console.log(`refresh: ${statLine()}`);
+    if (saveProgress()) console.log("refresh: progress saved to stocks-state.json (a retry resumes from it); stocks.json and the change log are untouched");
     process.exit(0);
   }
   console.log(`refresh: ERROR, old list kept. ${String(e?.message ?? e).slice(0, 300)}`);
+  console.log(`refresh: ${statLine()}`);
+  if (saveProgress()) console.log("refresh: progress saved to stocks-state.json (a retry resumes from it); stocks.json and the change log are untouched");
   process.exit(0); // never fail the workflow, the snapshot job must not be affected
 });

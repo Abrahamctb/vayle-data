@@ -1,6 +1,6 @@
 // Tests for the list-change safety rules (script/lib/stocks.mjs applyHysteresis). No network.  node script/test-refresh-rules.mjs
 import assert from "node:assert/strict";
-import { applyHysteresis, REMOVE_AFTER_FAILS, ADD_AFTER_PASSES } from "./lib/stocks.mjs";
+import { applyHysteresis, REMOVE_AFTER_FAILS, ADD_AFTER_PASSES, selectPoolsToRead } from "./lib/stocks.mjs";
 
 const entry = (symbol) => ({ symbol, token: "0x" + symbol, main_pool: { pool_id: "0x" + symbol }, other_pools: [] });
 const pass = (...syms) => new Map(syms.map((s) => [s, entry(s)]));
