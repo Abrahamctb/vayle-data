@@ -54,24 +54,35 @@ jobs:
       - name: Append one row to history.json (skips duplicates and short snapshots)
         run: node script/append-history.mjs
 
+      - name: Telegram gap alerts (dry run if the secrets are not set; never fails the data commit)
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node script/alert.mjs
+
       - name: Commit and push only if something changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          FILES="gap-snapshot.json history.json alert-state.json"
           commit_and_push() {
-            if [ -z "$(git status --porcelain -- gap-snapshot.json history.json)" ]; then
+            if [ -z "$(git status --porcelain -- $FILES)" ]; then
               echo "nothing changed, nothing to commit"
               return 0
             fi
-            git add gap-snapshot.json history.json
+            git add $FILES
             git commit -m "snapshot $(node -p "require('./gap-snapshot.json').snapshot_at")"
             git push
           }
           for attempt in 1 2 3; do
             if commit_and_push; then exit 0; fi
             echo "push rejected (another writer pushed first), attempt $attempt: starting again from origin/main"
+            # keep this run's alert state: the alerts were already sent, so they must not be forgotten
+            cp alert-state.json /tmp/alert-state.json
             git fetch origin main
             git reset --hard origin/main
+            cp /tmp/alert-state.json alert-state.json
             node script/gap-snapshot.mjs > /dev/null
             node script/append-history.mjs
           done

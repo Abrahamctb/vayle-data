@@ -4,6 +4,7 @@ An hourly, read-only snapshot of how far Uniswap v4 stock-token pool prices on *
 the **Chainlink** price of the same stock.
 
 - `gap-snapshot.json`: the latest snapshot (refreshed hourly by GitHub Actions)
+- `script/alert.mjs`, `alert-state.json`: Telegram gap alerts (see below)
 - `history.json`: one compact row per snapshot, last 30 days (see below)
 - `stocks.json`: which stocks, their Chainlink feed, and the pool(s) the snapshot reads
 - `script/gap-snapshot.mjs`, `script/lib/chain.mjs`: the plain Node script (no dependencies, Node 18+)
@@ -27,6 +28,36 @@ first; other qualifying pools are listed under `other_pools`.
 Rows older than 30 days are dropped and the file is kept under about 2 MB. A snapshot with fewer than 15 stocks, or one
 with the same block or time as the last row, is not appended. Raw file:
 <https://raw.githubusercontent.com/Abrahamctb/vayle-data/main/history.json>
+
+## Telegram alerts
+
+`script/alert.mjs` runs after each snapshot in the GitHub workflow and posts a plain-text message to a Telegram chat for
+every stock whose pool price is **100 bps or more** away from Chainlink. It is data, not advice: no buy or sell language and
+no predictions. Example:
+
+```
+INTC: pool $100.73 vs Chainlink $101.70, gap -96 bps (pool below). Pool fee 1%. Snapshot 14:12 UTC. usevayle.com
+```
+
+When the Chainlink feed is more than 60 minutes old the message says so ("Chainlink feed last updated 3 h ago"), because a stale
+feed explains many gaps.
+
+Rules: nothing is sent if the snapshot is older than 2 hours; the same symbol is not alerted again within 6 hours unless the
+gap changed sign or its size grew by 50+ bps since the last alert; at most 5 alerts per run, largest gap first; a message that
+fails to send is not recorded and is retried on the next run. State is kept in `alert-state.json` (last alerted gap and time
+per symbol).
+
+**Secrets** (repository settings, Secrets and variables, Actions): `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`. The script reads
+them only from environment variables and never prints or writes them. If either is missing it runs in **dry-run** mode: it
+prints the messages it would send and sends nothing.
+
+```
+node script/alert.mjs            # dry run locally (no variables set)
+node script/alert.mjs --test     # sends "Vayle alerts are on" when the variables are set, otherwise prints it
+node script/alert.mjs --dry-run  # never sends, even when the variables are set
+```
+
+The local Task Scheduler fallback does not send alerts (it has no secrets); only the GitHub workflow does.
 
 ## How the gap is calculated
 
