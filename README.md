@@ -33,11 +33,12 @@ with the same block or time as the last row, is not appended. Raw file:
 ## Telegram alerts
 
 `script/alert.mjs` runs after each snapshot in the GitHub workflow and posts a plain-text message to a Telegram chat for
-every stock whose pool price is **100 bps or more** away from Chainlink. It is data, not advice: no buy or sell language and
-no predictions. Example:
+every stock whose pool price is far enough from Chainlink to clear the pool's own fee: **`|gap|` of at least 100 bps and at
+least the pool fee + 20 bps** (pools with a dynamic fee alert at 100 bps and say so). It is data, not advice: no buy or sell
+language and no predictions. Example:
 
 ```
-INTC: pool $100.73 vs Chainlink $101.70, gap -96 bps (pool below). Pool fee 1%. Snapshot 14:12 UTC. usevayle.com
+ORCL: pool $132.06 vs Chainlink $130.48, gap +121 bps (pool above). Pool fee 1% (100 bps), gap after fee 21 bps (before gas). Snapshot 18:35 UTC. https://usevayle.com/#ORCL
 ```
 
 When the Chainlink feed is more than 60 minutes old the message says so ("Chainlink feed last updated 3 h ago"), because a stale

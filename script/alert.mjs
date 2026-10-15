@@ -9,9 +9,11 @@
 //   TELEGRAM_BOT_TOKEN   TELEGRAM_CHAT_ID
 // If either is missing the script runs in dry-run mode: it prints the messages it would send and sends nothing.
 //
-// Rules: skip everything if the snapshot is older than 2 hours; a stock qualifies at |gap| >= 100 bps; the same symbol is not
-// alerted again within 6 hours unless the gap sign flipped or |gap| grew by 50+ bps since the last alert; at most 5 alerts
-// per run, largest |gap| first; a message that fails to send is NOT recorded in alert-state.json.
+// Rules: skip everything if the snapshot is older than 2 hours; a stock qualifies when |gap| >= 100 bps AND |gap| is at least
+// the pool's fee (in bps) + 20 (so a gap the fee already eats is not worth a message); pools with the dynamic-fee flag
+// qualify at |gap| >= 100 and say "dynamic fee"; the same symbol is not alerted again within 6 hours unless the gap sign
+// flipped or |gap| grew by 50+ bps since the last alert; at most 5 alerts per run, largest |gap| first; a message that fails
+// to send is NOT recorded in alert-state.json.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
@@ -20,20 +22,24 @@ export const GAP_THRESHOLD_BPS = 100;
 export const MAX_SNAPSHOT_AGE_MS = 2 * 3600 * 1000;
 export const COOLDOWN_MS = 6 * 3600 * 1000;
 export const GROWTH_BPS = 50;
+export const FEE_MARGIN_BPS = 20;   // the gap must clear the fee by at least this much
+export const DYNAMIC_FEE_FLAG = 8388608; // 0x800000: the pool takes its fee from its hook
+const LINK = "https://usevayle.com/#";
 export const MAX_PER_RUN = 5;
-const SITE = "usevayle.com";
 
 // ---- formatting ------------------------------------------------------------------------------------------------------
 const usd = (n) => "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const signed = (n) => (n > 0 ? "+" : "") + Math.round(n);
 const hhmm = (iso) => new Date(iso).toISOString().slice(11, 16);
 
-function feeText(feeSetting) {
-  const n = Number(feeSetting);
-  if (!Number.isFinite(n)) return "unknown";
-  if (n === 8388608) return "dynamic (hook)"; // 0x800000 = the dynamic-fee flag
-  return String(n / 10000) + "%"; // pips: 10,000 = 1%
+/** Pool fee of a stock's main pool: { dynamic, bps } (bps = null when unknown). fee_setting is in pips: 10,000 = 1% = 100 bps. */
+export function feeInfo(stock) {
+  const n = Number(stock.main_pool?.fee_setting);
+  if (!Number.isFinite(n)) return { dynamic: false, bps: null };
+  if (n === DYNAMIC_FEE_FLAG) return { dynamic: true, bps: null };
+  return { dynamic: false, bps: n / 100 };
 }
+const num = (x) => String(Math.round(x * 100) / 100);
 function ageText(minutes) {
   const h = minutes / 60;
   return (h >= 10 ? String(Math.round(h)) : String(Math.round(h * 10) / 10)) + " h";
@@ -43,12 +49,32 @@ function ageText(minutes) {
 export function buildMessage(stock, snapshotAt) {
   const gap = stock.gap_bps;
   const side = gap < 0 ? "pool below" : "pool above";
+  const fee = feeInfo(stock);
   let text = `${stock.symbol}: pool ${usd(stock.pool_price_usd)} vs Chainlink ${usd(stock.chainlink_price_usd)}, gap ${signed(gap)} bps (${side}).`;
+  if (fee.dynamic) {
+    text += " Pool uses a dynamic fee (set by its hook), so the gap after fee is not fixed.";
+  } else if (fee.bps === null) {
+    text += " Pool fee unknown.";
+  } else {
+    const after = Math.max(0, Math.abs(gap) - fee.bps);
+    text += ` Pool fee ${num(fee.bps / 100)}% (${num(fee.bps)} bps), gap after fee ${Math.round(after)} bps (before gas).`;
+  }
   if (typeof stock.feed_age_minutes === "number" && stock.feed_age_minutes > 60) {
     text += ` Chainlink feed last updated ${ageText(stock.feed_age_minutes)} ago.`;
   }
-  text += ` Pool fee ${feeText(stock.main_pool?.fee_setting)}. Snapshot ${hhmm(snapshotAt)} UTC. ${SITE}`;
+  text += ` Snapshot ${hhmm(snapshotAt)} UTC. ${LINK}${encodeURIComponent(stock.symbol)}`;
   return text;
+}
+
+/** The size rule: |gap| >= 100 bps, and (unless the fee is dynamic or unknown) |gap| >= fee in bps + 20. */
+export function qualifies(stock) {
+  if (typeof stock.gap_bps !== "number" || !Number.isFinite(stock.gap_bps)) return false;
+  if (typeof stock.pool_price_usd !== "number" || typeof stock.chainlink_price_usd !== "number") return false;
+  const g = Math.abs(stock.gap_bps);
+  if (g < GAP_THRESHOLD_BPS) return false;
+  const fee = feeInfo(stock);
+  if (fee.dynamic || fee.bps === null) return true;
+  return g >= fee.bps + FEE_MARGIN_BPS;
 }
 
 // ---- selection -------------------------------------------------------------------------------------------------------
@@ -56,9 +82,7 @@ export function buildMessage(stock, snapshotAt) {
 export function selectAlerts(snap, state, nowMs) {
   const out = [];
   for (const s of snap.stocks ?? []) {
-    if (typeof s.gap_bps !== "number" || !Number.isFinite(s.gap_bps)) continue;
-    if (typeof s.pool_price_usd !== "number" || typeof s.chainlink_price_usd !== "number") continue;
-    if (Math.abs(s.gap_bps) < GAP_THRESHOLD_BPS) continue;
+    if (!qualifies(s)) continue;
     const last = state[s.symbol];
     if (last && typeof last.gap_bps === "number" && last.alerted_at) {
       const since = nowMs - Date.parse(last.alerted_at);
@@ -139,9 +163,9 @@ async function main() {
     process.exit(1);
   }
 
-  const qualifying = (snap.stocks ?? []).filter((s) => typeof s.gap_bps === "number" && Math.abs(s.gap_bps) >= GAP_THRESHOLD_BPS).length;
+  const qualifying = (snap.stocks ?? []).filter(qualifies).length;
   const picked = selectAlerts(snap, state, nowMs);
-  console.log(`alerts: snapshot ${snap.snapshot_at}; ${qualifying} stock(s) at |gap| >= ${GAP_THRESHOLD_BPS} bps; ${picked.length} to alert (cooldown ${COOLDOWN_MS / 3600000} h, max ${MAX_PER_RUN} per run)`);
+  console.log(`alerts: snapshot ${snap.snapshot_at}; ${qualifying} stock(s) with |gap| >= ${GAP_THRESHOLD_BPS} bps and above fee + ${FEE_MARGIN_BPS} bps; ${picked.length} to alert (cooldown ${COOLDOWN_MS / 3600000} h, max ${MAX_PER_RUN} per run)`);
 
   let sent = 0, failed = 0;
   for (const s of picked) {
