@@ -1,6 +1,6 @@
 {
- "snapshot_at": "2026-10-15T08:51:07.000Z",
- "block": 89095062,
+ "snapshot_at": "2026-10-15T09:12:21.000Z",
+ "block": 89107745,
  "chain_id": 4663,
  "rpc": "https://rpc.mainnet.chain.robinhood.com",
  "multiplier_policy": "uiMultiplier is read and reported but NOT applied: Chainlink's feed and the pool both price ONE TOKEN. Non-1.0 or pending multipliers are flagged.",
@@ -11,9 +11,9 @@
    "token": "0x941AE714EC6D8130c7B75d67160Ca08f1e7d11Dd",
    "feed": "0x1C6c8cADBe02E19129c39dDB92281cE4c0bf206b",
    "flags": [],
-   "chainlink_price_usd": 490.02921709,
-   "chainlink_updated_at": "2026-10-15T08:26:20.000Z",
-   "feed_age_minutes": 24.8,
+   "chainlink_price_usd": 490.5332492,
+   "chainlink_updated_at": "2026-10-15T08:56:20.000Z",
+   "feed_age_minutes": 16,
    "ui_multiplier": 1.0000637086201245,
    "multiplier_not_one": true,
    "main_pool": {
@@ -30,15 +30,15 @@
     "pool_price_usd": 490.3446765144118,
     "pool_price_in_quote": 490.35938729603066,
     "quote_price_usd": 0.99997,
-    "gap_bps": 6.437563586211124,
+    "gap_bps": -3.844238609630472,
     "virtual_in_range_depth_usd": 471141.109780067,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "quote_feed_age_minutes": 1049.4166666666667
    },
    "pool_price_usd": 490.3446765144118,
-   "gap_bps": 6.44,
+   "gap_bps": -3.84,
    "pool_liquidity": "10638411549506683",
    "other_pools": [],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "SPCX",
@@ -47,7 +47,7 @@
    "flags": [],
    "chainlink_price_usd": 147.9661,
    "chainlink_updated_at": "2026-10-15T08:18:46.000Z",
-   "feed_age_minutes": 32.4,
+   "feed_age_minutes": 53.6,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0xcb6ffbcc84359535c2cc0a5688c0a76520ea6e0a4820fddd3ac8d7880e576370",
@@ -58,17 +58,17 @@
     "hook": "(none)",
     "flags": [],
     "pool_liquidity": "237798050239834555",
-    "pool_tick": -226245,
+    "pool_tick": -226244,
     "tvl_usd_at_discovery": 650251.87,
-    "pool_price_usd": 149.55525452157127,
-    "pool_price_in_quote": 149.5597413138107,
+    "pool_price_usd": 149.5667538652378,
+    "pool_price_in_quote": 149.57124100246787,
     "quote_price_usd": 0.99997,
-    "gap_bps": 107.39990589542195,
-    "virtual_in_range_depth_usd": 5816109.959438108,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "gap_bps": 108.17706658740093,
+    "virtual_in_range_depth_usd": 5816333.556268109,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
-   "pool_price_usd": 149.55525452157127,
-   "gap_bps": 107.4,
+   "pool_price_usd": 149.5667538652378,
+   "gap_bps": 108.18,
    "pool_liquidity": "237798050239834555",
    "other_pools": [
     {
@@ -80,14 +80,14 @@
      "hook": "FablesRWA (verified)",
      "flags": [],
      "pool_liquidity": "429569574765191203",
-     "pool_tick": -226318,
+     "pool_tick": -226313,
      "tvl_usd_at_discovery": 374611.12,
-     "pool_price_usd": 148.46638388400103,
-     "pool_price_in_quote": 148.4708380091413,
+     "pool_price_usd": 148.5374955327109,
+     "pool_price_in_quote": 148.54195179126464,
      "quote_price_usd": 0.99997,
-     "gap_bps": 33.81070961531197,
-     "virtual_in_range_depth_usd": 10468177.07675248,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 38.61665156484361,
+     "virtual_in_range_depth_usd": 10470683.772862624,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x8567e70dbf639a618ba5eaf9402743452b93ca45c9bf8b97462407f07d7b7448",
@@ -105,7 +105,7 @@
      "quote_price_usd": 0.99997,
      "gap_bps": 37.72121141163003,
      "virtual_in_range_depth_usd": 386713.08472291246,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x541942afd092e6c18ccd56bb3d9205f80a2adce77edf260c464c5f9919f37168",
@@ -118,12 +118,12 @@
      "pool_liquidity": "3289660465434112698214",
      "pool_tick": 27701,
      "tvl_usd_at_discovery": 240890.69,
-     "pool_price_usd": 148.13586358611394,
-     "pool_price_in_quote": 0.0626596393525154,
+     "pool_price_usd": 148.13778301568334,
+     "pool_price_in_quote": 0.0626604512474993,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": 11.473140544620044,
-     "virtual_in_range_depth_usd": 3893564.194278077,
-     "quote_feed_age_minutes": 40.35
+     "gap_bps": 11.60286144483961,
+     "virtual_in_range_depth_usd": 3893589.4190881117,
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0x39910df82a4009ea98d01e9df0b9f1b5b01583cc62ea5889c6c8a8e41fbef470",
@@ -133,18 +133,18 @@
      "fee_setting": "10000",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "1009528446138298103896",
+     "pool_liquidity": "735730158173615172700",
      "pool_tick": 27624,
      "tvl_usd_at_discovery": 66559.87,
      "pool_price_usd": 149.28827855839305,
      "pool_price_in_quote": 0.06314709664205603,
      "quote_price_usd": 2364.13527299,
      "gap_bps": 89.35685663087924,
-     "virtual_in_range_depth_usd": 1199492.5998888072,
-     "quote_feed_age_minutes": 40.35
+     "virtual_in_range_depth_usd": 874173.3664069297,
+     "quote_feed_age_minutes": 61.583333333333336
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "SPY",
@@ -153,7 +153,7 @@
    "flags": [],
    "chainlink_price_usd": 770.86206293,
    "chainlink_updated_at": "2026-10-14T16:13:41.000Z",
-   "feed_age_minutes": 997.4,
+   "feed_age_minutes": 1018.7,
    "ui_multiplier": 1.001717991187472,
    "multiplier_not_one": true,
    "main_pool": {
@@ -167,14 +167,14 @@
     "pool_liquidity": "5300380202966769547",
     "pool_tick": -209865,
     "tvl_usd_at_discovery": 3165548.46,
-    "pool_price_usd": 769.4214517507061,
-    "pool_price_in_quote": 769.4445350867586,
+    "pool_price_usd": 769.4214910622028,
+    "pool_price_in_quote": 769.4445743994347,
     "quote_price_usd": 0.99997,
-    "gap_bps": -18.688313364627575,
-    "virtual_in_range_depth_usd": 294044221.7857099,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "gap_bps": -18.687803396650015,
+    "virtual_in_range_depth_usd": 294044229.29740477,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
-   "pool_price_usd": 769.4214517507061,
+   "pool_price_usd": 769.4214910622028,
    "gap_bps": -18.69,
    "pool_liquidity": "5300380202966769547",
    "other_pools": [
@@ -187,14 +187,14 @@
      "hook": "FablesRWA (verified)",
      "flags": [],
      "pool_liquidity": "3261020412653147114",
-     "pool_tick": -209875,
+     "pool_tick": -209872,
      "tvl_usd_at_discovery": 1794626.03,
-     "pool_price_usd": 768.6044871001369,
-     "pool_price_in_quote": 768.6275459265147,
+     "pool_price_usd": 768.8600693149842,
+     "pool_price_in_quote": 768.8831358090584,
      "quote_price_usd": 0.99997,
-     "gap_bps": -29.28637869766431,
-     "virtual_in_range_depth_usd": 180812502.1845076,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": -25.970841104909127,
+     "virtual_in_range_depth_usd": 180842562.26057065,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0xe5923c8a8be481ec89a2ca784a2bbfa4235de6d88f92260fd66b660c4babf907",
@@ -204,15 +204,15 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "4049516899200095824",
-     "pool_tick": -209876,
+     "pool_liquidity": "3933310960649361110",
+     "pool_tick": -209872,
      "tvl_usd_at_discovery": 613670.51,
-     "pool_price_usd": 768.50544738263,
-     "pool_price_in_quote": 768.5285032377271,
+     "pool_price_usd": 768.8076325648748,
+     "pool_price_in_quote": 768.8306974857993,
      "quote_price_usd": 0.99997,
-     "gap_bps": -30.571170390882003,
-     "virtual_in_range_depth_usd": 224517486.68302792,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": -26.65107629394076,
+     "virtual_in_range_depth_usd": 218117547.87478036,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0xe1ae6a4c6ccc9f037389a8d50a4f577bde1a9fe01d85d88ecbbd39955ce53288",
@@ -222,15 +222,15 @@
      "fee_setting": "100",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "1450865605719088",
-     "pool_tick": -209875,
+     "pool_liquidity": "2051804450624099388",
+     "pool_tick": -209868,
      "tvl_usd_at_discovery": 209439.34,
-     "pool_price_usd": 768.6234963531208,
-     "pool_price_in_quote": 768.6465557497933,
+     "pool_price_usd": 769.1460187847737,
+     "pool_price_in_quote": 769.1690938575894,
      "quote_price_usd": 0.99997,
-     "gap_bps": -29.03978136335473,
-     "virtual_in_range_depth_usd": 80446.56314243074,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": -22.261364616955284,
+     "virtual_in_range_depth_usd": 113805656.10023443,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x008f06cd38b13ddd7712ba63fb3caff0fc7c969aa32d0407f1868539f3f688c2",
@@ -241,14 +241,14 @@
      "hook": "ZiaFeeHook (verified)",
      "flags": [],
      "pool_liquidity": "84678022048144389",
-     "pool_tick": -209875,
+     "pool_tick": -209871,
      "tvl_usd_at_discovery": 80427.75,
-     "pool_price_usd": 768.6132698522042,
-     "pool_price_in_quote": 768.6363289420725,
+     "pool_price_usd": 768.9488183092816,
+     "pool_price_in_quote": 768.9718874659055,
      "quote_price_usd": 0.99997,
-     "gap_bps": -29.172444538887294,
-     "virtual_in_range_depth_usd": 4695135.444262937,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": -24.81954571024368,
+     "virtual_in_range_depth_usd": 4696160.194685502,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x509c6c6826ef06e0e29f24f18d9389533c52358a3b385d99a67a2afbb07f23c6",
@@ -261,12 +261,12 @@
      "pool_liquidity": "1291440528785143188326",
      "pool_tick": 11269,
      "tvl_usd_at_discovery": 695224.59,
-     "pool_price_usd": 766.0601654659862,
-     "pool_price_in_quote": 0.3240339815653292,
+     "pool_price_usd": 766.0438852186671,
+     "pool_price_in_quote": 0.32402709522193546,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": -62.292564324181036,
-     "virtual_in_range_depth_usd": 3475937.8976573683,
-     "quote_feed_age_minutes": 40.35
+     "gap_bps": -62.50375966121941,
+     "virtual_in_range_depth_usd": 3475900.962288679,
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0x8493982435e4273028008cd181c84c0d6a548f96792fdb5acddcbb6a8c82d305",
@@ -276,15 +276,15 @@
      "fee_setting": "200",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "115630801934799730501881",
-     "pool_tick": 638,
+     "pool_liquidity": "175674373722980172865452",
+     "pool_tick": 633,
      "tvl_usd_at_discovery": 1317831.07,
-     "pool_price_usd": 768.2891028090567,
-     "pool_price_in_quote": 1.0659582924141138,
+     "pool_price_usd": 767.8786601959243,
+     "pool_price_in_quote": 1.0653888261735687,
      "quote_price_usd": 720.74968437,
-     "gap_bps": -33.37769809508663,
-     "virtual_in_range_depth_usd": 172090977.07840416,
-     "quote_feed_age_minutes": 124.36666666666666
+     "gap_bps": -38.702160575082736,
+     "virtual_in_range_depth_usd": 261382759.89194298,
+     "quote_feed_age_minutes": 145.6
     },
     {
      "pool_id": "0xda14bf8a87711e1f30dbe620f2df3fdf371f7503f1a72202d15631f657651ec0",
@@ -294,15 +294,15 @@
      "fee_setting": "250",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "30780943593494160775727",
-     "pool_tick": 12602,
+     "pool_liquidity": "102798725226273096330360",
+     "pool_tick": 12584,
      "tvl_usd_at_discovery": 1222203.02,
-     "pool_price_usd": 765.4717303291916,
-     "pool_price_in_quote": 3.5260058891438226,
-     "quote_price_usd": 217.0931514,
-     "gap_bps": -69.92603294446823,
-     "virtual_in_range_depth_usd": 25095714.46772472,
-     "quote_feed_age_minutes": 33.016666666666666
+     "pool_price_usd": 767.9629240164721,
+     "pool_price_in_quote": 3.5197142079230814,
+     "quote_price_usd": 218.1890002,
+     "gap_bps": -37.609049049688586,
+     "virtual_in_range_depth_usd": 84159719.18216628,
+     "quote_feed_age_minutes": 17.75
     },
     {
      "pool_id": "0x68beff3b4270ffbbb78a48d7670648909b9de6736456b0f450fee242e1d10a8b",
@@ -315,12 +315,12 @@
      "pool_liquidity": "37928683813783926366775",
      "pool_tick": 11235,
      "tvl_usd_at_discovery": 533302.97,
-     "pool_price_usd": 769.8305664783039,
-     "pool_price_in_quote": 3.0756984779664758,
+     "pool_price_usd": 769.8075523928494,
+     "pool_price_in_quote": 3.0756065299578017,
      "quote_price_usd": 250.29455,
-     "gap_bps": -13.381076865754707,
-     "virtual_in_range_depth_usd": 33298221.66110663,
-     "quote_feed_age_minutes": 538.7333333333333
+     "gap_bps": -13.679626847148846,
+     "virtual_in_range_depth_usd": 33297723.93220394,
+     "quote_feed_age_minutes": 559.9666666666667
     },
     {
      "pool_id": "0xeab0adac76db99a233ed077ca6be7a3f708baee6f98b17df69f7e1a07d1dc2e4",
@@ -331,14 +331,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "29166444833073147883254",
-     "pool_tick": 7998,
+     "pool_tick": 7999,
      "tvl_usd_at_discovery": 523822.68,
-     "pool_price_usd": 768.5980866632843,
-     "pool_price_in_quote": 2.225137478021608,
+     "pool_price_usd": 768.6328970110848,
+     "pool_price_in_quote": 2.2252382560626387,
      "quote_price_usd": 345.4159998,
-     "gap_bps": -29.369408297386023,
-     "virtual_in_range_depth_usd": 30056220.317477442,
-     "quote_feed_age_minutes": 416.6
+     "gap_bps": -28.917831426835168,
+     "virtual_in_range_depth_usd": 30056900.94344744,
+     "quote_feed_age_minutes": 437.8333333333333
     },
     {
      "pool_id": "0x3ea70ce0b34473692549f97e630a1d82dc05cea94fa55f81b50f10c8c6d8186f",
@@ -348,15 +348,15 @@
      "fee_setting": "350",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "15962369949417819172628",
-     "pool_tick": 7562,
+     "pool_liquidity": "11249300347959807596937",
+     "pool_tick": 7550,
      "tvl_usd_at_discovery": 519161.81,
-     "pool_price_usd": 768.1571147183535,
-     "pool_price_in_quote": 2.1302193974441304,
+     "pool_price_usd": 767.2154170588531,
+     "pool_price_in_quote": 2.1276079230694758,
      "quote_price_usd": 360.6,
-     "gap_bps": -35.08991221289552,
-     "virtual_in_range_depth_usd": 16802165.47412203,
-     "quote_feed_age_minutes": 41.05
+     "gap_bps": -47.30607519179548,
+     "virtual_in_range_depth_usd": 11833876.423266403,
+     "quote_feed_age_minutes": 62.28333333333333
     },
     {
      "pool_id": "0x6d0f67069596c7ef9d1ce6981c1b6dbcd9a91b0c5393aebe9dd07c35e412df30",
@@ -366,15 +366,15 @@
      "fee_setting": "250",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "26027354839355879908168",
-     "pool_tick": 8074,
+     "pool_liquidity": "37514462497335639562810",
+     "pool_tick": 8089,
      "tvl_usd_at_discovery": 495101.94,
-     "pool_price_usd": 767.0574514830295,
-     "pool_price_in_quote": 2.2419861712009355,
+     "pool_price_usd": 768.2442295513165,
+     "pool_price_in_quote": 2.2454549335631806,
      "quote_price_usd": 342.13299856,
-     "gap_bps": -49.35528196198182,
-     "virtual_in_range_depth_usd": 26666833.97783176,
-     "quote_feed_age_minutes": 368.1666666666667
+     "gap_bps": -33.95981595894419,
+     "virtual_in_range_depth_usd": 38465896.54775591,
+     "quote_feed_age_minutes": 389.4
     },
     {
      "pool_id": "0x7fb585f108d921de3b197cf7e26b5aebc96b035fec13f972b868e008ea062394",
@@ -384,15 +384,15 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "13868808519548565484000",
-     "pool_tick": 20905,
+     "pool_liquidity": "6554128292515440733906",
+     "pool_tick": 20839,
      "tvl_usd_at_discovery": 483539.94,
-     "pool_price_usd": 767.2547535118638,
-     "pool_price_in_quote": 8.08828540493215,
-     "quote_price_usd": 94.86,
-     "gap_bps": -46.795783469029885,
-     "virtual_in_range_depth_usd": 7483081.957405783,
-     "quote_feed_age_minutes": 13.016666666666667
+     "pool_price_usd": 766.1419871458428,
+     "pool_price_in_quote": 8.03552161580379,
+     "quote_price_usd": 95.3444,
+     "gap_bps": -61.23113344320599,
+     "virtual_in_range_depth_usd": 3542804.2805929445,
+     "quote_feed_age_minutes": 18.75
     },
     {
      "pool_id": "0xb8d9b6b622bb03dd06d95790553f327710a73d85d845a59fa9e652638ca96ae6",
@@ -402,15 +402,15 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "19854356430406696283314",
-     "pool_tick": 13621,
+     "pool_liquidity": "14453267111264705769266",
+     "pool_tick": 13606,
      "tvl_usd_at_discovery": 421625.89,
-     "pool_price_usd": 768.3604329823635,
-     "pool_price_in_quote": 3.9043696891809425,
+     "pool_price_usd": 767.1830906514858,
+     "pool_price_in_quote": 3.898387106641357,
      "quote_price_usd": 196.795,
-     "gap_bps": -32.45236817243228,
-     "virtual_in_range_depth_usd": 15440996.913838863,
-     "quote_feed_age_minutes": 30.6
+     "gap_bps": -47.72542917121387,
+     "virtual_in_range_depth_usd": 11231882.866025219,
+     "quote_feed_age_minutes": 51.833333333333336
     },
     {
      "pool_id": "0x8dc0387af606d84be8e4c2fc1da7bdc6d467337e9f3e075113f968922a190847",
@@ -420,15 +420,15 @@
      "fee_setting": "350",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "11764640312775995628319",
-     "pool_tick": 553,
+     "pool_liquidity": "11808608976538273630521",
+     "pool_tick": 562,
      "tvl_usd_at_discovery": 376630.34,
-     "pool_price_usd": 768.0958703749172,
-     "pool_price_in_quote": 1.056862523725057,
+     "pool_price_usd": 768.842575339134,
+     "pool_price_in_quote": 1.0578899534033015,
      "quote_price_usd": 726.76989971,
-     "gap_bps": -35.884403813681125,
-     "virtual_in_range_depth_usd": 17579836.45565841,
-     "quote_feed_age_minutes": 132.53333333333333
+     "gap_bps": -26.197781522546883,
+     "virtual_in_range_depth_usd": 17654113.562990896,
+     "quote_feed_age_minutes": 153.76666666666668
     },
     {
      "pool_id": "0xcc2a903a8744a65258bb07fbeea553a25410f731c9fef306321d0c176a09542c",
@@ -438,15 +438,15 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "3497189945462913620190",
-     "pool_tick": -1367,
+     "pool_liquidity": "2941351878373428208024",
+     "pool_tick": -1425,
      "tvl_usd_at_discovery": 370567.38,
-     "pool_price_usd": 768.5576971493368,
-     "pool_price_in_quote": 0.872288886580695,
-     "quote_price_usd": 881.08161066,
-     "gap_bps": -29.893360842073257,
-     "virtual_in_range_depth_usd": 5755665.198301153,
-     "quote_feed_age_minutes": 2.5166666666666666
+     "pool_price_usd": 768.0595487674943,
+     "pool_price_in_quote": 0.867273523852946,
+     "quote_price_usd": 885.60243988,
+     "gap_bps": -36.355585483782384,
+     "virtual_in_range_depth_usd": 4851698.752364578,
+     "quote_feed_age_minutes": 17.25
     },
     {
      "pool_id": "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258",
@@ -456,15 +456,15 @@
      "fee_setting": "300",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "22060846190581420456820",
-     "pool_tick": 3693,
+     "pool_liquidity": "20678241441781478446988",
+     "pool_tick": 3706,
      "tvl_usd_at_discovery": 362289.92,
-     "pool_price_usd": 768.0762228706639,
-     "pool_price_in_quote": 1.44683598432904,
+     "pool_price_usd": 769.0389606025575,
+     "pool_price_in_quote": 1.4486495069359098,
      "quote_price_usd": 530.86613216,
-     "gap_bps": -36.13928085586823,
-     "virtual_in_range_depth_usd": 28173891.16259645,
-     "quote_feed_age_minutes": 72.91666666666667
+     "gap_bps": -23.65017575924002,
+     "virtual_in_range_depth_usd": 26424712.9582254,
+     "quote_feed_age_minutes": 94.15
     },
     {
      "pool_id": "0xe6e17efdbdd916526293cf1b509171be4ffb04f47c4a5fe1a7367acdaa6ffd82",
@@ -474,15 +474,15 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "6024585802104940604633",
-     "pool_tick": 3282,
+     "pool_liquidity": "5753385882902161979017",
+     "pool_tick": 3225,
      "tvl_usd_at_discovery": 341193.87,
-     "pool_price_usd": 766.0752400603764,
-     "pool_price_in_quote": 1.3885758979956921,
-     "quote_price_usd": 551.6985,
-     "gap_bps": -62.09700930707624,
-     "virtual_in_range_depth_usd": 7833282.769666905,
-     "quote_feed_age_minutes": 47.2
+     "pool_price_usd": 766.4435218953307,
+     "pool_price_in_quote": 1.3806683573885714,
+     "quote_price_usd": 555.125,
+     "gap_bps": -57.319477078358915,
+     "virtual_in_range_depth_usd": 7505661.446653794,
+     "quote_feed_age_minutes": 18.916666666666668
     },
     {
      "pool_id": "0x4c862e5846659b086fe73896bbb9058513417e4e6938a1be93aeb7a768fa5754",
@@ -492,15 +492,15 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "7145930567922940356583",
-     "pool_tick": 5929,
+     "pool_liquidity": "11162795985219270027271",
+     "pool_tick": 5933,
      "tvl_usd_at_discovery": 328679.39,
-     "pool_price_usd": 765.6892454808017,
-     "pool_price_in_quote": 1.809275640092159,
+     "pool_price_usd": 765.9764268193328,
+     "pool_price_in_quote": 1.8099542315744872,
      "quote_price_usd": 423.2020973,
-     "gap_bps": -67.10431992899923,
-     "virtual_in_range_depth_usd": 8135588.375033016,
-     "quote_feed_age_minutes": 4.15
+     "gap_bps": -63.378863036756165,
+     "virtual_in_range_depth_usd": 12711142.602479134,
+     "quote_feed_age_minutes": 25.383333333333333
     },
     {
      "pool_id": "0xbc732a1a0baabce2574ec2bca24fccad8e2c38a061a37cefc17a2fd12809394f",
@@ -510,15 +510,15 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "10771142844912065435509",
-     "pool_tick": 12606,
+     "pool_liquidity": "12489546963127519499289",
+     "pool_tick": 12587,
      "tvl_usd_at_discovery": 318170.29,
-     "pool_price_usd": 765.776644206544,
-     "pool_price_in_quote": 3.5274104192977505,
-     "quote_price_usd": 217.0931514,
-     "gap_bps": -65.97054087895576,
-     "virtual_in_range_depth_usd": 8783465.521914093,
-     "quote_feed_age_minutes": 33.016666666666666
+     "pool_price_usd": 768.2339136447025,
+     "pool_price_in_quote": 3.5209562028356665,
+     "quote_price_usd": 218.1890002,
+     "gap_bps": -34.09363894894544,
+     "virtual_in_range_depth_usd": 10226801.930208929,
+     "quote_feed_age_minutes": 17.75
     },
     {
      "pool_id": "0x2bca43d9d8c75399e3c6ba14e9dc88f44ca8968bb4694a8be4f80bd5a550df2e",
@@ -529,14 +529,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "3437602186412375067902",
-     "pool_tick": 8074,
+     "pool_tick": 8086,
      "tvl_usd_at_discovery": 183598.59,
-     "pool_price_usd": 767.0800950314781,
-     "pool_price_in_quote": 2.242052354669189,
+     "pool_price_usd": 767.9898438624462,
+     "pool_price_in_quote": 2.2447114049063686,
      "quote_price_usd": 342.13299856,
-     "gap_bps": -49.061538767997654,
-     "virtual_in_range_depth_usd": 3522114.34439525,
-     "quote_feed_age_minutes": 368.1666666666667
+     "gap_bps": -37.259831631053395,
+     "virtual_in_range_depth_usd": 3524202.320567877,
+     "quote_feed_age_minutes": 389.4
     },
     {
      "pool_id": "0xf38009b348295f907c1f2e22aba84d731de3b7360d312881df1c206e85ea3b0b",
@@ -547,14 +547,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "4297108183329603467240",
-     "pool_tick": 638,
+     "pool_tick": 632,
      "tvl_usd_at_discovery": 144770.65,
-     "pool_price_usd": 768.2581149787587,
-     "pool_price_in_quote": 1.0659152985273734,
+     "pool_price_usd": 767.8418000359447,
+     "pool_price_in_quote": 1.0653376847568203,
      "quote_price_usd": 720.74968437,
-     "gap_bps": -33.779687397558575,
-     "virtual_in_range_depth_usd": 6395169.9733589785,
-     "quote_feed_age_minutes": 124.36666666666666
+     "gap_bps": -39.180328612558775,
+     "virtual_in_range_depth_usd": 6393436.984436829,
+     "quote_feed_age_minutes": 145.6
     },
     {
      "pool_id": "0xa821b3724b451b22476c5347471b2a96d185b86af8760f226273e34ab4b2b8a0",
@@ -565,14 +565,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "2879109421042105046643",
-     "pool_tick": 7559,
+     "pool_tick": 7549,
      "tvl_usd_at_discovery": 137854.57,
-     "pool_price_usd": 767.8917891554847,
-     "pool_price_in_quote": 2.1294836083069457,
+     "pool_price_usd": 767.1781609231475,
+     "pool_price_in_quote": 2.127504605998745,
      "quote_price_usd": 360.6,
-     "gap_bps": -38.53184528533443,
-     "virtual_in_range_depth_usd": 3030058.681986537,
-     "quote_feed_age_minutes": 41.05
+     "gap_bps": -47.78938002020978,
+     "virtual_in_range_depth_usd": 3028650.385877383,
+     "quote_feed_age_minutes": 62.28333333333333
     },
     {
      "pool_id": "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741",
@@ -583,14 +583,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "451040927402823242417",
-     "pool_tick": 3693,
+     "pool_tick": 3706,
      "tvl_usd_at_discovery": 31616.49,
-     "pool_price_usd": 768.0712745795664,
-     "pool_price_in_quote": 1.4468266631635,
+     "pool_price_usd": 769.0558734308304,
+     "pool_price_in_quote": 1.4486813658684132,
      "quote_price_usd": 530.86613216,
-     "gap_bps": -36.203472510061545,
-     "virtual_in_range_depth_usd": 576022.1958271073,
-     "quote_feed_age_minutes": 72.91666666666667
+     "gap_bps": -23.430774272434345,
+     "virtual_in_range_depth_usd": 576391.2821139568,
+     "quote_feed_age_minutes": 94.15
     },
     {
      "pool_id": "0x988f3b6ceec4795e0d6d28a054af87ffbcbdeee2566f72ae391da5f109bd485f",
@@ -601,14 +601,14 @@
      "hook": "hook 0x79576FBA",
      "flags": [],
      "pool_liquidity": "740097419265197743797",
-     "pool_tick": 12604,
+     "pool_tick": 12585,
      "tvl_usd_at_discovery": 31250.61,
-     "pool_price_usd": 765.6095588866078,
-     "pool_price_in_quote": 3.526640771251008,
-     "quote_price_usd": 217.0931514,
-     "gap_bps": -68.13805343368048,
-     "virtual_in_range_depth_usd": 603456.0150705632,
-     "quote_feed_age_minutes": 33.016666666666666
+     "pool_price_usd": 768.0613877315226,
+     "pool_price_in_quote": 3.520165485095442,
+     "quote_price_usd": 218.1890002,
+     "gap_bps": -36.33172954227629,
+     "virtual_in_range_depth_usd": 605945.1000594948,
+     "quote_feed_age_minutes": 17.75
     },
     {
      "pool_id": "0x982af6ff6a2169c91a78634d3d10b3e1fe1e6a7e76387de04167234a41d50e4c",
@@ -619,14 +619,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "415772307055701316125",
-     "pool_tick": 15075,
+     "pool_tick": 15058,
      "tvl_usd_at_discovery": 29320.72,
-     "pool_price_usd": 767.2812124593538,
-     "pool_price_in_quote": 4.515118706215009,
-     "quote_price_usd": 169.936,
-     "gap_bps": -46.45254505112852,
-     "virtual_in_range_depth_usd": 300265.5674133932,
-     "quote_feed_age_minutes": 35.666666666666664
+     "pool_price_usd": 769.866653009955,
+     "pool_price_in_quote": 4.507547955209199,
+     "quote_price_usd": 170.795,
+     "gap_bps": -12.912944713629523,
+     "virtual_in_range_depth_usd": 301530.2484345175,
+     "quote_feed_age_minutes": 2.3833333333333333
     },
     {
      "pool_id": "0xe6b713cf680868a40aafca45810b0c894eb5c696f5a2230d4816e6695e90e681",
@@ -637,17 +637,17 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "371981090152017686274",
-     "pool_tick": 555,
+     "pool_tick": 559,
      "tvl_usd_at_discovery": 28543.24,
-     "pool_price_usd": 768.2877032116425,
-     "pool_price_in_quote": 1.0571264763692183,
+     "pool_price_usd": 768.6278634008574,
+     "pool_price_in_quote": 1.0575945202292498,
      "quote_price_usd": 726.76989971,
-     "gap_bps": -33.395854357815224,
-     "virtual_in_range_depth_usd": 555918.6776504292,
-     "quote_feed_age_minutes": 132.53333333333333
+     "gap_bps": -28.98312988254309,
+     "virtual_in_range_depth_usd": 556041.7308212715,
+     "quote_feed_age_minutes": 153.76666666666668
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "GLD",
@@ -656,7 +656,7 @@
    "flags": [],
    "chainlink_price_usd": 380.14792699,
    "chainlink_updated_at": "2026-10-15T02:53:33.000Z",
-   "feed_age_minutes": 357.6,
+   "feed_age_minutes": 378.8,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0xfe281bbfa9aa658c1aa9c2ad1b0c62c4286f96c7cb1074296b54e869935a7a3a",
@@ -666,19 +666,19 @@
     "fee_setting": "8388608",
     "hook": "FablesRWA (verified)",
     "flags": [],
-    "pool_liquidity": "1564076259018582209",
-    "pool_tick": 216917,
+    "pool_liquidity": "1564958868240545480",
+    "pool_tick": 216916,
     "tvl_usd_at_discovery": 1981650.75,
-    "pool_price_usd": 380.0728852797981,
-    "pool_price_in_quote": 380.0842878084323,
+    "pool_price_usd": 380.0846847221996,
+    "pool_price_in_quote": 380.09608760482774,
     "quote_price_usd": 0.99997,
-    "gap_bps": -1.9740134004170287,
-    "virtual_in_range_depth_usd": 60983851.46723941,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "gap_bps": -1.663622587689133,
+    "virtual_in_range_depth_usd": 61019211.848242275,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
-   "pool_price_usd": 380.0728852797981,
-   "gap_bps": -1.97,
-   "pool_liquidity": "1564076259018582209",
+   "pool_price_usd": 380.0846847221996,
+   "gap_bps": -1.66,
+   "pool_liquidity": "1564958868240545480",
    "other_pools": [
     {
      "pool_id": "0xd85389e64f380f1f634d458dd32bc26ed7d36bf555ee144d798145b46c056f95",
@@ -696,10 +696,10 @@
      "quote_price_usd": 0.99997,
      "gap_bps": -2.4880670909483897,
      "virtual_in_range_depth_usd": 321872.51039707306,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "quote_feed_age_minutes": 1049.4166666666667
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "QQQ",
@@ -708,7 +708,7 @@
    "flags": [],
    "chainlink_price_usd": 720.74968437,
    "chainlink_updated_at": "2026-10-15T06:46:45.000Z",
-   "feed_age_minutes": 124.4,
+   "feed_age_minutes": 145.6,
    "ui_multiplier": 1.0007007912414054,
    "multiplier_not_one": true,
    "main_pool": {
@@ -719,19 +719,19 @@
     "fee_setting": "200",
     "hook": "(none)",
     "flags": [],
-    "pool_liquidity": "115630801934799730501881",
-    "pool_tick": 638,
+    "pool_liquidity": "175674373722980172865452",
+    "pool_tick": 633,
     "tvl_usd_at_discovery": 1317831.07,
-    "pool_price_usd": 723.1634374588908,
-    "pool_price_in_quote": 0.9381230082982556,
+    "pool_price_usd": 723.5499791175906,
+    "pool_price_in_quote": 0.9386244490582673,
     "quote_price_usd": 770.86206293,
-    "gap_bps": 33.489478264575425,
-    "virtual_in_range_depth_usd": 172667300.7820438,
-    "quote_feed_age_minutes": 997.4333333333333
+    "gap_bps": 38.852528253805325,
+    "virtual_in_range_depth_usd": 262398297.9983189,
+    "quote_feed_age_minutes": 1018.6666666666666
    },
-   "pool_price_usd": 723.1634374588908,
-   "gap_bps": 33.49,
-   "pool_liquidity": "115630801934799730501881",
+   "pool_price_usd": 723.5499791175906,
+   "gap_bps": 38.85,
+   "pool_liquidity": "175674373722980172865452",
    "other_pools": [
     {
      "pool_id": "0xf38009b348295f907c1f2e22aba84d731de3b7360d312881df1c206e85ea3b0b",
@@ -742,17 +742,17 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "4297108183329603467240",
-     "pool_tick": 638,
+     "pool_tick": 632,
      "tvl_usd_at_discovery": 144770.65,
-     "pool_price_usd": 723.1926063871985,
-     "pool_price_in_quote": 0.9381608476598099,
+     "pool_price_usd": 723.5847130536465,
+     "pool_price_in_quote": 0.9386695076202672,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 33.89418088103405,
-     "virtual_in_range_depth_usd": 6416845.878143176,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 39.334442249872446,
+     "virtual_in_range_depth_usd": 6418585.212221082,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "TSM",
@@ -761,7 +761,7 @@
    "flags": [],
    "chainlink_price_usd": 423.2020973,
    "chainlink_updated_at": "2026-10-15T08:46:58.000Z",
-   "feed_age_minutes": 4.2,
+   "feed_age_minutes": 25.4,
    "ui_multiplier": 1.0027285770377712,
    "multiplier_not_one": true,
    "main_pool": {
@@ -780,7 +780,7 @@
     "quote_price_usd": 0.99997,
     "gap_bps": 12.963249559672994,
     "virtual_in_range_depth_usd": 3384334.893422335,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "quote_feed_age_minutes": 1049.4166666666667
    },
    "pool_price_usd": 423.7507047401477,
    "gap_bps": 12.96,
@@ -794,27 +794,27 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "7145930567922940356583",
-     "pool_tick": 5929,
+     "pool_liquidity": "11162795985219270027271",
+     "pool_tick": 5933,
      "tvl_usd_at_discovery": 328679.39,
-     "pool_price_usd": 426.06115168318667,
-     "pool_price_in_quote": 0.5527073807001918,
+     "pool_price_usd": 425.9014120259956,
+     "pool_price_in_quote": 0.552500158597986,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 67.55766101886645,
-     "virtual_in_range_depth_usd": 8190550.507195966,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 63.783113156032904,
+     "virtual_in_range_depth_usd": 12792218.227174774,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "INTC",
    "token": "0xc72b96e0E48ecd4DC75E1e45396e26300BC39681",
    "feed": "0x3f390C5C24628Ac7C489515402235FeAD71D1913",
    "flags": [],
-   "chainlink_price_usd": 94.86,
-   "chainlink_updated_at": "2026-10-15T08:38:06.000Z",
-   "feed_age_minutes": 13,
+   "chainlink_price_usd": 95.3444,
+   "chainlink_updated_at": "2026-10-15T08:53:36.000Z",
+   "feed_age_minutes": 18.8,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0xf2e329e631d0fb315a5c563ee3a9120f24822b5ef6c502a91cb56b174d5d8c22",
@@ -830,12 +830,12 @@
     "pool_price_usd": 95.37947540132846,
     "pool_price_in_quote": 95.3823368714346,
     "quote_price_usd": 0.99997,
-    "gap_bps": 54.76232356403792,
+    "gap_bps": 3.678810850817665,
     "virtual_in_range_depth_usd": 2660375.1319555202,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "quote_feed_age_minutes": 1049.4166666666667
    },
    "pool_price_usd": 95.37947540132846,
-   "gap_bps": 54.76,
+   "gap_bps": 3.68,
    "pool_liquidity": "136204649736385126",
    "other_pools": [
     {
@@ -847,14 +847,14 @@
      "hook": "FablesRWA (verified)",
      "flags": [],
      "pool_liquidity": "22652529828406520",
-     "pool_tick": 230751,
+     "pool_tick": 230749,
      "tvl_usd_at_discovery": 132178.74,
-     "pool_price_usd": 95.29320349229887,
-     "pool_price_in_quote": 95.29606237417009,
+     "pool_price_usd": 95.3133850862085,
+     "pool_price_in_quote": 95.3162445735457,
      "quote_price_usd": 0.99997,
-     "gap_bps": 45.66766733068444,
-     "virtual_in_range_depth_usd": 442253.3747171199,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": -3.2529350220353574,
+     "virtual_in_range_depth_usd": 442300.2033742181,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x7fb585f108d921de3b197cf7e26b5aebc96b035fec13f972b868e008ea062394",
@@ -864,18 +864,18 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "13868808519548565484000",
-     "pool_tick": 20905,
+     "pool_liquidity": "6554128292515440733906",
+     "pool_tick": 20839,
      "tvl_usd_at_discovery": 483539.94,
-     "pool_price_usd": 95.3059918558186,
-     "pool_price_in_quote": 0.12363559764968365,
+     "pool_price_usd": 95.93180129263968,
+     "pool_price_in_quote": 0.12444742828309478,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 47.01579757733551,
-     "virtual_in_range_depth_usd": 7518264.264062183,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 61.60836846628465,
+     "virtual_in_range_depth_usd": 3564630.9197452143,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "MSFT",
@@ -884,7 +884,7 @@
    "flags": [],
    "chainlink_price_usd": 530.86613216,
    "chainlink_updated_at": "2026-10-15T07:38:12.000Z",
-   "feed_age_minutes": 72.9,
+   "feed_age_minutes": 94.2,
    "ui_multiplier": 1.000412952576206,
    "multiplier_not_one": true,
    "main_pool": {
@@ -903,7 +903,7 @@
     "quote_price_usd": 0.99997,
     "gap_bps": -5.499201545179458,
     "virtual_in_range_depth_usd": 3163224.5651116874,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "quote_feed_age_minutes": 1049.4166666666667
    },
    "pool_price_usd": 530.5741981745742,
    "gap_bps": -5.5,
@@ -925,7 +925,7 @@
      "quote_price_usd": 2364.13527299,
      "gap_bps": -41.6214427052297,
      "virtual_in_range_depth_usd": 217410.66232427637,
-     "quote_feed_age_minutes": 40.35
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258",
@@ -935,15 +935,15 @@
      "fee_setting": "300",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "22060846190581420456820",
-     "pool_tick": 3693,
+     "pool_liquidity": "20678241441781478446988",
+     "pool_tick": 3706,
      "tvl_usd_at_discovery": 362289.92,
-     "pool_price_usd": 532.7916026967507,
-     "pool_price_in_quote": 0.6911633459709278,
+     "pool_price_usd": 532.1246162299657,
+     "pool_price_in_quote": 0.6902980984787243,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 36.27035932611317,
-     "virtual_in_range_depth_usd": 28276078.878204666,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 23.70624143689723,
+     "virtual_in_range_depth_usd": 26487356.02075424,
+     "quote_feed_age_minutes": 1018.6666666666666
     },
     {
      "pool_id": "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741",
@@ -954,17 +954,17 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "451040927402823242417",
-     "pool_tick": 3693,
+     "pool_tick": 3706,
      "tvl_usd_at_discovery": 31616.49,
-     "pool_price_usd": 532.7950352010398,
-     "pool_price_in_quote": 0.691167798783505,
+     "pool_price_usd": 532.1129139173445,
+     "pool_price_in_quote": 0.6902829176659901,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 36.335017892202664,
-     "virtual_in_range_depth_usd": 578115.1735062756,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 23.48580332807342,
+     "virtual_in_range_depth_usd": 577744.9833431311,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "META",
@@ -973,7 +973,7 @@
    "flags": [],
    "chainlink_price_usd": 726.76989971,
    "chainlink_updated_at": "2026-10-15T06:38:35.000Z",
-   "feed_age_minutes": 132.5,
+   "feed_age_minutes": 153.8,
    "ui_multiplier": 1.0005414598794518,
    "multiplier_not_one": true,
    "main_pool": {
@@ -987,15 +987,15 @@
     "pool_liquidity": "1653272361877793517",
     "pool_tick": 210428,
     "tvl_usd_at_discovery": 3551951.72,
-    "pool_price_usd": 727.1954265268952,
-    "pool_price_in_quote": 727.2172430441865,
+    "pool_price_usd": 727.196601678749,
+    "pool_price_in_quote": 727.2184182312959,
     "quote_price_usd": 0.99997,
-    "gap_bps": 5.85504183738165,
-    "virtual_in_range_depth_usd": 89164803.37063575,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "gap_bps": 5.871211354779674,
+    "virtual_in_range_depth_usd": 89164875.41601571,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
-   "pool_price_usd": 727.1954265268952,
-   "gap_bps": 5.86,
+   "pool_price_usd": 727.196601678749,
+   "gap_bps": 5.87,
    "pool_liquidity": "1653272361877793517",
    "other_pools": [
     {
@@ -1007,14 +1007,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "45780984664985803",
-     "pool_tick": 210420,
+     "pool_tick": 210426,
      "tvl_usd_at_discovery": 72864.48,
-     "pool_price_usd": 727.7440847824411,
-     "pool_price_in_quote": 727.7659177599738,
+     "pool_price_usd": 727.3281904576771,
+     "pool_price_in_quote": 727.3500109580059,
      "quote_price_usd": 0.99997,
-     "gap_bps": 13.404312325397417,
-     "virtual_in_range_depth_usd": 2470005.683193107,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 7.681808890267637,
+     "virtual_in_range_depth_usd": 2469299.797583629,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x4ac4259eb99dce57268a856719d087fa1a53569b2fed6f330aabe32d9a4aa4f5",
@@ -1032,7 +1032,7 @@
      "quote_price_usd": 0.99997,
      "gap_bps": 3.758523429031883,
      "virtual_in_range_depth_usd": 372746.1588749256,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0xf89d70906c1464e5f0853fbb0601c111bfb48ef54537c0527694a559b33dd801",
@@ -1050,7 +1050,7 @@
      "quote_price_usd": 2364.13527299,
      "gap_bps": -27.633712293755455,
      "virtual_in_range_depth_usd": 377606.25546633103,
-     "quote_feed_age_minutes": 40.35
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0x8dc0387af606d84be8e4c2fc1da7bdc6d467337e9f3e075113f968922a190847",
@@ -1060,15 +1060,15 @@
      "fee_setting": "350",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "11764640312775995628319",
-     "pool_tick": 553,
+     "pool_liquidity": "11808608976538273630521",
+     "pool_tick": 562,
      "tvl_usd_at_discovery": 376630.34,
-     "pool_price_usd": 729.3872624161095,
-     "pool_price_in_quote": 0.9461968586750173,
+     "pool_price_usd": 728.6788767112175,
+     "pool_price_in_quote": 0.9452779060647417,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 36.01363660154156,
-     "virtual_in_range_depth_usd": 17643147.83982127,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 26.26659417209289,
+     "virtual_in_range_depth_usd": 17700484.906633608,
+     "quote_feed_age_minutes": 1018.6666666666666
     },
     {
      "pool_id": "0xe6b713cf680868a40aafca45810b0c894eb5c696f5a2230d4816e6695e90e681",
@@ -1079,17 +1079,17 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "371981090152017686274",
-     "pool_tick": 555,
+     "pool_tick": 559,
      "tvl_usd_at_discovery": 28543.24,
-     "pool_price_usd": 729.20514258387,
-     "pool_price_in_quote": 0.9459606039142794,
+     "pool_price_usd": 728.8824291212325,
+     "pool_price_in_quote": 0.9455419642144465,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 33.50775637298357,
-     "virtual_in_range_depth_usd": 557781.4364118193,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 29.067376236624714,
+     "virtual_in_range_depth_usd": 557657.9982405761,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "SNDK",
@@ -1098,7 +1098,7 @@
    "flags": [],
    "chainlink_price_usd": 1345.96,
    "chainlink_updated_at": "2026-10-15T08:50:23.000Z",
-   "feed_age_minutes": 0.7,
+   "feed_age_minutes": 22,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0x2707cb88a6a40fa0f948f58958051ba097d6f6a3cf7f87929bd68ccc5becea24",
@@ -1116,13 +1116,13 @@
     "quote_price_usd": 0.99997,
     "gap_bps": -52.9028620708114,
     "virtual_in_range_depth_usd": 2498810.045234969,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "quote_feed_age_minutes": 1049.4166666666667
    },
    "pool_price_usd": 1338.839486376717,
    "gap_bps": -52.9,
    "pool_liquidity": "34146445781363257",
    "other_pools": [],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "AMZN",
@@ -1131,7 +1131,7 @@
    "flags": [],
    "chainlink_price_usd": 250.29455,
    "chainlink_updated_at": "2026-10-14T23:52:23.000Z",
-   "feed_age_minutes": 538.7,
+   "feed_age_minutes": 560,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0x5619cb8420678b47997f20925eb01be8750c907d6226a0df5d7eafeff966346f",
@@ -1144,15 +1144,15 @@
     "pool_liquidity": "127745392034041515",
     "pool_tick": -221097,
     "tvl_usd_at_discovery": 86522.94,
-    "pool_price_usd": 250.24829685937868,
-    "pool_price_in_quote": 250.2558045335147,
+    "pool_price_usd": 250.2480235642174,
+    "pool_price_in_quote": 250.25553123015428,
     "quote_price_usd": 0.99997,
-    "gap_bps": -1.847948372080141,
-    "virtual_in_range_depth_usd": 4041608.9426000803,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "gap_bps": -1.8588673138346743,
+    "virtual_in_range_depth_usd": 4041606.73568702,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
-   "pool_price_usd": 250.24829685937868,
-   "gap_bps": -1.85,
+   "pool_price_usd": 250.2480235642174,
+   "gap_bps": -1.86,
    "pool_liquidity": "127745392034041515",
    "other_pools": [
     {
@@ -1171,7 +1171,7 @@
      "quote_price_usd": 0.99997,
      "gap_bps": -11.687691497130919,
      "virtual_in_range_depth_usd": 1289771.9769086782,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0xfad1472a3bf9bbecc0abed3790849e3f1b4bb271c13ec642e42801e89a13e7b2",
@@ -1189,7 +1189,7 @@
      "quote_price_usd": 2364.13527299,
      "gap_bps": -30.001633035125767,
      "virtual_in_range_depth_usd": 355413.77636034903,
-     "quote_feed_age_minutes": 40.35
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0x68beff3b4270ffbbb78a48d7670648909b9de6736456b0f450fee242e1d10a8b",
@@ -1202,24 +1202,24 @@
      "pool_liquidity": "37928683813783926366775",
      "pool_tick": 11235,
      "tvl_usd_at_discovery": 533302.97,
-     "pool_price_usd": 250.62991982219987,
-     "pool_price_in_quote": 0.32512939976520666,
+     "pool_price_usd": 250.6374126278684,
+     "pool_price_in_quote": 0.3251391197994759,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 13.399006178915194,
-     "virtual_in_range_depth_usd": 33342837.968885034,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 13.698365700268484,
+     "virtual_in_range_depth_usd": 33343336.37214493,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "CRCL",
    "token": "0xdF0992E440dD0be65BD8439b609d6D4366bf1CB5",
    "feed": "0x6652eDf64bA3731C4F2D3ce821A0Fb1f1f6b482a",
    "flags": [],
-   "chainlink_price_usd": 76.765,
-   "chainlink_updated_at": "2026-10-15T08:19:26.000Z",
-   "feed_age_minutes": 31.7,
+   "chainlink_price_usd": 77.1617,
+   "chainlink_updated_at": "2026-10-15T08:54:27.000Z",
+   "feed_age_minutes": 17.9,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0xdb9c34002d173981250969293af6f43f42a26f2110f19893bbe2ad373375e9e6",
@@ -1229,19 +1229,19 @@
     "fee_setting": "8388608",
     "hook": "FablesRWA (verified)",
     "flags": [],
-    "pool_liquidity": "137326984990224789",
-    "pool_tick": 232879,
+    "pool_liquidity": "138755135847951092",
+    "pool_tick": 232851,
     "tvl_usd_at_discovery": 272948.11,
-    "pool_price_usd": 77.03344941290021,
-    "pool_price_in_quote": 77.03576048571477,
+    "pool_price_usd": 77.24672811670456,
+    "pool_price_in_quote": 77.2490455880722,
     "quote_price_usd": 0.99997,
-    "gap_bps": 34.97028761808251,
-    "virtual_in_range_depth_usd": 2410566.067999563,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "gap_bps": 11.019471668530329,
+    "virtual_in_range_depth_usd": 2439004.4618696356,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
-   "pool_price_usd": 77.03344941290021,
-   "gap_bps": 34.97,
-   "pool_liquidity": "137326984990224789",
+   "pool_price_usd": 77.24672811670456,
+   "gap_bps": 11.02,
+   "pool_liquidity": "138755135847951092",
    "other_pools": [
     {
      "pool_id": "0x628c98ab436ee34a6a7decd606242890582591bdf7c9a35d90e0d08021c31ea0",
@@ -1251,15 +1251,15 @@
      "fee_setting": "3000",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "158410054279984390",
-     "pool_tick": 232874,
+     "pool_liquidity": "158382177888109439",
+     "pool_tick": 232861,
      "tvl_usd_at_discovery": 236151.71,
-     "pool_price_usd": 77.07245264226762,
-     "pool_price_in_quote": 77.07476488521418,
+     "pool_price_usd": 77.1664623454516,
+     "pool_price_in_quote": 77.16877740877386,
      "quote_price_usd": 0.99997,
-     "gap_bps": 40.051148605174234,
-     "virtual_in_range_depth_usd": 2781351.0924903546,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 0.6171903226095223,
+     "virtual_in_range_depth_usd": 2782557.1126079,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x5177eac8c2176468bbf15e44081e151d35c2e7d068e96d3db94f496a4dc944b2",
@@ -1270,14 +1270,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "12361266912397022",
-     "pool_tick": 232879,
+     "pool_tick": 232854,
      "tvl_usd_at_discovery": 60075.17,
-     "pool_price_usd": 77.02966184783291,
-     "pool_price_in_quote": 77.03197280701713,
+     "pool_price_usd": 77.22131027195043,
+     "pool_price_in_quote": 77.22362698075985,
      "quote_price_usd": 0.99997,
-     "gap_bps": 34.47689022769644,
-     "virtual_in_range_depth_usd": 216977.87967307842,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 7.725370481784747,
+     "virtual_in_range_depth_usd": 217247.6305398505,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x970df1466b2e888c80e8f66e014e4637ead055085557514a084468695e669daf",
@@ -1288,14 +1288,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "17153987941871354",
-     "pool_tick": 232880,
+     "pool_tick": 232854,
      "tvl_usd_at_discovery": 51316.99,
-     "pool_price_usd": 77.02602633657588,
-     "pool_price_in_quote": 77.02833718669147,
+     "pool_price_usd": 77.22218852547059,
+     "pool_price_in_quote": 77.2245052606284,
      "quote_price_usd": 0.99997,
-     "gap_bps": 34.00330053746905,
-     "virtual_in_range_depth_usd": 301097.6240408365,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 7.839190358764664,
+     "virtual_in_range_depth_usd": 301480.78292273625,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0xa5be017c2058326bbd27f03e4cb8c7b8ce265eb7e70c71617600eb518b6bff6a",
@@ -1305,15 +1305,15 @@
      "fee_setting": "8388608",
      "hook": "hook 0xA4e6f550",
      "flags": [],
-     "pool_liquidity": "286832349284642213",
-     "pool_tick": 232876,
+     "pool_liquidity": "293981588800668103",
+     "pool_tick": 232846,
      "tvl_usd_at_discovery": 20239.68,
-     "pool_price_usd": 77.05268835000001,
-     "pool_price_in_quote": 77.055,
+     "pool_price_usd": 77.28517482388119,
+     "pool_price_in_quote": 77.28749344868466,
      "quote_price_usd": 0.99997,
-     "gap_bps": 37.47649970689904,
-     "virtual_in_range_depth_usd": 5035533.725674442,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 16.002087030378547,
+     "virtual_in_range_depth_usd": 5168823.596537396,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0xc73a455650cc4ed91c893d5b26ea79a5278fbf77a7775282c6a190b635e554ee",
@@ -1329,9 +1329,9 @@
      "pool_price_usd": 76.59318306299353,
      "pool_price_in_quote": 0.03239796975158854,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": -22.382197226140637,
+     "gap_bps": -73.67864329148584,
      "virtual_in_range_depth_usd": 339.4134682371555,
-     "quote_feed_age_minutes": 40.35
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0x6d9af55c4cb0d740dc5237e8fe2d60e017412fb1af4e2d81e948124797e56748",
@@ -1342,14 +1342,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "4398478963613747283882",
-     "pool_tick": 34284,
+     "pool_tick": 34249,
      "tvl_usd_at_discovery": 122066.32,
-     "pool_price_usd": 76.69870459637696,
-     "pool_price_in_quote": 0.03244260405597416,
+     "pool_price_usd": 76.96577177893607,
+     "pool_price_in_quote": 0.03255557017327309,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": -8.63614975875002,
-     "virtual_in_range_depth_usd": 3745956.1631149612,
-     "quote_feed_age_minutes": 40.35
+     "gap_bps": -25.391900523695444,
+     "virtual_in_range_depth_usd": 3752472.261410591,
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0x10906975ba92bce9209431984d3e3e4b0eac706db274e8d1a29358331a555987",
@@ -1360,14 +1360,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "1520199297823450496395",
-     "pool_tick": 34273,
+     "pool_tick": 34258,
      "tvl_usd_at_discovery": 103056.77,
-     "pool_price_usd": 76.7817538112497,
-     "pool_price_in_quote": 0.03247773284738537,
+     "pool_price_usd": 76.8995573119499,
+     "pool_price_in_quote": 0.03252756227214211,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": 2.1824804598058853,
-     "virtual_in_range_depth_usd": 1295375.5589062574,
-     "quote_feed_age_minutes": 40.35
+     "gap_bps": -33.97316130283425,
+     "virtual_in_range_depth_usd": 1296368.902251208,
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0xe77cc864a0284f3dc420e504dd565e5d6f965cc86f5b4fa145b00b9ccabc3cd7",
@@ -1383,12 +1383,12 @@
      "pool_price_usd": 77.00157326220847,
      "pool_price_in_quote": 0.22506327535285867,
      "quote_price_usd": 342.13299856,
-     "gap_bps": 30.817854778670803,
+     "gap_bps": -20.75210082094215,
      "virtual_in_range_depth_usd": 35986.25470136787,
-     "quote_feed_age_minutes": 368.1666666666667
+     "quote_feed_age_minutes": 389.4
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "GOOGL",
@@ -1397,7 +1397,7 @@
    "flags": [],
    "chainlink_price_usd": 342.13299856,
    "chainlink_updated_at": "2026-10-15T02:42:57.000Z",
-   "feed_age_minutes": 368.2,
+   "feed_age_minutes": 389.4,
    "ui_multiplier": 1.0001939244141127,
    "multiplier_not_one": true,
    "main_pool": {
@@ -1416,7 +1416,7 @@
     "quote_price_usd": 0.99997,
     "gap_bps": 2.5426334734373532,
     "virtual_in_range_depth_usd": 14363892.159056548,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "quote_feed_age_minutes": 1049.4166666666667
    },
    "pool_price_usd": 342.2199904414506,
    "gap_bps": 2.54,
@@ -1438,7 +1438,7 @@
      "quote_price_usd": 2364.13527299,
      "gap_bps": 30.509281285630827,
      "virtual_in_range_depth_usd": 869643.862232338,
-     "quote_feed_age_minutes": 40.35
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0xe4d9d8c880cedae4ed7884609969c262cd1138a328e05eca7b32f834e649609d",
@@ -1449,14 +1449,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "197006940720068760631",
-     "pool_tick": 19355,
+     "pool_tick": 19345,
      "tvl_usd_at_discovery": 30579.98,
-     "pool_price_usd": 341.27096618843234,
-     "pool_price_in_quote": 0.14435340062280602,
+     "pool_price_usd": 341.61318981835564,
+     "pool_price_in_quote": 0.14449815698841384,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": -25.19582662870391,
-     "virtual_in_range_depth_usd": 353913.6841280401,
-     "quote_feed_age_minutes": 40.35
+     "gap_bps": -15.193177619000728,
+     "virtual_in_range_depth_usd": 354091.0904839003,
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0x6d0f67069596c7ef9d1ce6981c1b6dbcd9a91b0c5393aebe9dd07c35e412df30",
@@ -1466,15 +1466,15 @@
      "fee_setting": "250",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "26027354839355879908168",
-     "pool_tick": 8074,
+     "pool_liquidity": "37514462497335639562810",
+     "pool_tick": 8089,
      "tvl_usd_at_discovery": 495101.94,
-     "pool_price_usd": 343.8299811265483,
-     "pool_price_in_quote": 0.4460330812229511,
+     "pool_price_usd": 343.2988350858435,
+     "pool_price_in_quote": 0.44534405258054266,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 49.60008457794937,
-     "virtual_in_range_depth_usd": 26799101.69990442,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 34.07553585156674,
+     "virtual_in_range_depth_usd": 38596971.15144348,
+     "quote_feed_age_minutes": 1018.6666666666666
     },
     {
      "pool_id": "0x2bca43d9d8c75399e3c6ba14e9dc88f44ca8968bb4694a8be4f80bd5a550df2e",
@@ -1485,14 +1485,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "3437602186412375067902",
-     "pool_tick": 8074,
+     "pool_tick": 8086,
      "tvl_usd_at_discovery": 183598.59,
-     "pool_price_usd": 343.8198315595264,
-     "pool_price_in_quote": 0.4460199147078117,
+     "pool_price_usd": 343.4125479315922,
+     "pool_price_in_quote": 0.4454915664500364,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 49.303428977213834,
-     "virtual_in_range_depth_usd": 3539479.5758381016,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 37.39918034734173,
+     "virtual_in_range_depth_usd": 3537382.548384621,
+     "quote_feed_age_minutes": 1018.6666666666666
     },
     {
      "pool_id": "0xe77cc864a0284f3dc420e504dd565e5d6f965cc86f5b4fa145b00b9ccabc3cd7",
@@ -1505,15 +1505,15 @@
      "pool_liquidity": "110856043060716185713",
      "pool_tick": 14914,
      "tvl_usd_at_discovery": 72025.28,
-     "pool_price_usd": 341.08185744496217,
+     "pool_price_usd": 342.8444728666832,
      "pool_price_in_quote": 4.443194912329345,
-     "quote_price_usd": 76.765,
-     "gap_bps": -30.723172551666895,
-     "virtual_in_range_depth_usd": 35875.693510100034,
-     "quote_feed_age_minutes": 31.683333333333334
+     "quote_price_usd": 77.1617,
+     "gap_bps": 20.795255344492684,
+     "virtual_in_range_depth_usd": 36061.08903690856,
+     "quote_feed_age_minutes": 17.9
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "PLTR",
@@ -1522,7 +1522,7 @@
    "flags": [],
    "chainlink_price_usd": 196.795,
    "chainlink_updated_at": "2026-10-15T08:20:31.000Z",
-   "feed_age_minutes": 30.6,
+   "feed_age_minutes": 51.8,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0xee430ee1003e1985e1828a01b9a20dad67ad4302994fe2abb4a173de4ac54623",
@@ -1532,19 +1532,19 @@
     "fee_setting": "10000",
     "hook": "(none)",
     "flags": [],
-    "pool_liquidity": "821703738984425806",
+    "pool_liquidity": "823000907173964560",
     "pool_tick": 223428,
     "tvl_usd_at_discovery": 647178,
     "pool_price_usd": 198.19555786206777,
     "pool_price_in_quote": 198.20150390718499,
     "quote_price_usd": 0.99997,
     "gap_bps": 71.16836617128409,
-    "virtual_in_range_depth_usd": 23135862.92489298,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "virtual_in_range_depth_usd": 23172385.948946383,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
    "pool_price_usd": 198.19555786206777,
    "gap_bps": 71.17,
-   "pool_liquidity": "821703738984425806",
+   "pool_liquidity": "823000907173964560",
    "other_pools": [
     {
      "pool_id": "0xc59eaeda6d1a6f031bc7e1d039772f2d675e7b4de2c8668610f4471bd60b3802",
@@ -1555,14 +1555,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "54781574041102052",
-     "pool_tick": 223499,
+     "pool_tick": 223482,
      "tvl_usd_at_discovery": 73205.26,
-     "pool_price_usd": 196.79776442481875,
-     "pool_price_in_quote": 196.8036685348748,
+     "pool_price_usd": 197.12303171975358,
+     "pool_price_in_quote": 197.1289455881212,
      "quote_price_usd": 0.99997,
-     "gap_bps": 0.140472309701169,
-     "virtual_in_range_depth_usd": 1536979.4758765101,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 16.66870193620755,
+     "virtual_in_range_depth_usd": 1538249.111123098,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0xb8d9b6b622bb03dd06d95790553f327710a73d85d845a59fa9e652638ca96ae6",
@@ -1572,27 +1572,27 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "19854356430406696283314",
-     "pool_tick": 13621,
+     "pool_liquidity": "14453267111264705769266",
+     "pool_tick": 13606,
      "tvl_usd_at_discovery": 421625.89,
-     "pool_price_usd": 197.43572568603543,
-     "pool_price_in_quote": 0.25612328739540535,
+     "pool_price_usd": 197.7387165109249,
+     "pool_price_in_quote": 0.25651634192417255,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 32.55802667930781,
-     "virtual_in_range_depth_usd": 15491269.75278645,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 47.95429309306135,
+     "virtual_in_range_depth_usd": 11285744.56631965,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "MU",
    "token": "0xfF080c8ce2E5feadaCa0Da81314Ae59D232d4afD",
    "feed": "0x425EEFdCf05ed6526C3cE61Af99429A228a6d596",
    "flags": [],
-   "chainlink_price_usd": 881.08161066,
-   "chainlink_updated_at": "2026-10-15T08:48:36.000Z",
-   "feed_age_minutes": 2.5,
+   "chainlink_price_usd": 885.60243988,
+   "chainlink_updated_at": "2026-10-15T08:55:06.000Z",
+   "feed_age_minutes": 17.3,
    "ui_multiplier": 1.0001834566829466,
    "multiplier_not_one": true,
    "main_pool": {
@@ -1609,12 +1609,12 @@
     "pool_price_usd": 884.8852053938537,
     "pool_price_in_quote": 884.911752746436,
     "quote_price_usd": 0.99997,
-    "gap_bps": 43.1696075350436,
+    "gap_bps": -8.098831415183918,
     "virtual_in_range_depth_usd": 1481060.5560099077,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "quote_feed_age_minutes": 1049.4166666666667
    },
    "pool_price_usd": 884.8852053938537,
-   "gap_bps": 43.17,
+   "gap_bps": -8.1,
    "pool_liquidity": "24894640992058181",
    "other_pools": [
     {
@@ -1626,14 +1626,14 @@
      "hook": "hook 0x5Eb87F69",
      "flags": [],
      "pool_liquidity": "459105088273035",
-     "pool_tick": 208534,
+     "pool_tick": 208472,
      "tvl_usd_at_discovery": 44777.37,
-     "pool_price_usd": 878.7870596812928,
-     "pool_price_in_quote": 878.8134240840153,
+     "pool_price_usd": 884.2879116849529,
+     "pool_price_in_quote": 884.3144411181864,
      "quote_price_usd": 0.99997,
-     "gap_bps": -26.04243410537653,
-     "virtual_in_range_depth_usd": 27219.32893124358,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": -14.843321741810914,
+     "virtual_in_range_depth_usd": 27304.387033423962,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x881b4219078c86ac3a3930a6c229c2c846209fe9b4f0b8671772d42e2a799796",
@@ -1643,15 +1643,15 @@
      "fee_setting": "8000",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "388340482037546488944",
+     "pool_liquidity": "357999144495376555951",
      "pool_tick": 9902,
      "tvl_usd_at_discovery": 50059.95,
      "pool_price_usd": 878.2825648670288,
      "pool_price_in_quote": 0.3715026694543734,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": -31.768292052702524,
-     "virtual_in_range_depth_usd": 1119169.7242759108,
-     "quote_feed_age_minutes": 40.35
+     "gap_bps": -82.65418751514606,
+     "virtual_in_range_depth_usd": 1031728.1415877854,
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0x5fb97aef826b674c4bc76707563816f171043a3b1bf91431b7f82acd6381876b",
@@ -1667,9 +1667,9 @@
      "pool_price_usd": 880.5682313774481,
      "pool_price_in_quote": 0.37246947813767206,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": -5.826693876488327,
+     "gap_bps": -56.84501618168583,
      "virtual_in_range_depth_usd": 214174.04888231924,
-     "quote_feed_age_minutes": 40.35
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0xcc2a903a8744a65258bb07fbeea553a25410f731c9fef306321d0c176a09542c",
@@ -1679,27 +1679,27 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "3497189945462913620190",
-     "pool_tick": -1367,
+     "pool_liquidity": "2941351878373428208024",
+     "pool_tick": -1425,
      "tvl_usd_at_discovery": 370567.38,
-     "pool_price_usd": 883.7233567788759,
-     "pool_price_in_quote": 1.1464091946876942,
+     "pool_price_usd": 888.8338473719008,
+     "pool_price_in_quote": 1.1530387732320062,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 29.98299007621985,
-     "virtual_in_range_depth_usd": 5772922.4035534235,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 36.488240618878905,
+     "virtual_in_range_depth_usd": 4869401.747513238,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "AMD",
    "token": "0x86923f96303D656E4aa86D9d42D1e57ad2023fdC",
    "feed": "0x943A29E7ae51A4798823ca9eEd2ed533B2A22C72",
    "flags": [],
-   "chainlink_price_usd": 551.6985,
-   "chainlink_updated_at": "2026-10-15T08:03:55.000Z",
-   "feed_age_minutes": 47.2,
+   "chainlink_price_usd": 555.125,
+   "chainlink_updated_at": "2026-10-15T08:53:26.000Z",
+   "feed_age_minutes": 18.9,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0xde9f85fdd9e05a943a52f2c69ffafe3064a3287df03d02c9b431bc92d4781274",
@@ -1709,19 +1709,19 @@
     "fee_setting": "10000",
     "hook": "(none)",
     "flags": [],
-    "pool_liquidity": "61337782403695817",
+    "pool_liquidity": "61338072824639061",
     "pool_tick": 213145,
     "tvl_usd_at_discovery": 567754.77,
-    "pool_price_usd": 554.1969781135506,
-    "pool_price_in_quote": 554.2136045216862,
+    "pool_price_usd": 554.1782756695471,
+    "pool_price_in_quote": 554.1949015165926,
     "quote_price_usd": 0.99997,
-    "gap_bps": 45.2870202393267,
-    "virtual_in_range_depth_usd": 2887909.8255712604,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "gap_bps": -17.054254995773324,
+    "virtual_in_range_depth_usd": 2887874.7695103534,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
-   "pool_price_usd": 554.1969781135506,
-   "gap_bps": 45.29,
-   "pool_liquidity": "61337782403695817",
+   "pool_price_usd": 554.1782756695471,
+   "gap_bps": -17.05,
+   "pool_liquidity": "61338072824639061",
    "other_pools": [
     {
      "pool_id": "0xe6e17efdbdd916526293cf1b509171be4ffb04f47c4a5fe1a7367acdaa6ffd82",
@@ -1731,27 +1731,27 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "6024585802104940604633",
-     "pool_tick": 3282,
+     "pool_liquidity": "5753385882902161979017",
+     "pool_tick": 3225,
      "tvl_usd_at_discovery": 341193.87,
-     "pool_price_usd": 555.1457893246477,
-     "pool_price_in_quote": 0.7201622910518806,
+     "pool_price_usd": 558.3252913741187,
+     "pool_price_in_quote": 0.7242868967399408,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 62.48502261013447,
-     "virtual_in_range_depth_usd": 7882229.054764327,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 57.64992342479092,
+     "virtual_in_range_depth_usd": 7548931.527418993,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "NVDA",
    "token": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
    "feed": "0x379EC4f7C378F34a1B47E4F3cbeBCbAC3E8E9F15",
    "flags": [],
-   "chainlink_price_usd": 217.0931514,
-   "chainlink_updated_at": "2026-10-15T08:18:06.000Z",
-   "feed_age_minutes": 33,
+   "chainlink_price_usd": 218.1890002,
+   "chainlink_updated_at": "2026-10-15T08:54:36.000Z",
+   "feed_age_minutes": 17.8,
    "ui_multiplier": 1.0007751591646306,
    "multiplier_not_one": true,
    "main_pool": {
@@ -1762,19 +1762,19 @@
     "fee_setting": "8388608",
     "hook": "FablesRWA (verified)",
     "flags": [],
-    "pool_liquidity": "546501191087726552",
-    "pool_tick": 222477,
+    "pool_liquidity": "546501323984338314",
+    "pool_tick": 222456,
     "tvl_usd_at_discovery": 649994.26,
-    "pool_price_usd": 217.9725879757953,
-    "pool_price_in_quote": 217.9791273496158,
+    "pool_price_usd": 218.42832024037295,
+    "pool_price_in_quote": 218.43487328657156,
     "quote_price_usd": 0.99997,
-    "gap_bps": 40.50964160425817,
-    "virtual_in_range_depth_usd": 16136730.0676455,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "gap_bps": 10.968474128098837,
+    "virtual_in_range_depth_usd": 16153594.346729856,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
-   "pool_price_usd": 217.9725879757953,
-   "gap_bps": 40.51,
-   "pool_liquidity": "546501191087726552",
+   "pool_price_usd": 218.42832024037295,
+   "gap_bps": 10.97,
+   "pool_liquidity": "546501323984338314",
    "other_pools": [
     {
      "pool_id": "0x6444a8e0b267406a15db74ca00c4a24bdfa81ed3180f5b6d0851f8ed6f4f29c5",
@@ -1784,15 +1784,15 @@
      "fee_setting": "100",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "139587796691513698",
-     "pool_tick": 222472,
+     "pool_liquidity": "139694491045454199",
+     "pool_tick": 222450,
      "tvl_usd_at_discovery": 613764.32,
-     "pool_price_usd": 218.08740480898138,
-     "pool_price_in_quote": 218.0939476274102,
+     "pool_price_usd": 218.566344084388,
+     "pool_price_in_quote": 218.57290127142613,
      "quote_price_usd": 0.99997,
-     "gap_bps": 45.798469577210476,
-     "virtual_in_range_depth_usd": 4122742.645622247,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 17.294358745954007,
+     "virtual_in_range_depth_usd": 4130421.806209152,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x3bb34a44f1b2b5f32c034c38a53065a521a47b199700fa9bd19d60985ff24bf1",
@@ -1802,15 +1802,15 @@
      "fee_setting": "3000",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "318768595922858228",
-     "pool_tick": 222481,
+     "pool_liquidity": "318769405603924294",
+     "pool_tick": 222482,
      "tvl_usd_at_discovery": 600456.02,
-     "pool_price_usd": 217.8722081326542,
-     "pool_price_in_quote": 217.87874449498906,
+     "pool_price_usd": 217.85859646149524,
+     "pool_price_in_quote": 217.86513241546768,
      "quote_price_usd": 0.99997,
-     "gap_bps": 35.885827241908906,
-     "virtual_in_range_depth_usd": 9410223.27857808,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": -15.143006210299811,
+     "virtual_in_range_depth_usd": 9409953.221351644,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0xdf5c0bcd967d54774c139a4ef803ec994779736346fb4c21b50ed241b1fd2682",
@@ -1821,14 +1821,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "552400542701688410",
-     "pool_tick": 222474,
+     "pool_tick": 222453,
      "tvl_usd_at_discovery": 102290.39,
-     "pool_price_usd": 218.03140889313903,
-     "pool_price_in_quote": 218.03795003163998,
+     "pool_price_usd": 218.49879482918388,
+     "pool_price_in_quote": 218.50534998968357,
      "quote_price_usd": 0.99997,
-     "gap_bps": 43.21911986114453,
-     "virtual_in_range_depth_usd": 16313122.907952473,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 14.198453125496725,
+     "virtual_in_range_depth_usd": 16330598.469224457,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0xaa8039d8e39d2bbcae23762e71f5a12162875a61848f0d96914c827f61877ef6",
@@ -1844,9 +1844,9 @@
      "pool_price_usd": 218.6812236770929,
      "pool_price_in_quote": 0.0924994547374269,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": 73.15165249809401,
+     "gap_bps": 22.559500095866536,
      "virtual_in_range_depth_usd": 2036199.8724538577,
-     "quote_feed_age_minutes": 40.35
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0x71f9660f9535e3e81d720696a58ea80274da8b2c6eb7c3acb22611d977439a5c",
@@ -1857,14 +1857,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "1189932828536221052408",
-     "pool_tick": 23867,
+     "pool_tick": 23858,
      "tvl_usd_at_discovery": 109555.11,
-     "pool_price_usd": 217.3546167876127,
-     "pool_price_in_quote": 0.09193831641990484,
+     "pool_price_usd": 217.5501161115591,
+     "pool_price_in_quote": 0.09202101021758213,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": 12.043926117731147,
-     "virtual_in_range_depth_usd": 1705976.4746735557,
-     "quote_feed_age_minutes": 40.35
+     "gap_bps": -29.28122351975943,
+     "virtual_in_range_depth_usd": 1706743.5213797432,
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0x647836c4965c512f0d82a2128abe7826eacf5a79d2dbed252a89ba5c591d1e87",
@@ -1875,14 +1875,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "434318754095064403494",
-     "pool_tick": 23873,
+     "pool_tick": 23861,
      "tvl_usd_at_discovery": 31334.76,
-     "pool_price_usd": 217.2285796340962,
-     "pool_price_in_quote": 0.09188500426177393,
+     "pool_price_usd": 217.48623359865508,
+     "pool_price_in_quote": 0.09199398870420518,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": 6.23825455675779,
-     "virtual_in_range_depth_usd": 622491.2068995929,
-     "quote_feed_age_minutes": 40.35
+     "gap_bps": -32.20907565004431,
+     "virtual_in_range_depth_usd": 622860.2646845303,
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0xda14bf8a87711e1f30dbe620f2df3fdf371f7503f1a72202d15631f657651ec0",
@@ -1892,15 +1892,15 @@
      "fee_setting": "250",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "30780943593494160775727",
-     "pool_tick": 12602,
+     "pool_liquidity": "102798725226273096330360",
+     "pool_tick": 12584,
      "tvl_usd_at_discovery": 1222203.02,
-     "pool_price_usd": 218.62188753098738,
-     "pool_price_in_quote": 0.28360701355573115,
+     "pool_price_usd": 219.0126860853488,
+     "pool_price_in_quote": 0.2841139765691606,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 70.41844116817076,
-     "virtual_in_range_depth_usd": 25272434.577006586,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 37.7510270725735,
+     "virtual_in_range_depth_usd": 84477430.7658929,
+     "quote_feed_age_minutes": 1018.6666666666666
     },
     {
      "pool_id": "0xbc732a1a0baabce2574ec2bca24fccad8e2c38a061a37cefc17a2fd12809394f",
@@ -1910,15 +1910,15 @@
      "fee_setting": "500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "10771142844912065435509",
-     "pool_tick": 12606,
+     "pool_liquidity": "12489546963127519499289",
+     "pool_tick": 12587,
      "tvl_usd_at_discovery": 318170.29,
-     "pool_price_usd": 218.534837543363,
-     "pool_price_in_quote": 0.2834940880508834,
+     "pool_price_usd": 218.9354307529222,
+     "pool_price_in_quote": 0.28401375717046173,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 66.4086422840053,
-     "virtual_in_range_depth_usd": 8841795.323899962,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 34.21027422271454,
+     "virtual_in_range_depth_usd": 10261788.100054312,
+     "quote_feed_age_minutes": 1018.6666666666666
     },
     {
      "pool_id": "0x988f3b6ceec4795e0d6d28a054af87ffbcbdeee2566f72ae391da5f109bd485f",
@@ -1929,26 +1929,26 @@
      "hook": "hook 0x79576FBA",
      "flags": [],
      "pool_liquidity": "740097419265197743797",
-     "pool_tick": 12604,
+     "pool_tick": 12585,
      "tvl_usd_at_discovery": 31250.61,
-     "pool_price_usd": 218.58253021232764,
-     "pool_price_in_quote": 0.28355595731551336,
+     "pool_price_usd": 218.98460915939,
+     "pool_price_in_quote": 0.28407755380650435,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 68.60551807935242,
-     "virtual_in_range_depth_usd": 607596.0563257651,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 36.46421032502603,
+     "virtual_in_range_depth_usd": 608154.6310168935,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "USO",
    "token": "0xa30FA36Db767ad9eD3f7a60fC79526fB4d56D344",
    "feed": "0x75a9c76Ef439e2C7c2E5a34Ab105EcFe3766431c",
    "flags": [],
-   "chainlink_price_usd": 152.77,
-   "chainlink_updated_at": "2026-10-15T08:33:55.000Z",
-   "feed_age_minutes": 17.2,
+   "chainlink_price_usd": 153.535,
+   "chainlink_updated_at": "2026-10-15T08:51:55.000Z",
+   "feed_age_minutes": 20.4,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0x1f2ad5a274a776d8e1408292bde1d92d8fa7b6444acf14ad60b9c3e4e5b66420",
@@ -1959,17 +1959,17 @@
     "hook": "(none)",
     "flags": [],
     "pool_liquidity": "221582103900166588",
-    "pool_tick": 226010,
+    "pool_tick": 225987,
     "tvl_usd_at_discovery": 248331.03,
-    "pool_price_usd": 153.09474318953636,
-    "pool_price_in_quote": 153.09933616962144,
+    "pool_price_usd": 153.44420682393928,
+    "pool_price_in_quote": 153.44881028824793,
     "quote_price_usd": 0.99997,
-    "gap_bps": 21.25700003510827,
-    "virtual_in_range_depth_usd": 5483253.216864111,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "gap_bps": -5.913516531130631,
+    "virtual_in_range_depth_usd": 5489507.857930746,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
-   "pool_price_usd": 153.09474318953636,
-   "gap_bps": 21.26,
+   "pool_price_usd": 153.44420682393928,
+   "gap_bps": -5.91,
    "pool_liquidity": "221582103900166588",
    "other_pools": [
     {
@@ -1980,7 +1980,7 @@
      "fee_setting": "50000",
      "hook": "(none)",
      "flags": [
-      "|gap| above 300 bps (-419)"
+      "|gap| above 300 bps (-466)"
      ],
      "pool_liquidity": "287068182096455033563",
      "pool_tick": 27821,
@@ -1988,21 +1988,21 @@
      "pool_price_usd": 146.37419387708,
      "pool_price_in_quote": 0.06191447483965489,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": -418.65589598219685,
+     "gap_bps": -466.3956832591922,
      "virtual_in_range_depth_usd": 337740.7583997062,
-     "quote_feed_age_minutes": 40.35
+     "quote_feed_age_minutes": 61.583333333333336
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "COIN",
    "token": "0x6330D8C3178a418788dF01a47479c0ce7CCF450b",
    "feed": "0xA3a468A452940B7D6b69991207B508c609a98Ef2",
    "flags": [],
-   "chainlink_price_usd": 169.936,
-   "chainlink_updated_at": "2026-10-15T08:15:27.000Z",
-   "feed_age_minutes": 35.7,
+   "chainlink_price_usd": 170.795,
+   "chainlink_updated_at": "2026-10-15T09:09:58.000Z",
+   "feed_age_minutes": 2.4,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0x007a13fa152f6dc383cad20a8eaab4e1e2538b606936eae2a424f8aa47d6db31",
@@ -2018,12 +2018,12 @@
     "pool_price_usd": 169.84508438838492,
     "pool_price_in_quote": 169.85017989378173,
     "quote_price_usd": 0.99997,
-    "gap_bps": -5.349991268188506,
+    "gap_bps": -55.617296268337405,
     "virtual_in_range_depth_usd": 7343987.86654843,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "quote_feed_age_minutes": 1049.4166666666667
    },
    "pool_price_usd": 169.84508438838492,
-   "gap_bps": -5.35,
+   "gap_bps": -55.62,
    "pool_liquidity": "281761712658866746",
    "other_pools": [
     {
@@ -2035,14 +2035,14 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "31737944970036960",
-     "pool_tick": 224960,
+     "pool_tick": 224937,
      "tvl_usd_at_discovery": 97783.7,
-     "pool_price_usd": 170.04117005913088,
-     "pool_price_in_quote": 170.04627144727428,
+     "pool_price_usd": 170.42859744583635,
+     "pool_price_in_quote": 170.43371045715006,
      "quote_price_usd": 0.99997,
-     "gap_bps": 6.188803969192531,
-     "virtual_in_range_depth_usd": 827712.1424269857,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": -21.45276818195158,
+     "virtual_in_range_depth_usd": 828654.549195139,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x4e2885c9071ad4bc4b571671eb0798edb049e91bd05991200652892115201830",
@@ -2058,9 +2058,9 @@
      "pool_price_usd": 170.05669375504579,
      "pool_price_in_quote": 170.06179560891405,
      "quote_price_usd": 0.99997,
-     "gap_bps": 7.102306459242189,
+     "gap_bps": -43.22762639153385,
      "virtual_in_range_depth_usd": 607446.8436772174,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x982af6ff6a2169c91a78634d3d10b3e1fe1e6a7e76387de04167234a41d50e4c",
@@ -2071,26 +2071,26 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "415772307055701316125",
-     "pool_tick": 15075,
+     "pool_tick": 15058,
      "tvl_usd_at_discovery": 29320.72,
-     "pool_price_usd": 170.72908002815456,
-     "pool_price_in_quote": 0.22147811941766035,
+     "pool_price_usd": 171.01583179811644,
+     "pool_price_in_quote": 0.22185010784951023,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 46.66933599440664,
-     "virtual_in_range_depth_usd": 301666.8868787099,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 12.92964068716589,
+     "virtual_in_range_depth_usd": 301920.11621137446,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "ORCL",
    "token": "0xb0992820E760d836549ba69BC7598b4af75dEE03",
    "feed": "0x0e6a64a2B58A6693a531E6c555f3A5d042eEA844",
    "flags": [],
-   "chainlink_price_usd": 128.13143645,
-   "chainlink_updated_at": "2026-10-15T08:17:49.000Z",
-   "feed_age_minutes": 33.3,
+   "chainlink_price_usd": 128.79051068,
+   "chainlink_updated_at": "2026-10-15T08:55:50.000Z",
+   "feed_age_minutes": 16.5,
    "ui_multiplier": 1.0047629169067926,
    "multiplier_not_one": true,
    "main_pool": {
@@ -2107,15 +2107,15 @@
     "pool_price_usd": 129.34345319896073,
     "pool_price_in_quote": 129.3473336189693,
     "quote_price_usd": 0.99997,
-    "gap_bps": 94.59167730736351,
+    "gap_bps": 42.93348291277383,
     "virtual_in_range_depth_usd": 1446745.1478113001,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "quote_feed_age_minutes": 1049.4166666666667
    },
    "pool_price_usd": 129.34345319896073,
-   "gap_bps": 94.59,
+   "gap_bps": 42.93,
    "pool_liquidity": "63605742625277211",
    "other_pools": [],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "AAPL",
@@ -2124,7 +2124,7 @@
    "flags": [],
    "chainlink_price_usd": 345.4159998,
    "chainlink_updated_at": "2026-10-15T01:54:31.000Z",
-   "feed_age_minutes": 416.6,
+   "feed_age_minutes": 437.8,
    "ui_multiplier": 1.0005660800610925,
    "multiplier_not_one": true,
    "main_pool": {
@@ -2138,15 +2138,15 @@
     "pool_liquidity": "478984206404964998",
     "pool_tick": 217867,
     "tvl_usd_at_discovery": 687758.36,
-    "pool_price_usd": 345.60893067166364,
-    "pool_price_in_quote": 345.6192992506412,
+    "pool_price_usd": 345.61064925675106,
+    "pool_price_in_quote": 345.6210178872877,
     "quote_price_usd": 0.99997,
-    "gap_bps": 5.585464245296787,
-    "virtual_in_range_depth_usd": 17808902.363164373,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "gap_bps": 5.635218312520429,
+    "virtual_in_range_depth_usd": 17808946.64164398,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
-   "pool_price_usd": 345.60893067166364,
-   "gap_bps": 5.59,
+   "pool_price_usd": 345.61064925675106,
+   "gap_bps": 5.64,
    "pool_liquidity": "478984206404964998",
    "other_pools": [
     {
@@ -2165,7 +2165,7 @@
      "quote_price_usd": 0.99997,
      "gap_bps": -1.2825191414253505,
      "virtual_in_range_depth_usd": 9103879.332301984,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x845b21902932be7f77f8ccbf793c17494f0ce7c6ffdcdb675d4dec701bc7601a",
@@ -2176,14 +2176,14 @@
      "hook": "hook 0x64E9ae10",
      "flags": [],
      "pool_liquidity": "6886353867571508",
-     "pool_tick": 217877,
+     "pool_tick": 217871,
      "tvl_usd_at_discovery": 22778.09,
-     "pool_price_usd": 345.2571793441266,
-     "pool_price_in_quote": 345.2675373702477,
+     "pool_price_usd": 345.48795281578373,
+     "pool_price_in_quote": 345.4983177653167,
      "quote_price_usd": 0.99997,
-     "gap_bps": -4.597947285747315,
-     "virtual_in_range_depth_usd": 255908.18471818476,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 2.0830828862988824,
+     "virtual_in_range_depth_usd": 255993.69627086897,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x7458bf9fb741da112910cd1ff786d5ee95bcb729fc3dcda258e8bc0956f3d5ef",
@@ -2201,7 +2201,7 @@
      "quote_price_usd": 2364.13527299,
      "gap_bps": -22.850784637150912,
      "virtual_in_range_depth_usd": 194251.18316270842,
-     "quote_feed_age_minutes": 40.35
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0xeab0adac76db99a233ed077ca6be7a3f708baee6f98b17df69f7e1a07d1dc2e4",
@@ -2212,26 +2212,26 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "29166444833073147883254",
-     "pool_tick": 7998,
+     "pool_tick": 7999,
      "tvl_usd_at_discovery": 523822.68,
-     "pool_price_usd": 346.43345435688815,
-     "pool_price_in_quote": 0.4494104341315171,
+     "pool_price_usd": 346.4177648527272,
+     "pool_price_in_quote": 0.44939008093875354,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 29.455918587363012,
-     "virtual_in_range_depth_usd": 30144753.67534899,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 29.001698048359888,
+     "virtual_in_range_depth_usd": 30144071.059990574,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "MSTR",
    "token": "0xec262a75e413fAfD0dF80480274532C79D42da09",
    "feed": "0x396118bdFB181e6240E74D243F266B061c0edc3D",
    "flags": [],
-   "chainlink_price_usd": 140.265,
-   "chainlink_updated_at": "2026-10-15T08:16:35.000Z",
-   "feed_age_minutes": 34.5,
+   "chainlink_price_usd": 141.025,
+   "chainlink_updated_at": "2026-10-15T08:52:06.000Z",
+   "feed_age_minutes": 20.3,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0x319bac87e616a89e241c10aeb8afd4892a852cdd8b373cd9765ecddc40b87cfe",
@@ -2241,19 +2241,19 @@
     "fee_setting": "2500",
     "hook": "(none)",
     "flags": [],
-    "pool_liquidity": "572110497205967429",
-    "pool_tick": 226858,
+    "pool_liquidity": "616892544542496368",
+    "pool_tick": 226816,
     "tvl_usd_at_discovery": 1405229.95,
-    "pool_price_usd": 140.65391578889512,
-    "pool_price_in_quote": 140.6581355329611,
+    "pool_price_usd": 141.2420294395771,
+    "pool_price_in_quote": 141.2462668275819,
     "quote_price_usd": 0.99997,
-    "gap_bps": 27.727215548792156,
-    "virtual_in_range_depth_usd": 13569983.237904893,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "gap_bps": 15.389430212876405,
+    "virtual_in_range_depth_usd": 14662734.719201291,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
-   "pool_price_usd": 140.65391578889512,
-   "gap_bps": 27.73,
-   "pool_liquidity": "572110497205967429",
+   "pool_price_usd": 141.2420294395771,
+   "gap_bps": 15.39,
+   "pool_liquidity": "616892544542496368",
    "other_pools": [
     {
      "pool_id": "0xc105b8300ff65d750a0e4e63c7a879e20504069b770713464a5315e797735326",
@@ -2263,15 +2263,15 @@
      "fee_setting": "2400",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "443059531964172769",
-     "pool_tick": 226859,
+     "pool_liquidity": "445705932772683740",
+     "pool_tick": 226818,
      "tvl_usd_at_discovery": 1029749.97,
-     "pool_price_usd": 140.63687011414385,
-     "pool_price_in_quote": 140.64108934682426,
+     "pool_price_usd": 141.21712279054822,
+     "pool_price_in_quote": 141.22135943133117,
      "quote_price_usd": 0.99997,
-     "gap_bps": 26.511967642951564,
-     "virtual_in_range_depth_usd": 10508365.303947663,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 13.623314344847456,
+     "virtual_in_range_depth_usd": 10592917.149308417,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0xe1c3e133c917674bd51704e47c7dfe7f0d66375c89ceb30b083de95f9a1dc5ea",
@@ -2282,14 +2282,14 @@
      "hook": "FablesRWA (verified)",
      "flags": [],
      "pool_liquidity": "7605966360285149",
-     "pool_tick": 226862,
+     "pool_tick": 226821,
      "tvl_usd_at_discovery": 37534.02,
-     "pool_price_usd": 140.59545520916635,
-     "pool_price_in_quote": 140.59967319936231,
+     "pool_price_usd": 141.17295610191152,
+     "pool_price_in_quote": 141.17719141765406,
      "quote_price_usd": 0.99997,
-     "gap_bps": 23.559349029790724,
-     "virtual_in_range_depth_usd": 180369.67491223104,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 10.49148036954569,
+     "virtual_in_range_depth_usd": 180739.73276105832,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0x1dae69f15c48eef452c79360cc8df58f5d5c3c1e6324ff8777d58c1feb053cdc",
@@ -2299,18 +2299,18 @@
      "fee_setting": "2500",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "2064691035856166932694",
-     "pool_tick": 28255,
+     "pool_liquidity": "2197165481109829752140",
+     "pool_tick": 28224,
      "tvl_usd_at_discovery": 143202.71,
-     "pool_price_usd": 140.1591861694768,
-     "pool_price_in_quote": 0.059285603396210425,
+     "pool_price_usd": 140.58593571375667,
+     "pool_price_in_quote": 0.059466113178859255,
      "quote_price_usd": 2364.13527299,
-     "gap_bps": -7.543851318801916,
-     "virtual_in_range_depth_usd": 2377015.4953033593,
-     "quote_feed_age_minutes": 40.35
+     "gap_bps": -31.133790905395262,
+     "virtual_in_range_depth_usd": 2533377.22711765,
+     "quote_feed_age_minutes": 61.583333333333336
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "TSLA",
@@ -2319,7 +2319,7 @@
    "flags": [],
    "chainlink_price_usd": 360.6,
    "chainlink_updated_at": "2026-10-15T08:10:04.000Z",
-   "feed_age_minutes": 41.1,
+   "feed_age_minutes": 62.3,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0x8517f8071ae5b831b738052f12125e8e3d6c158b78728aa44ce3b25e5104d32e",
@@ -2330,17 +2330,17 @@
     "hook": "(none)",
     "flags": [],
     "pool_liquidity": "414182264025357384",
-    "pool_tick": -217424,
+    "pool_tick": -217425,
     "tvl_usd_at_discovery": 850917.84,
-    "pool_price_usd": 361.2938059771104,
-    "pool_price_in_quote": 361.3046451164639,
+    "pool_price_usd": 361.2656299429062,
+    "pool_price_in_quote": 361.2764682369533,
     "quote_price_usd": 0.99997,
-    "gap_bps": 19.2403210513145,
-    "virtual_in_range_depth_usd": 15745093.244679436,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "gap_bps": 18.458955710098458,
+    "virtual_in_range_depth_usd": 15744479.280465025,
+    "quote_feed_age_minutes": 1049.4166666666667
    },
-   "pool_price_usd": 361.2938059771104,
-   "gap_bps": 19.24,
+   "pool_price_usd": 361.2656299429062,
+   "gap_bps": 18.46,
    "pool_liquidity": "414182264025357384",
    "other_pools": [
     {
@@ -2352,14 +2352,14 @@
      "hook": "FablesRWA (verified)",
      "flags": [],
      "pool_liquidity": "85254635153371453",
-     "pool_tick": -217441,
+     "pool_tick": -217426,
      "tvl_usd_at_discovery": 154774.71,
-     "pool_price_usd": 360.6954201895771,
-     "pool_price_in_quote": 360.70624137681835,
+     "pool_price_usd": 361.231129662206,
+     "pool_price_in_quote": 361.24196692121365,
      "quote_price_usd": 0.99997,
-     "gap_bps": 2.646150570633811,
-     "virtual_in_range_depth_usd": 3238260.5966128446,
-     "quote_feed_age_minutes": 1028.1833333333334
+     "gap_bps": 17.502209157126416,
+     "virtual_in_range_depth_usd": 3240664.457505934,
+     "quote_feed_age_minutes": 1049.4166666666667
     },
     {
      "pool_id": "0xb2a6d67bf3fc511d11cac788a531655f5a7b60cd31c8ff386f0476121741e751",
@@ -2377,7 +2377,7 @@
      "quote_price_usd": 2364.13527299,
      "gap_bps": -296.8015633880271,
      "virtual_in_range_depth_usd": 309437.57066110754,
-     "quote_feed_age_minutes": 40.35
+     "quote_feed_age_minutes": 61.583333333333336
     },
     {
      "pool_id": "0x3ea70ce0b34473692549f97e630a1d82dc05cea94fa55f81b50f10c8c6d8186f",
@@ -2387,15 +2387,15 @@
      "fee_setting": "350",
      "hook": "(none)",
      "flags": [],
-     "pool_liquidity": "15962369949417819172628",
-     "pool_tick": 7562,
+     "pool_liquidity": "11249300347959807596937",
+     "pool_tick": 7550,
      "tvl_usd_at_discovery": 519161.81,
-     "pool_price_usd": 361.86979794423615,
-     "pool_price_in_quote": 0.46943521460738513,
+     "pool_price_usd": 362.3139651679272,
+     "pool_price_in_quote": 0.4700114100709455,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 35.21347599101862,
-     "virtual_in_range_depth_usd": 16861331.73917404,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 47.530925344625594,
+     "virtual_in_range_depth_usd": 11890123.932947583,
+     "quote_feed_age_minutes": 1018.6666666666666
     },
     {
      "pool_id": "0xa821b3724b451b22476c5347471b2a96d185b86af8760f226273e34ab4b2b8a0",
@@ -2406,26 +2406,26 @@
      "hook": "(none)",
      "flags": [],
      "pool_liquidity": "2879109421042105046643",
-     "pool_tick": 7559,
+     "pool_tick": 7549,
      "tvl_usd_at_discovery": 137854.57,
-     "pool_price_usd": 361.9948328894989,
-     "pool_price_in_quote": 0.4695974160585598,
+     "pool_price_usd": 362.3315600617105,
+     "pool_price_in_quote": 0.4700342350283917,
      "quote_price_usd": 770.86206293,
-     "gap_bps": 38.68088989181643,
-     "virtual_in_range_depth_usd": 3041779.2186109032,
-     "quote_feed_age_minutes": 997.4333333333333
+     "gap_bps": 48.01885917111668,
+     "virtual_in_range_depth_usd": 3043193.619513182,
+     "quote_feed_age_minutes": 1018.6666666666666
     }
    ],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "CRWV",
    "token": "0x5f10A1C971B69e47e059e1dC91901B59b3fB49C3",
    "feed": "0xe1b3aABCAFAd1c94708dc1367dcfF8Aa4407487C",
    "flags": [],
-   "chainlink_price_usd": 61.74,
-   "chainlink_updated_at": "2026-10-15T08:19:01.000Z",
-   "feed_age_minutes": 32.1,
+   "chainlink_price_usd": 62.05,
+   "chainlink_updated_at": "2026-10-15T09:03:02.000Z",
+   "feed_age_minutes": 9.3,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0x237014478f7ef98afbe7412ac35b6a3f96b8fb111de48b7c4dbf49dba4bd9c4b",
@@ -2441,24 +2441,24 @@
     "pool_price_usd": 62.17388338862515,
     "pool_price_in_quote": 62.17574866108498,
     "quote_price_usd": 0.99997,
-    "gap_bps": 70.27589708862129,
+    "gap_bps": 19.965090834029443,
     "virtual_in_range_depth_usd": 23716.405426902762,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "quote_feed_age_minutes": 1049.4166666666667
    },
    "pool_price_usd": 62.17388338862515,
-   "gap_bps": 70.28,
+   "gap_bps": 19.97,
    "pool_liquidity": "1503908408792750",
    "other_pools": [],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "NBIS",
    "token": "0x9D9c6684F596F66a64C030B93A886D51Fd4D7931",
    "feed": "0xE1D87B116Ba0fe898998f1D140339D1fA1E09705",
    "flags": [],
-   "chainlink_price_usd": 178.145,
-   "chainlink_updated_at": "2026-10-15T08:48:54.000Z",
-   "feed_age_minutes": 2.2,
+   "chainlink_price_usd": 180.06,
+   "chainlink_updated_at": "2026-10-15T09:00:23.000Z",
+   "feed_age_minutes": 12,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0x7c2f9ce1214ba9baf56d1b6a1fc640c1b63e9a711172c0c7d10e5a9c4a3d4f0c",
@@ -2474,15 +2474,15 @@
     "pool_price_usd": 178.90969647551037,
     "pool_price_in_quote": 178.91506392742818,
     "quote_price_usd": 0.99997,
-    "gap_bps": 42.92550874345968,
+    "gap_bps": -63.88445654168774,
     "virtual_in_range_depth_usd": 581507.690017635,
-    "quote_feed_age_minutes": 1028.1833333333334
+    "quote_feed_age_minutes": 1049.4166666666667
    },
    "pool_price_usd": 178.90969647551037,
-   "gap_bps": 42.93,
+   "gap_bps": -63.88,
    "pool_liquidity": "21737772622913358",
    "other_pools": [],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   },
   {
    "symbol": "GME",
@@ -2491,7 +2491,7 @@
    "flags": [],
    "chainlink_price_usd": 26.47043903,
    "chainlink_updated_at": "2026-10-15T07:03:54.000Z",
-   "feed_age_minutes": 107.2,
+   "feed_age_minutes": 128.5,
    "ui_multiplier": 1,
    "main_pool": {
     "pool_id": "0xca11843fcb588e837565f1b728dfa6832fa25d64d0825147a10843d25f800804",
@@ -2509,13 +2509,13 @@
     "quote_price_usd": 2364.13527299,
     "gap_bps": 48.20182538727632,
     "virtual_in_range_depth_usd": 1356116.4023905888,
-    "quote_feed_age_minutes": 40.35
+    "quote_feed_age_minutes": 61.583333333333336
    },
    "pool_price_usd": 26.598031378004862,
    "gap_bps": 48.2,
    "pool_liquidity": "2703996124391543821517",
    "other_pools": [],
-   "snapshot_at": "2026-10-15T08:51:07.000Z"
+   "snapshot_at": "2026-10-15T09:12:21.000Z"
   }
  ]
 }
