@@ -26,6 +26,8 @@ export const FEE_MARGIN_BPS = 20;   // the gap must clear the fee by at least th
 export const DYNAMIC_FEE_FLAG = 8388608; // 0x800000: the pool takes its fee from its hook
 const LINK = "https://usevayle.com/#";
 export const MAX_PER_RUN = 5;
+export const CLOSED_BPS = 50;                 // an alerted gap counts as closed once |gap| is at or below this
+export const CLOSE_WINDOW_MS = 24 * 3600 * 1000; // only follow up alerts sent in the last 24 h
 
 // ---- formatting ------------------------------------------------------------------------------------------------------
 const usd = (n) => "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -66,6 +68,13 @@ export function buildMessage(stock, snapshotAt) {
   return text;
 }
 
+/** Plain-text "gap closed" follow-up for a stock that was alerted earlier. No advice, no claim about what anyone could have done. */
+export function buildClosedMessage(stock, last, snapshotAt) {
+  const now = signed(stock.gap_bps);
+  return `${stock.symbol}: gap closed. Now ${now} bps (was ${signed(last.gap_bps)} bps when alerted at ${hhmm(last.alerted_at)} UTC). ` +
+    `Pool ${usd(stock.pool_price_usd)} vs Chainlink ${usd(stock.chainlink_price_usd)}. Snapshot ${hhmm(snapshotAt)} UTC. ${LINK}${encodeURIComponent(stock.symbol)}`;
+}
+
 /** The size rule: |gap| >= 100 bps, and (unless the fee is dynamic or unknown) |gap| >= fee in bps + 20. */
 export function qualifies(stock) {
   if (typeof stock.gap_bps !== "number" || !Number.isFinite(stock.gap_bps)) return false;
@@ -93,6 +102,23 @@ export function selectAlerts(snap, state, nowMs) {
     out.push(s);
   }
   out.sort((a, b) => Math.abs(b.gap_bps) - Math.abs(a.gap_bps));
+  return out.slice(0, MAX_PER_RUN);
+}
+
+/** Which earlier alerts have closed. Pure function: (snapshot, state, now) -> [{ stock, last }], capped at MAX_PER_RUN.
+ *  An alert closes when |gap| <= CLOSED_BPS, it was sent within CLOSE_WINDOW_MS, and it has not been closed already. */
+export function selectClosed(snap, state, nowMs) {
+  const out = [];
+  for (const s of snap.stocks ?? []) {
+    const last = state[s.symbol];
+    if (!last || !last.alerted_at || last.closed_at) continue;
+    if (typeof s.gap_bps !== "number" || !Number.isFinite(s.gap_bps)) continue;
+    if (typeof s.pool_price_usd !== "number" || typeof s.chainlink_price_usd !== "number") continue;
+    if (nowMs - Date.parse(last.alerted_at) > CLOSE_WINDOW_MS) continue;
+    if (Math.abs(s.gap_bps) > CLOSED_BPS) continue;
+    out.push({ stock: s, last });
+  }
+  out.sort((a, b) => Date.parse(a.last.alerted_at) - Date.parse(b.last.alerted_at));
   return out.slice(0, MAX_PER_RUN);
 }
 
@@ -182,9 +208,27 @@ async function main() {
     }
     await sleep(1100); // Telegram allows about one message per second per chat
   }
+  // follow-ups: earlier alerts whose gap has closed (a failed send is not recorded and is retried next run)
+  const closed = selectClosed(snap, state, nowMs);
+  console.log(`alerts: ${closed.length} earlier alert(s) closed (|gap| <= ${CLOSED_BPS} bps, alerted within ${CLOSE_WINDOW_MS / 3600000} h)`);
+  let closedSent = 0;
+  for (const { stock: s, last } of closed) {
+    const text = buildClosedMessage(s, last, snap.snapshot_at);
+    if (dryRun) { console.log(`  would send: ${text}`); continue; }
+    const r = await sendTelegram(token, chatId, text);
+    if (r.ok) {
+      closedSent++;
+      state[s.symbol] = { ...last, closed_at: new Date(nowMs).toISOString(), closed_gap_bps: Math.round(s.gap_bps * 10) / 10 };
+      console.log(`  sent closed: ${s.symbol} (${signed(s.gap_bps)} bps)`);
+    } else {
+      failed++;
+      console.error(`  FAILED closed ${s.symbol}: ${r.error} (not recorded, will be retried next run)`);
+    }
+    await sleep(1100);
+  }
   if (!dryRun) {
-    if (sent > 0) writeFileSync(stateFile, JSON.stringify(state, null, 1) + "\n");
-    console.log(`alerts: ${sent} sent, ${failed} failed${sent > 0 ? "; alert-state.json updated" : ""}`);
+    if (sent + closedSent > 0) writeFileSync(stateFile, JSON.stringify(state, null, 1) + "\n");
+    console.log(`alerts: ${sent} sent, ${closedSent} closed, ${failed} failed${sent + closedSent > 0 ? "; alert-state.json updated" : ""}`);
   }
 }
 

@@ -1,6 +1,6 @@
 // Unit tests for the alert rules and message (script/alert.mjs). No network, no secrets.  node script/test-alert.mjs
 import assert from "node:assert/strict";
-import { qualifies, selectAlerts, buildMessage, feeInfo, MAX_PER_RUN, COOLDOWN_MS } from "./alert.mjs";
+import { qualifies, selectAlerts, buildMessage, feeInfo, MAX_PER_RUN, COOLDOWN_MS, selectClosed, buildClosedMessage, CLOSE_WINDOW_MS } from "./alert.mjs";
 
 // a stock record as it appears in gap-snapshot.json: fee_setting is the pool's fee in pips (10,000 = 1% = 100 bps)
 const stock = (symbol, gap, feePips, extra = {}) => ({
@@ -96,6 +96,33 @@ test("max 5 per run, largest |gap| first; the rest wait for the next run", () =>
   const r = selectAlerts(snap(...stocks), {}, NOW);
   assert.equal(r.length, MAX_PER_RUN);
   assert.deepEqual(r.map((s) => Math.abs(s.gap_bps)), [500, 400, 300, 250, 220]);
+});
+
+// ---- gap closed follow-up ----------------------------------------------------------------------------------------------
+const alerted = (gap, minsAgo, extra = {}) => ({ gap_bps: gap, alerted_at: new Date(NOW - minsAgo * 60000).toISOString(), ...extra });
+test("an alerted gap that is now within 50 bps is reported closed, once", () => {
+  const st = { AAA: alerted(130, 180) };
+  assert.equal(syms(selectClosed(snap(stock("AAA", 12, 3000)), st, NOW).map((c) => c.stock)), "AAA");
+  assert.equal(selectClosed(snap(stock("AAA", 12, 3000)), { AAA: alerted(130, 180, { closed_at: "2026-10-15T09:00:00Z" }) }, NOW).length, 0);
+});
+test("not closed while |gap| is above 50 bps, at the boundary, or when the sign flips but stays large", () => {
+  const st = { AAA: alerted(130, 180), BBB: alerted(130, 180), CCC: alerted(130, 180) };
+  assert.equal(selectClosed(snap(stock("AAA", 80, 3000), stock("CCC", -70, 3000)), st, NOW).length, 0);
+  assert.equal(syms(selectClosed(snap(stock("BBB", -50, 3000)), st, NOW).map((c) => c.stock)), "BBB");
+});
+test("old alerts (over 24 h) and stocks never alerted are not followed up", () => {
+  const st = { AAA: alerted(130, 24 * 60 + 5) };
+  assert.equal(selectClosed(snap(stock("AAA", 5, 3000), stock("ZZZ", 5, 3000)), st, NOW).length, 0);
+});
+test("closed message: says gap closed, shows before and after, no advice words", () => {
+  const m = buildClosedMessage(stock("AAA", 12, 3000), alerted(130, 180), "2026-10-15T09:55:00Z");
+  assert.match(m, /^AAA: gap closed\. Now \+12 bps \(was \+130 bps when alerted at 07:00 UTC\)/);
+  assert.doesNotMatch(m, /buy|sell|profit|opportunity|arbitrage/i);
+});
+test("a new alert for the same stock replaces the state entry, so the closed flag is cleared", () => {
+  const st = { AAA: alerted(130, 400, { closed_at: "2026-10-15T05:00:00Z" }) };
+  const picked = selectAlerts(snap(stock("AAA", 135, 3000)), st, NOW);
+  assert.equal(syms(picked), "AAA"); // cooldown over -> alerts again; main() writes a fresh entry without closed_at
 });
 
 console.log(`\n${n} tests passed`);
