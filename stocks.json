@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T13:37:12.000Z",
+ "generated_at": "2026-11-09T13:59:25.000Z",
  "chain_id": 4663,
  "pool_manager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
  "rule": "main pool = the pool with the highest TVL among pools with TVL >= $20000, >= 100 real swaps and >= 10 senders in 14 days, preferring a USDG quote, then ETH/WETH, then another Stock Token",
@@ -8,8 +8,8 @@
   "stock_tokens": 203,
   "with_feed": 36,
   "resolved": 27,
-  "pools_total": 95,
-  "unresolved": 176
+  "pools_total": 94,
+  "unresolved": 177
  },
  "quote_feeds": {
   "USDG": {
@@ -57,8 +57,9 @@
     "swap_senders_14d_at_discovery": 34
    },
    "other_pools": [],
-   "status": "tracked",
-   "tracked_since": "2026-10-08"
+   "status": "failing",
+   "tracked_since": "2026-10-08",
+   "failing_since": "2026-11-09"
   },
   {
    "symbol": "SPCX",
@@ -90,9 +91,9 @@
     "pair": "SPCX/USDG",
     "fee_setting": "8388608",
     "hook_name": "hook 0xc15b155a",
-    "tvl_usd_at_discovery": 758807.53,
-    "real_swaps_14d_at_discovery": 6065,
-    "swap_senders_14d_at_discovery": 30
+    "tvl_usd_at_discovery": 744598.34,
+    "real_swaps_14d_at_discovery": 700,
+    "swap_senders_14d_at_discovery": 18
    },
    "other_pools": [
     {
@@ -117,9 +118,9 @@
      "pair": "SPCX/USDG",
      "fee_setting": "10000",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 722942.42,
-     "real_swaps_14d_at_discovery": 106,
-     "swap_senders_14d_at_discovery": 22
+     "tvl_usd_at_discovery": 631154.97,
+     "real_swaps_14d_at_discovery": 149,
+     "swap_senders_14d_at_discovery": 13
     },
     {
      "main": false,
@@ -143,9 +144,9 @@
      "pair": "SPCX/USDG",
      "fee_setting": "8388608",
      "hook_name": "FablesRWA (verified)",
-     "tvl_usd_at_discovery": 138818.99,
-     "real_swaps_14d_at_discovery": 363,
-     "swap_senders_14d_at_discovery": 71
+     "tvl_usd_at_discovery": 77537.78,
+     "real_swaps_14d_at_discovery": 560,
+     "swap_senders_14d_at_discovery": 52
     },
     {
      "main": false,
@@ -169,8 +170,8 @@
      "pair": "SPCX/USDG",
      "fee_setting": "3000",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 30118.43,
-     "real_swaps_14d_at_discovery": 121,
+     "tvl_usd_at_discovery": 27128.21,
+     "real_swaps_14d_at_discovery": 109,
      "swap_senders_14d_at_discovery": 22
     },
     {
@@ -195,9 +196,9 @@
      "pair": "ETH/SPCX",
      "fee_setting": "3000",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 208248.84,
-     "real_swaps_14d_at_discovery": 102,
-     "swap_senders_14d_at_discovery": 16
+     "tvl_usd_at_discovery": 131965.72,
+     "real_swaps_14d_at_discovery": 289,
+     "swap_senders_14d_at_discovery": 20
     },
     {
      "main": false,
@@ -221,9 +222,35 @@
      "pair": "ETH/SPCX",
      "fee_setting": "10000",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 44872.17,
-     "real_swaps_14d_at_discovery": 100,
-     "swap_senders_14d_at_discovery": 27
+     "tvl_usd_at_discovery": 43018.22,
+     "real_swaps_14d_at_discovery": 140,
+     "swap_senders_14d_at_discovery": 42
+    },
+    {
+     "main": false,
+     "pool_id": "0x0927698e8716bbb958a2cde0fc4f31d7a2b9a5b0ee1e501dc15e29788277dfa2",
+     "pool_key": {
+      "currency0": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "currency1": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+      "fee": 2500,
+      "tickSpacing": 25,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "TSLA",
+      "token": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x4A1166a659A55625345e9515b32adECea5547C38",
+      "feed_decimals": 8
+     },
+     "pair": "TSLA/SPCX",
+     "fee_setting": "2500",
+     "hook_name": "(none)",
+     "tvl_usd_at_discovery": 102705.28,
+     "real_swaps_14d_at_discovery": 123,
+     "swap_senders_14d_at_discovery": 15
     }
    ],
    "status": "tracked",
@@ -259,9 +286,9 @@
     "pair": "SPY/USDG",
     "fee_setting": "3000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 2743382.74,
-    "real_swaps_14d_at_discovery": 219,
-    "swap_senders_14d_at_discovery": 42
+    "tvl_usd_at_discovery": 2745661.12,
+    "real_swaps_14d_at_discovery": 162,
+    "swap_senders_14d_at_discovery": 45
    },
    "other_pools": [
     {
@@ -286,9 +313,9 @@
      "pair": "SPY/USDG",
      "fee_setting": "8388608",
      "hook_name": "FablesRWA (verified)",
-     "tvl_usd_at_discovery": 1274429.06,
-     "real_swaps_14d_at_discovery": 177,
-     "swap_senders_14d_at_discovery": 51
+     "tvl_usd_at_discovery": 1042861.25,
+     "real_swaps_14d_at_discovery": 651,
+     "swap_senders_14d_at_discovery": 101
     },
     {
      "main": false,
@@ -312,9 +339,9 @@
      "pair": "SPY/USDG",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 964423.21,
-     "real_swaps_14d_at_discovery": 307,
-     "swap_senders_14d_at_discovery": 70
+     "tvl_usd_at_discovery": 893838.11,
+     "real_swaps_14d_at_discovery": 839,
+     "swap_senders_14d_at_discovery": 93
     },
     {
      "main": false,
@@ -338,9 +365,9 @@
      "pair": "SPY/USDG",
      "fee_setting": "100",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 382559.24,
-     "real_swaps_14d_at_discovery": 2214,
-     "swap_senders_14d_at_discovery": 114
+     "tvl_usd_at_discovery": 191638.26,
+     "real_swaps_14d_at_discovery": 2522,
+     "swap_senders_14d_at_discovery": 168
     },
     {
      "main": false,
@@ -364,35 +391,9 @@
      "pair": "ETH/SPY",
      "fee_setting": "1000",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 654487.85,
-     "real_swaps_14d_at_discovery": 252,
-     "swap_senders_14d_at_discovery": 53
-    },
-    {
-     "main": false,
-     "pool_id": "0xda14bf8a87711e1f30dbe620f2df3fdf371f7503f1a72202d15631f657651ec0",
-     "pool_key": {
-      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
-      "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
-      "fee": 250,
-      "tickSpacing": 3,
-      "hooks": "0x0000000000000000000000000000000000000000"
-     },
-     "stock_is_currency0": true,
-     "quote": {
-      "symbol": "NVDA",
-      "token": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
-      "decimals": 18,
-      "kind": "stock",
-      "feed": "0x379EC4f7C378F34a1B47E4F3cbeBCbAC3E8E9F15",
-      "feed_decimals": 8
-     },
-     "pair": "SPY/NVDA",
-     "fee_setting": "250",
-     "hook_name": "(none)",
-     "tvl_usd_at_discovery": 1313963.5,
-     "real_swaps_14d_at_discovery": 913,
-     "swap_senders_14d_at_discovery": 42
+     "tvl_usd_at_discovery": 618524.23,
+     "real_swaps_14d_at_discovery": 842,
+     "swap_senders_14d_at_discovery": 85
     },
     {
      "main": false,
@@ -416,9 +417,9 @@
      "pair": "SPY/QQQ",
      "fee_setting": "200",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 996810.17,
-     "real_swaps_14d_at_discovery": 1450,
-     "swap_senders_14d_at_discovery": 30
+     "tvl_usd_at_discovery": 1631227.58,
+     "real_swaps_14d_at_discovery": 958,
+     "swap_senders_14d_at_discovery": 33
     },
     {
      "main": false,
@@ -442,35 +443,35 @@
      "pair": "SPY/GOOGL",
      "fee_setting": "250",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 844126.9,
-     "real_swaps_14d_at_discovery": 791,
-     "swap_senders_14d_at_discovery": 26
+     "tvl_usd_at_discovery": 739047.66,
+     "real_swaps_14d_at_discovery": 1483,
+     "swap_senders_14d_at_discovery": 55
     },
     {
      "main": false,
-     "pool_id": "0x68beff3b4270ffbbb78a48d7670648909b9de6736456b0f450fee242e1d10a8b",
+     "pool_id": "0xda14bf8a87711e1f30dbe620f2df3fdf371f7503f1a72202d15631f657651ec0",
      "pool_key": {
       "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
-      "currency1": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
-      "fee": 500,
-      "tickSpacing": 5,
+      "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "fee": 250,
+      "tickSpacing": 3,
       "hooks": "0x0000000000000000000000000000000000000000"
      },
      "stock_is_currency0": true,
      "quote": {
-      "symbol": "AMZN",
-      "token": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+      "symbol": "NVDA",
+      "token": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
       "decimals": 18,
       "kind": "stock",
-      "feed": "0xD5a1508ceD74c084eBf3cBe853e2C968fB2a651C",
+      "feed": "0x379EC4f7C378F34a1B47E4F3cbeBCbAC3E8E9F15",
       "feed_decimals": 8
      },
-     "pair": "SPY/AMZN",
-     "fee_setting": "500",
+     "pair": "SPY/NVDA",
+     "fee_setting": "250",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 515354.12,
-     "real_swaps_14d_at_discovery": 280,
-     "swap_senders_14d_at_discovery": 24
+     "tvl_usd_at_discovery": 593411.02,
+     "real_swaps_14d_at_discovery": 3349,
+     "swap_senders_14d_at_discovery": 66
     },
     {
      "main": false,
@@ -494,9 +495,35 @@
      "pair": "SPY/META",
      "fee_setting": "350",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 443591.98,
-     "real_swaps_14d_at_discovery": 723,
-     "swap_senders_14d_at_discovery": 36
+     "tvl_usd_at_discovery": 570253.05,
+     "real_swaps_14d_at_discovery": 1310,
+     "swap_senders_14d_at_discovery": 57
+    },
+    {
+     "main": false,
+     "pool_id": "0x68beff3b4270ffbbb78a48d7670648909b9de6736456b0f450fee242e1d10a8b",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "AMZN",
+      "token": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0xD5a1508ceD74c084eBf3cBe853e2C968fB2a651C",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/AMZN",
+     "fee_setting": "500",
+     "hook_name": "(none)",
+     "tvl_usd_at_discovery": 528281.43,
+     "real_swaps_14d_at_discovery": 815,
+     "swap_senders_14d_at_discovery": 40
     },
     {
      "main": false,
@@ -520,35 +547,9 @@
      "pair": "SPY/AAPL",
      "fee_setting": "350",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 431667.08,
-     "real_swaps_14d_at_discovery": 544,
-     "swap_senders_14d_at_discovery": 24
-    },
-    {
-     "main": false,
-     "pool_id": "0xb8d9b6b622bb03dd06d95790553f327710a73d85d845a59fa9e652638ca96ae6",
-     "pool_key": {
-      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
-      "currency1": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
-      "fee": 500,
-      "tickSpacing": 5,
-      "hooks": "0x0000000000000000000000000000000000000000"
-     },
-     "stock_is_currency0": true,
-     "quote": {
-      "symbol": "PLTR",
-      "token": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
-      "decimals": 18,
-      "kind": "stock",
-      "feed": "0x820ABedFF239034956B7A9d2F0a331f9F075eB4c",
-      "feed_decimals": 8
-     },
-     "pair": "SPY/PLTR",
-     "fee_setting": "500",
-     "hook_name": "(none)",
-     "tvl_usd_at_discovery": 403598.4,
-     "real_swaps_14d_at_discovery": 730,
-     "swap_senders_14d_at_discovery": 34
+     "tvl_usd_at_discovery": 483899.32,
+     "real_swaps_14d_at_discovery": 762,
+     "swap_senders_14d_at_discovery": 30
     },
     {
      "main": false,
@@ -572,61 +573,35 @@
      "pair": "SPY/MU",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 402020.23,
-     "real_swaps_14d_at_discovery": 800,
-     "swap_senders_14d_at_discovery": 46
+     "tvl_usd_at_discovery": 375274.84,
+     "real_swaps_14d_at_discovery": 2934,
+     "swap_senders_14d_at_discovery": 67
     },
     {
      "main": false,
-     "pool_id": "0x4c862e5846659b086fe73896bbb9058513417e4e6938a1be93aeb7a768fa5754",
+     "pool_id": "0xb8d9b6b622bb03dd06d95790553f327710a73d85d845a59fa9e652638ca96ae6",
      "pool_key": {
       "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
-      "currency1": "0x58FfE4a942d3885bAa22D7520691F611EF09e7AA",
+      "currency1": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
       "fee": 500,
       "tickSpacing": 5,
       "hooks": "0x0000000000000000000000000000000000000000"
      },
      "stock_is_currency0": true,
      "quote": {
-      "symbol": "TSM",
-      "token": "0x58FfE4a942d3885bAa22D7520691F611EF09e7AA",
+      "symbol": "PLTR",
+      "token": "0x894E1EC2D74FFE5AEF8Dc8A9e84686acCB964F2A",
       "decimals": 18,
       "kind": "stock",
-      "feed": "0x874cF94aa8eC88Fd9560094dD065f2fB3E41Fc2F",
+      "feed": "0x820ABedFF239034956B7A9d2F0a331f9F075eB4c",
       "feed_decimals": 8
      },
-     "pair": "SPY/TSM",
+     "pair": "SPY/PLTR",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 378254.06,
-     "real_swaps_14d_at_discovery": 335,
-     "swap_senders_14d_at_discovery": 14
-    },
-    {
-     "main": false,
-     "pool_id": "0x3ea70ce0b34473692549f97e630a1d82dc05cea94fa55f81b50f10c8c6d8186f",
-     "pool_key": {
-      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
-      "currency1": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
-      "fee": 350,
-      "tickSpacing": 4,
-      "hooks": "0x0000000000000000000000000000000000000000"
-     },
-     "stock_is_currency0": true,
-     "quote": {
-      "symbol": "TSLA",
-      "token": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
-      "decimals": 18,
-      "kind": "stock",
-      "feed": "0x4A1166a659A55625345e9515b32adECea5547C38",
-      "feed_decimals": 8
-     },
-     "pair": "SPY/TSLA",
-     "fee_setting": "350",
-     "hook_name": "(none)",
-     "tvl_usd_at_discovery": 303931.71,
-     "real_swaps_14d_at_discovery": 452,
-     "swap_senders_14d_at_discovery": 30
+     "tvl_usd_at_discovery": 369846.63,
+     "real_swaps_14d_at_discovery": 750,
+     "swap_senders_14d_at_discovery": 39
     },
     {
      "main": false,
@@ -650,9 +625,35 @@
      "pair": "SPY/AMD",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 283667.08,
-     "real_swaps_14d_at_discovery": 749,
-     "swap_senders_14d_at_discovery": 35
+     "tvl_usd_at_discovery": 353005.72,
+     "real_swaps_14d_at_discovery": 2333,
+     "swap_senders_14d_at_discovery": 39
+    },
+    {
+     "main": false,
+     "pool_id": "0x4c862e5846659b086fe73896bbb9058513417e4e6938a1be93aeb7a768fa5754",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x58FfE4a942d3885bAa22D7520691F611EF09e7AA",
+      "fee": 500,
+      "tickSpacing": 5,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "TSM",
+      "token": "0x58FfE4a942d3885bAa22D7520691F611EF09e7AA",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x874cF94aa8eC88Fd9560094dD065f2fB3E41Fc2F",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/TSM",
+     "fee_setting": "500",
+     "hook_name": "(none)",
+     "tvl_usd_at_discovery": 349900.8,
+     "real_swaps_14d_at_discovery": 1118,
+     "swap_senders_14d_at_discovery": 29
     },
     {
      "main": false,
@@ -676,9 +677,35 @@
      "pair": "SPY/MSFT",
      "fee_setting": "300",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 283020.4,
-     "real_swaps_14d_at_discovery": 358,
-     "swap_senders_14d_at_discovery": 31
+     "tvl_usd_at_discovery": 266797.87,
+     "real_swaps_14d_at_discovery": 631,
+     "swap_senders_14d_at_discovery": 40
+    },
+    {
+     "main": false,
+     "pool_id": "0x3ea70ce0b34473692549f97e630a1d82dc05cea94fa55f81b50f10c8c6d8186f",
+     "pool_key": {
+      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+      "currency1": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "fee": 350,
+      "tickSpacing": 4,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "TSLA",
+      "token": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0x4A1166a659A55625345e9515b32adECea5547C38",
+      "feed_decimals": 8
+     },
+     "pair": "SPY/TSLA",
+     "fee_setting": "350",
+     "hook_name": "(none)",
+     "tvl_usd_at_discovery": 252324.89,
+     "real_swaps_14d_at_discovery": 1018,
+     "swap_senders_14d_at_discovery": 35
     },
     {
      "main": false,
@@ -702,9 +729,9 @@
      "pair": "SPY/NVDA",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 276838.34,
-     "real_swaps_14d_at_discovery": 201,
-     "swap_senders_14d_at_discovery": 16
+     "tvl_usd_at_discovery": 225442.27,
+     "real_swaps_14d_at_discovery": 124,
+     "swap_senders_14d_at_discovery": 11
     },
     {
      "main": false,
@@ -728,9 +755,9 @@
      "pair": "SPY/INTC",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 240376.48,
-     "real_swaps_14d_at_discovery": 1308,
-     "swap_senders_14d_at_discovery": 27
+     "tvl_usd_at_discovery": 186975.53,
+     "real_swaps_14d_at_discovery": 1530,
+     "swap_senders_14d_at_discovery": 32
     },
     {
      "main": false,
@@ -754,9 +781,9 @@
      "pair": "SPY/QQQ",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 136204.48,
-     "real_swaps_14d_at_discovery": 502,
-     "swap_senders_14d_at_discovery": 30
+     "tvl_usd_at_discovery": 130611.66,
+     "real_swaps_14d_at_discovery": 148,
+     "swap_senders_14d_at_discovery": 14
     },
     {
      "main": false,
@@ -780,9 +807,9 @@
      "pair": "SPY/TSLA",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 121607.73,
-     "real_swaps_14d_at_discovery": 121,
-     "swap_senders_14d_at_discovery": 18
+     "tvl_usd_at_discovery": 60119.64,
+     "real_swaps_14d_at_discovery": 337,
+     "swap_senders_14d_at_discovery": 19
     },
     {
      "main": false,
@@ -806,9 +833,9 @@
      "pair": "SPY/GOOGL",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 45970.6,
-     "real_swaps_14d_at_discovery": 104,
-     "swap_senders_14d_at_discovery": 18
+     "tvl_usd_at_discovery": 37024.59,
+     "real_swaps_14d_at_discovery": 101,
+     "swap_senders_14d_at_discovery": 21
     },
     {
      "main": false,
@@ -832,35 +859,9 @@
      "pair": "SPY/COIN",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 25856.29,
-     "real_swaps_14d_at_discovery": 148,
-     "swap_senders_14d_at_discovery": 44
-    },
-    {
-     "main": false,
-     "pool_id": "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741",
-     "pool_key": {
-      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
-      "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
-      "fee": 500,
-      "tickSpacing": 5,
-      "hooks": "0x0000000000000000000000000000000000000000"
-     },
-     "stock_is_currency0": true,
-     "quote": {
-      "symbol": "MSFT",
-      "token": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
-      "decimals": 18,
-      "kind": "stock",
-      "feed": "0x45C3C877C15E6BA2EBB19eA114Ea508d14C1Af2E",
-      "feed_decimals": 8
-     },
-     "pair": "SPY/MSFT",
-     "fee_setting": "500",
-     "hook_name": "(none)",
-     "tvl_usd_at_discovery": 24522.42,
-     "real_swaps_14d_at_discovery": 158,
-     "swap_senders_14d_at_discovery": 22
+     "tvl_usd_at_discovery": 22767.79,
+     "real_swaps_14d_at_discovery": 165,
+     "swap_senders_14d_at_discovery": 31
     }
    ],
    "status": "tracked",
@@ -896,9 +897,9 @@
     "pair": "USDG/GLD",
     "fee_setting": "8388608",
     "hook_name": "FablesRWA (verified)",
-    "tvl_usd_at_discovery": 1090291.2,
-    "real_swaps_14d_at_discovery": 271,
-    "swap_senders_14d_at_discovery": 47
+    "tvl_usd_at_discovery": 1160837.89,
+    "real_swaps_14d_at_discovery": 151,
+    "swap_senders_14d_at_discovery": 40
    },
    "other_pools": [],
    "status": "tracked",
@@ -934,9 +935,9 @@
     "pair": "SPY/QQQ",
     "fee_setting": "200",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 996810.17,
-    "real_swaps_14d_at_discovery": 1450,
-    "swap_senders_14d_at_discovery": 30
+    "tvl_usd_at_discovery": 1631227.58,
+    "real_swaps_14d_at_discovery": 958,
+    "swap_senders_14d_at_discovery": 33
    },
    "other_pools": [
     {
@@ -961,9 +962,9 @@
      "pair": "SPY/QQQ",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 136204.48,
-     "real_swaps_14d_at_discovery": 502,
-     "swap_senders_14d_at_discovery": 30
+     "tvl_usd_at_discovery": 130611.66,
+     "real_swaps_14d_at_discovery": 148,
+     "swap_senders_14d_at_discovery": 14
     }
    ],
    "status": "tracked",
@@ -999,9 +1000,9 @@
     "pair": "TSM/USDG",
     "fee_setting": "7500",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 231347.82,
-    "real_swaps_14d_at_discovery": 141,
-    "swap_senders_14d_at_discovery": 37
+    "tvl_usd_at_discovery": 229901.01,
+    "real_swaps_14d_at_discovery": 105,
+    "swap_senders_14d_at_discovery": 21
    },
    "other_pools": [
     {
@@ -1026,9 +1027,9 @@
      "pair": "SPY/TSM",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 378254.06,
-     "real_swaps_14d_at_discovery": 335,
-     "swap_senders_14d_at_discovery": 14
+     "tvl_usd_at_discovery": 349900.8,
+     "real_swaps_14d_at_discovery": 1118,
+     "swap_senders_14d_at_discovery": 29
     }
    ],
    "status": "tracked",
@@ -1064,9 +1065,9 @@
     "pair": "USDG/INTC",
     "fee_setting": "10000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 154816.4,
-    "real_swaps_14d_at_discovery": 266,
-    "swap_senders_14d_at_discovery": 40
+    "tvl_usd_at_discovery": 83590.16,
+    "real_swaps_14d_at_discovery": 140,
+    "swap_senders_14d_at_discovery": 20
    },
    "other_pools": [
     {
@@ -1091,9 +1092,9 @@
      "pair": "USDG/INTC",
      "fee_setting": "8388608",
      "hook_name": "FablesRWA (verified)",
-     "tvl_usd_at_discovery": 48565.91,
-     "real_swaps_14d_at_discovery": 142,
-     "swap_senders_14d_at_discovery": 25
+     "tvl_usd_at_discovery": 39266.63,
+     "real_swaps_14d_at_discovery": 192,
+     "swap_senders_14d_at_discovery": 27
     },
     {
      "main": false,
@@ -1117,9 +1118,9 @@
      "pair": "SPY/INTC",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 240376.48,
-     "real_swaps_14d_at_discovery": 1308,
-     "swap_senders_14d_at_discovery": 27
+     "tvl_usd_at_discovery": 186975.53,
+     "real_swaps_14d_at_discovery": 1530,
+     "swap_senders_14d_at_discovery": 32
     }
    ],
    "status": "tracked",
@@ -1155,9 +1156,9 @@
     "pair": "USDG/MSFT",
     "fee_setting": "3000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 116725.24,
-    "real_swaps_14d_at_discovery": 105,
-    "swap_senders_14d_at_discovery": 13
+    "tvl_usd_at_discovery": 114951.77,
+    "real_swaps_14d_at_discovery": 241,
+    "swap_senders_14d_at_discovery": 26
    },
    "other_pools": [
     {
@@ -1182,9 +1183,9 @@
      "pair": "ETH/MSFT",
      "fee_setting": "10000",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 30771.05,
-     "real_swaps_14d_at_discovery": 103,
-     "swap_senders_14d_at_discovery": 23
+     "tvl_usd_at_discovery": 29374.41,
+     "real_swaps_14d_at_discovery": 105,
+     "swap_senders_14d_at_discovery": 39
     },
     {
      "main": false,
@@ -1208,35 +1209,9 @@
      "pair": "SPY/MSFT",
      "fee_setting": "300",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 283020.4,
-     "real_swaps_14d_at_discovery": 358,
-     "swap_senders_14d_at_discovery": 31
-    },
-    {
-     "main": false,
-     "pool_id": "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741",
-     "pool_key": {
-      "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
-      "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
-      "fee": 500,
-      "tickSpacing": 5,
-      "hooks": "0x0000000000000000000000000000000000000000"
-     },
-     "stock_is_currency0": false,
-     "quote": {
-      "symbol": "SPY",
-      "token": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
-      "decimals": 18,
-      "kind": "stock",
-      "feed": "0x319724394D3A0e3669269846abE664Cd621f9f6A",
-      "feed_decimals": 8
-     },
-     "pair": "SPY/MSFT",
-     "fee_setting": "500",
-     "hook_name": "(none)",
-     "tvl_usd_at_discovery": 24522.42,
-     "real_swaps_14d_at_discovery": 158,
-     "swap_senders_14d_at_discovery": 22
+     "tvl_usd_at_discovery": 266797.87,
+     "real_swaps_14d_at_discovery": 631,
+     "swap_senders_14d_at_discovery": 40
     }
    ],
    "status": "tracked",
@@ -1272,9 +1247,9 @@
     "pair": "USDG/META",
     "fee_setting": "3000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 1323221.02,
-    "real_swaps_14d_at_discovery": 131,
-    "swap_senders_14d_at_discovery": 19
+    "tvl_usd_at_discovery": 2047173.09,
+    "real_swaps_14d_at_discovery": 401,
+    "swap_senders_14d_at_discovery": 49
    },
    "other_pools": [
     {
@@ -1299,9 +1274,9 @@
      "pair": "ETH/META",
      "fee_setting": "2100",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 35590.87,
-     "real_swaps_14d_at_discovery": 123,
-     "swap_senders_14d_at_discovery": 13
+     "tvl_usd_at_discovery": 21329.61,
+     "real_swaps_14d_at_discovery": 222,
+     "swap_senders_14d_at_discovery": 25
     },
     {
      "main": false,
@@ -1325,9 +1300,9 @@
      "pair": "SPY/META",
      "fee_setting": "350",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 443591.98,
-     "real_swaps_14d_at_discovery": 723,
-     "swap_senders_14d_at_discovery": 36
+     "tvl_usd_at_discovery": 570253.05,
+     "real_swaps_14d_at_discovery": 1310,
+     "swap_senders_14d_at_discovery": 57
     }
    ],
    "status": "tracked",
@@ -1363,9 +1338,9 @@
     "pair": "USDG/SNDK",
     "fee_setting": "10000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 208873.42,
-    "real_swaps_14d_at_discovery": 102,
-    "swap_senders_14d_at_discovery": 27
+    "tvl_usd_at_discovery": 195403.66,
+    "real_swaps_14d_at_discovery": 162,
+    "swap_senders_14d_at_discovery": 22
    },
    "other_pools": [],
    "status": "tracked",
@@ -1401,9 +1376,9 @@
     "pair": "AMZN/USDG",
     "fee_setting": "8388608",
     "hook_name": "FablesRWA (verified)",
-    "tvl_usd_at_discovery": 72056.08,
-    "real_swaps_14d_at_discovery": 254,
-    "swap_senders_14d_at_discovery": 41
+    "tvl_usd_at_discovery": 79280.42,
+    "real_swaps_14d_at_discovery": 128,
+    "swap_senders_14d_at_discovery": 37
    },
    "other_pools": [
     {
@@ -1428,35 +1403,9 @@
      "pair": "AMZN/USDG",
      "fee_setting": "2400",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 56656.67,
-     "real_swaps_14d_at_discovery": 179,
-     "swap_senders_14d_at_discovery": 24
-    },
-    {
-     "main": false,
-     "pool_id": "0xfad1472a3bf9bbecc0abed3790849e3f1b4bb271c13ec642e42801e89a13e7b2",
-     "pool_key": {
-      "currency0": "0x0000000000000000000000000000000000000000",
-      "currency1": "0x12f190a9F9d7D37a250758b26824B97CE941bF54",
-      "fee": 2990,
-      "tickSpacing": 30,
-      "hooks": "0x0000000000000000000000000000000000000000"
-     },
-     "stock_is_currency0": false,
-     "quote": {
-      "symbol": "ETH",
-      "token": "0x0000000000000000000000000000000000000000",
-      "decimals": 18,
-      "kind": "native-eth",
-      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
-      "feed_decimals": 8
-     },
-     "pair": "ETH/AMZN",
-     "fee_setting": "2990",
-     "hook_name": "(none)",
-     "tvl_usd_at_discovery": 33889.7,
-     "real_swaps_14d_at_discovery": 108,
-     "swap_senders_14d_at_discovery": 30
+     "tvl_usd_at_discovery": 60129.24,
+     "real_swaps_14d_at_discovery": 171,
+     "swap_senders_14d_at_discovery": 26
     },
     {
      "main": false,
@@ -1480,9 +1429,9 @@
      "pair": "SPY/AMZN",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 515354.12,
-     "real_swaps_14d_at_discovery": 280,
-     "swap_senders_14d_at_discovery": 24
+     "tvl_usd_at_discovery": 528281.43,
+     "real_swaps_14d_at_discovery": 815,
+     "swap_senders_14d_at_discovery": 40
     }
    ],
    "status": "tracked",
@@ -1518,9 +1467,9 @@
     "pair": "USDG/CRCL",
     "fee_setting": "3000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 519806.6,
-    "real_swaps_14d_at_discovery": 101,
-    "swap_senders_14d_at_discovery": 13
+    "tvl_usd_at_discovery": 487579.84,
+    "real_swaps_14d_at_discovery": 265,
+    "swap_senders_14d_at_discovery": 18
    },
    "other_pools": [
     {
@@ -1545,9 +1494,9 @@
      "pair": "USDG/CRCL",
      "fee_setting": "8388608",
      "hook_name": "FablesRWA (verified)",
-     "tvl_usd_at_discovery": 99778.57,
-     "real_swaps_14d_at_discovery": 168,
-     "swap_senders_14d_at_discovery": 31
+     "tvl_usd_at_discovery": 93940.49,
+     "real_swaps_14d_at_discovery": 114,
+     "swap_senders_14d_at_discovery": 28
     },
     {
      "main": false,
@@ -1571,9 +1520,9 @@
      "pair": "USDG/CRCL",
      "fee_setting": "2500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 53353.21,
-     "real_swaps_14d_at_discovery": 208,
-     "swap_senders_14d_at_discovery": 23
+     "tvl_usd_at_discovery": 47819,
+     "real_swaps_14d_at_discovery": 100,
+     "swap_senders_14d_at_discovery": 20
     },
     {
      "main": false,
@@ -1597,9 +1546,9 @@
      "pair": "ETH/CRCL",
      "fee_setting": "1500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 192699.03,
-     "real_swaps_14d_at_discovery": 211,
-     "swap_senders_14d_at_discovery": 38
+     "tvl_usd_at_discovery": 209662.74,
+     "real_swaps_14d_at_discovery": 202,
+     "swap_senders_14d_at_discovery": 26
     },
     {
      "main": false,
@@ -1623,9 +1572,9 @@
      "pair": "ETH/CRCL",
      "fee_setting": "2500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 184553.07,
-     "real_swaps_14d_at_discovery": 109,
-     "swap_senders_14d_at_discovery": 29
+     "tvl_usd_at_discovery": 177289.86,
+     "real_swaps_14d_at_discovery": 162,
+     "swap_senders_14d_at_discovery": 32
     }
    ],
    "status": "tracked",
@@ -1661,37 +1610,11 @@
     "pair": "GOOGL/USDG",
     "fee_setting": "3000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 381445.74,
-    "real_swaps_14d_at_discovery": 284,
-    "swap_senders_14d_at_discovery": 14
+    "tvl_usd_at_discovery": 258714.99,
+    "real_swaps_14d_at_discovery": 180,
+    "swap_senders_14d_at_discovery": 12
    },
    "other_pools": [
-    {
-     "main": false,
-     "pool_id": "0x5182d37e70a1c2e1060f8671739ae929913ceabcf2bd80a1a2a6356eafd4b506",
-     "pool_key": {
-      "currency0": "0x0000000000000000000000000000000000000000",
-      "currency1": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
-      "fee": 10000,
-      "tickSpacing": 200,
-      "hooks": "0x0000000000000000000000000000000000000000"
-     },
-     "stock_is_currency0": false,
-     "quote": {
-      "symbol": "ETH",
-      "token": "0x0000000000000000000000000000000000000000",
-      "decimals": 18,
-      "kind": "native-eth",
-      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
-      "feed_decimals": 8
-     },
-     "pair": "ETH/GOOGL",
-     "fee_setting": "10000",
-     "hook_name": "(none)",
-     "tvl_usd_at_discovery": 26906.85,
-     "real_swaps_14d_at_discovery": 127,
-     "swap_senders_14d_at_discovery": 55
-    },
     {
      "main": false,
      "pool_id": "0xe4d9d8c880cedae4ed7884609969c262cd1138a328e05eca7b32f834e649609d",
@@ -1714,9 +1637,35 @@
      "pair": "ETH/GOOGL",
      "fee_setting": "2100",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 25799.07,
-     "real_swaps_14d_at_discovery": 134,
-     "swap_senders_14d_at_discovery": 28
+     "tvl_usd_at_discovery": 90868.59,
+     "real_swaps_14d_at_discovery": 165,
+     "swap_senders_14d_at_discovery": 20
+    },
+    {
+     "main": false,
+     "pool_id": "0x5182d37e70a1c2e1060f8671739ae929913ceabcf2bd80a1a2a6356eafd4b506",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0x2e0847E8910a9732eB3fb1bb4b70a580ADAD4FE3",
+      "fee": 10000,
+      "tickSpacing": 200,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/GOOGL",
+     "fee_setting": "10000",
+     "hook_name": "(none)",
+     "tvl_usd_at_discovery": 20019.86,
+     "real_swaps_14d_at_discovery": 125,
+     "swap_senders_14d_at_discovery": 32
     },
     {
      "main": false,
@@ -1740,9 +1689,9 @@
      "pair": "SPY/GOOGL",
      "fee_setting": "250",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 844126.9,
-     "real_swaps_14d_at_discovery": 791,
-     "swap_senders_14d_at_discovery": 26
+     "tvl_usd_at_discovery": 739047.66,
+     "real_swaps_14d_at_discovery": 1483,
+     "swap_senders_14d_at_discovery": 55
     },
     {
      "main": false,
@@ -1766,9 +1715,9 @@
      "pair": "SPY/GOOGL",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 45970.6,
-     "real_swaps_14d_at_discovery": 104,
-     "swap_senders_14d_at_discovery": 18
+     "tvl_usd_at_discovery": 37024.59,
+     "real_swaps_14d_at_discovery": 101,
+     "swap_senders_14d_at_discovery": 21
     }
    ],
    "status": "tracked",
@@ -1804,9 +1753,9 @@
     "pair": "USDG/PLTR",
     "fee_setting": "10000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 484330.82,
-    "real_swaps_14d_at_discovery": 133,
-    "swap_senders_14d_at_discovery": 18
+    "tvl_usd_at_discovery": 731523.57,
+    "real_swaps_14d_at_discovery": 213,
+    "swap_senders_14d_at_discovery": 39
    },
    "other_pools": [
     {
@@ -1831,9 +1780,9 @@
      "pair": "SPY/PLTR",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 403598.4,
-     "real_swaps_14d_at_discovery": 730,
-     "swap_senders_14d_at_discovery": 34
+     "tvl_usd_at_discovery": 369846.63,
+     "real_swaps_14d_at_discovery": 750,
+     "swap_senders_14d_at_discovery": 39
     }
    ],
    "status": "tracked",
@@ -1869,9 +1818,9 @@
     "pair": "USDG/MU",
     "fee_setting": "10000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 285731.42,
-    "real_swaps_14d_at_discovery": 258,
-    "swap_senders_14d_at_discovery": 30
+    "tvl_usd_at_discovery": 303078.13,
+    "real_swaps_14d_at_discovery": 183,
+    "swap_senders_14d_at_discovery": 16
    },
    "other_pools": [
     {
@@ -1896,35 +1845,9 @@
      "pair": "USDG/MU",
      "fee_setting": "8388608",
      "hook_name": "hook 0x5Eb87F69",
-     "tvl_usd_at_discovery": 24473.16,
-     "real_swaps_14d_at_discovery": 179,
-     "swap_senders_14d_at_discovery": 21
-    },
-    {
-     "main": false,
-     "pool_id": "0x881b4219078c86ac3a3930a6c229c2c846209fe9b4f0b8671772d42e2a799796",
-     "pool_key": {
-      "currency0": "0x0000000000000000000000000000000000000000",
-      "currency1": "0xfF080c8ce2E5feadaCa0Da81314Ae59D232d4afD",
-      "fee": 8000,
-      "tickSpacing": 80,
-      "hooks": "0x0000000000000000000000000000000000000000"
-     },
-     "stock_is_currency0": false,
-     "quote": {
-      "symbol": "ETH",
-      "token": "0x0000000000000000000000000000000000000000",
-      "decimals": 18,
-      "kind": "native-eth",
-      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
-      "feed_decimals": 8
-     },
-     "pair": "ETH/MU",
-     "fee_setting": "8000",
-     "hook_name": "(none)",
-     "tvl_usd_at_discovery": 69016.26,
-     "real_swaps_14d_at_discovery": 101,
-     "swap_senders_14d_at_discovery": 18
+     "tvl_usd_at_discovery": 50820.82,
+     "real_swaps_14d_at_discovery": 381,
+     "swap_senders_14d_at_discovery": 46
     },
     {
      "main": false,
@@ -1948,9 +1871,9 @@
      "pair": "ETH/MU",
      "fee_setting": "10000",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 24786.44,
-     "real_swaps_14d_at_discovery": 127,
-     "swap_senders_14d_at_discovery": 15
+     "tvl_usd_at_discovery": 54740.79,
+     "real_swaps_14d_at_discovery": 152,
+     "swap_senders_14d_at_discovery": 44
     },
     {
      "main": false,
@@ -1974,9 +1897,9 @@
      "pair": "SPY/MU",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 402020.23,
-     "real_swaps_14d_at_discovery": 800,
-     "swap_senders_14d_at_discovery": 46
+     "tvl_usd_at_discovery": 375274.84,
+     "real_swaps_14d_at_discovery": 2934,
+     "swap_senders_14d_at_discovery": 67
     }
    ],
    "status": "tracked",
@@ -2012,9 +1935,9 @@
     "pair": "USDG/AMD",
     "fee_setting": "10000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 285618.21,
-    "real_swaps_14d_at_discovery": 161,
-    "swap_senders_14d_at_discovery": 25
+    "tvl_usd_at_discovery": 111920.3,
+    "real_swaps_14d_at_discovery": 100,
+    "swap_senders_14d_at_discovery": 13
    },
    "other_pools": [
     {
@@ -2039,9 +1962,9 @@
      "pair": "SPY/AMD",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 283667.08,
-     "real_swaps_14d_at_discovery": 749,
-     "swap_senders_14d_at_discovery": 35
+     "tvl_usd_at_discovery": 353005.72,
+     "real_swaps_14d_at_discovery": 2333,
+     "swap_senders_14d_at_discovery": 39
     }
    ],
    "status": "tracked",
@@ -2077,9 +2000,9 @@
     "pair": "USDG/NVDA",
     "fee_setting": "3000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 502879.13,
-    "real_swaps_14d_at_discovery": 166,
-    "swap_senders_14d_at_discovery": 30
+    "tvl_usd_at_discovery": 432911.42,
+    "real_swaps_14d_at_discovery": 468,
+    "swap_senders_14d_at_discovery": 35
    },
    "other_pools": [
     {
@@ -2104,9 +2027,9 @@
      "pair": "USDG/NVDA",
      "fee_setting": "8388608",
      "hook_name": "FablesRWA (verified)",
-     "tvl_usd_at_discovery": 440035.11,
-     "real_swaps_14d_at_discovery": 187,
-     "swap_senders_14d_at_discovery": 39
+     "tvl_usd_at_discovery": 266027.38,
+     "real_swaps_14d_at_discovery": 950,
+     "swap_senders_14d_at_discovery": 42
     },
     {
      "main": false,
@@ -2130,9 +2053,9 @@
      "pair": "USDG/NVDA",
      "fee_setting": "100",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 118081.43,
-     "real_swaps_14d_at_discovery": 668,
-     "swap_senders_14d_at_discovery": 58
+     "tvl_usd_at_discovery": 85117.59,
+     "real_swaps_14d_at_discovery": 180,
+     "swap_senders_14d_at_discovery": 23
     },
     {
      "main": false,
@@ -2156,9 +2079,35 @@
      "pair": "ETH/NVDA",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 104853.12,
-     "real_swaps_14d_at_discovery": 404,
-     "swap_senders_14d_at_discovery": 33
+     "tvl_usd_at_discovery": 100441.01,
+     "real_swaps_14d_at_discovery": 1765,
+     "swap_senders_14d_at_discovery": 54
+    },
+    {
+     "main": false,
+     "pool_id": "0xaa8039d8e39d2bbcae23762e71f5a12162875a61848f0d96914c827f61877ef6",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "fee": 50000,
+      "tickSpacing": 1000,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/NVDA",
+     "fee_setting": "50000",
+     "hook_name": "(none)",
+     "tvl_usd_at_discovery": 41468.98,
+     "real_swaps_14d_at_discovery": 138,
+     "swap_senders_14d_at_discovery": 50
     },
     {
      "main": false,
@@ -2182,9 +2131,9 @@
      "pair": "SPY/NVDA",
      "fee_setting": "250",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 1313963.5,
-     "real_swaps_14d_at_discovery": 913,
-     "swap_senders_14d_at_discovery": 42
+     "tvl_usd_at_discovery": 593411.02,
+     "real_swaps_14d_at_discovery": 3349,
+     "swap_senders_14d_at_discovery": 66
     },
     {
      "main": false,
@@ -2208,9 +2157,9 @@
      "pair": "SPY/NVDA",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 276838.34,
-     "real_swaps_14d_at_discovery": 201,
-     "swap_senders_14d_at_discovery": 16
+     "tvl_usd_at_discovery": 225442.27,
+     "real_swaps_14d_at_discovery": 124,
+     "swap_senders_14d_at_discovery": 11
     }
    ],
    "status": "tracked",
@@ -2246,9 +2195,9 @@
     "pair": "USDG/USO",
     "fee_setting": "1200",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 20127.46,
-    "real_swaps_14d_at_discovery": 146,
-    "swap_senders_14d_at_discovery": 24
+    "tvl_usd_at_discovery": 20898.2,
+    "real_swaps_14d_at_discovery": 430,
+    "swap_senders_14d_at_discovery": 69
    },
    "other_pools": [],
    "status": "tracked",
@@ -2284,9 +2233,9 @@
     "pair": "USDG/COIN",
     "fee_setting": "10000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 626136.58,
-    "real_swaps_14d_at_discovery": 102,
-    "swap_senders_14d_at_discovery": 21
+    "tvl_usd_at_discovery": 596540.18,
+    "real_swaps_14d_at_discovery": 147,
+    "swap_senders_14d_at_discovery": 42
    },
    "other_pools": [
     {
@@ -2311,9 +2260,9 @@
      "pair": "SPY/COIN",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 25856.29,
-     "real_swaps_14d_at_discovery": 148,
-     "swap_senders_14d_at_discovery": 44
+     "tvl_usd_at_discovery": 22767.79,
+     "real_swaps_14d_at_discovery": 165,
+     "swap_senders_14d_at_discovery": 31
     }
    ],
    "status": "tracked",
@@ -2349,9 +2298,9 @@
     "pair": "USDG/ORCL",
     "fee_setting": "10000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 129026.35,
-    "real_swaps_14d_at_discovery": 115,
-    "swap_senders_14d_at_discovery": 37
+    "tvl_usd_at_discovery": 119960.49,
+    "real_swaps_14d_at_discovery": 179,
+    "swap_senders_14d_at_discovery": 50
    },
    "other_pools": [],
    "status": "tracked",
@@ -2387,9 +2336,9 @@
     "pair": "USDG/AAPL",
     "fee_setting": "3000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 461317.39,
-    "real_swaps_14d_at_discovery": 130,
-    "swap_senders_14d_at_discovery": 25
+    "tvl_usd_at_discovery": 357668.88,
+    "real_swaps_14d_at_discovery": 217,
+    "swap_senders_14d_at_discovery": 19
    },
    "other_pools": [
     {
@@ -2414,9 +2363,9 @@
      "pair": "USDG/AAPL",
      "fee_setting": "8388608",
      "hook_name": "FablesRWA (verified)",
-     "tvl_usd_at_discovery": 101066.67,
-     "real_swaps_14d_at_discovery": 148,
-     "swap_senders_14d_at_discovery": 42
+     "tvl_usd_at_discovery": 89878.63,
+     "real_swaps_14d_at_discovery": 188,
+     "swap_senders_14d_at_discovery": 28
     },
     {
      "main": false,
@@ -2440,9 +2389,9 @@
      "pair": "SPY/AAPL",
      "fee_setting": "350",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 431667.08,
-     "real_swaps_14d_at_discovery": 544,
-     "swap_senders_14d_at_discovery": 24
+     "tvl_usd_at_discovery": 483899.32,
+     "real_swaps_14d_at_discovery": 762,
+     "swap_senders_14d_at_discovery": 30
     }
    ],
    "status": "tracked",
@@ -2478,9 +2427,9 @@
     "pair": "USDG/MSTR",
     "fee_setting": "2500",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 1818665.33,
-    "real_swaps_14d_at_discovery": 268,
-    "swap_senders_14d_at_discovery": 15
+    "tvl_usd_at_discovery": 1860777.32,
+    "real_swaps_14d_at_discovery": 786,
+    "swap_senders_14d_at_discovery": 21
    },
    "other_pools": [
     {
@@ -2505,9 +2454,9 @@
      "pair": "USDG/MSTR",
      "fee_setting": "2400",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 559548.19,
-     "real_swaps_14d_at_discovery": 182,
-     "swap_senders_14d_at_discovery": 14
+     "tvl_usd_at_discovery": 422342.59,
+     "real_swaps_14d_at_discovery": 314,
+     "swap_senders_14d_at_discovery": 19
     },
     {
      "main": false,
@@ -2531,9 +2480,9 @@
      "pair": "ETH/MSTR",
      "fee_setting": "2500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 608847.68,
-     "real_swaps_14d_at_discovery": 107,
-     "swap_senders_14d_at_discovery": 26
+     "tvl_usd_at_discovery": 803166.97,
+     "real_swaps_14d_at_discovery": 198,
+     "swap_senders_14d_at_discovery": 31
     }
    ],
    "status": "tracked",
@@ -2569,9 +2518,9 @@
     "pair": "TSLA/USDG",
     "fee_setting": "3000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 477052.42,
-    "real_swaps_14d_at_discovery": 102,
-    "swap_senders_14d_at_discovery": 27
+    "tvl_usd_at_discovery": 390790.88,
+    "real_swaps_14d_at_discovery": 212,
+    "swap_senders_14d_at_discovery": 24
    },
    "other_pools": [
     {
@@ -2596,9 +2545,35 @@
      "pair": "TSLA/USDG",
      "fee_setting": "8388608",
      "hook_name": "FablesRWA (verified)",
-     "tvl_usd_at_discovery": 108470.68,
-     "real_swaps_14d_at_discovery": 125,
-     "swap_senders_14d_at_discovery": 15
+     "tvl_usd_at_discovery": 108334.62,
+     "real_swaps_14d_at_discovery": 269,
+     "swap_senders_14d_at_discovery": 39
+    },
+    {
+     "main": false,
+     "pool_id": "0xb2a6d67bf3fc511d11cac788a531655f5a7b60cd31c8ff386f0476121741e751",
+     "pool_key": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "fee": 50000,
+      "tickSpacing": 1000,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": false,
+     "quote": {
+      "symbol": "ETH",
+      "token": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "kind": "native-eth",
+      "feed": "0x78F3556b67E17Df817D51Ef5a990cDaF09E8d3A9",
+      "feed_decimals": 8
+     },
+     "pair": "ETH/TSLA",
+     "fee_setting": "50000",
+     "hook_name": "(none)",
+     "tvl_usd_at_discovery": 63987.81,
+     "real_swaps_14d_at_discovery": 112,
+     "swap_senders_14d_at_discovery": 34
     },
     {
      "main": false,
@@ -2622,9 +2597,35 @@
      "pair": "SPY/TSLA",
      "fee_setting": "350",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 303931.71,
-     "real_swaps_14d_at_discovery": 452,
-     "swap_senders_14d_at_discovery": 30
+     "tvl_usd_at_discovery": 252324.89,
+     "real_swaps_14d_at_discovery": 1018,
+     "swap_senders_14d_at_discovery": 35
+    },
+    {
+     "main": false,
+     "pool_id": "0x0927698e8716bbb958a2cde0fc4f31d7a2b9a5b0ee1e501dc15e29788277dfa2",
+     "pool_key": {
+      "currency0": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+      "currency1": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+      "fee": 2500,
+      "tickSpacing": 25,
+      "hooks": "0x0000000000000000000000000000000000000000"
+     },
+     "stock_is_currency0": true,
+     "quote": {
+      "symbol": "SPCX",
+      "token": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+      "decimals": 18,
+      "kind": "stock",
+      "feed": "0xB265810950ba6c5C0Ff821c9963014a56fD8Bffb",
+      "feed_decimals": 8
+     },
+     "pair": "TSLA/SPCX",
+     "fee_setting": "2500",
+     "hook_name": "(none)",
+     "tvl_usd_at_discovery": 102705.28,
+     "real_swaps_14d_at_discovery": 123,
+     "swap_senders_14d_at_discovery": 15
     },
     {
      "main": false,
@@ -2648,9 +2649,9 @@
      "pair": "SPY/TSLA",
      "fee_setting": "500",
      "hook_name": "(none)",
-     "tvl_usd_at_discovery": 121607.73,
-     "real_swaps_14d_at_discovery": 121,
-     "swap_senders_14d_at_discovery": 18
+     "tvl_usd_at_discovery": 60119.64,
+     "real_swaps_14d_at_discovery": 337,
+     "swap_senders_14d_at_discovery": 19
     }
    ],
    "status": "tracked",
@@ -2686,9 +2687,9 @@
     "pair": "CRWV/USDG",
     "fee_setting": "9000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 177067.64,
-    "real_swaps_14d_at_discovery": 106,
-    "swap_senders_14d_at_discovery": 37
+    "tvl_usd_at_discovery": 103918.01,
+    "real_swaps_14d_at_discovery": 207,
+    "swap_senders_14d_at_discovery": 10
    },
    "other_pools": [],
    "status": "tracked",
@@ -2724,9 +2725,9 @@
     "pair": "USDG/NBIS",
     "fee_setting": "9900",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 80669.23,
-    "real_swaps_14d_at_discovery": 117,
-    "swap_senders_14d_at_discovery": 26
+    "tvl_usd_at_discovery": 109943.61,
+    "real_swaps_14d_at_discovery": 195,
+    "swap_senders_14d_at_discovery": 39
    },
    "other_pools": [],
    "status": "tracked",
@@ -2762,9 +2763,9 @@
     "pair": "ETH/GME",
     "fee_setting": "10000",
     "hook_name": "(none)",
-    "tvl_usd_at_discovery": 62383.76,
-    "real_swaps_14d_at_discovery": 193,
-    "swap_senders_14d_at_discovery": 61
+    "tvl_usd_at_discovery": 59783.95,
+    "real_swaps_14d_at_discovery": 136,
+    "swap_senders_14d_at_discovery": 40
    },
    "other_pools": [],
    "status": "tracked",
@@ -2800,38 +2801,11 @@
     "pair": "USDG/BABA",
     "fee_setting": "8388608",
     "hook_name": "hook 0xc15b155a",
-    "tvl_usd_at_discovery": 895882.8,
-    "real_swaps_14d_at_discovery": 100,
-    "swap_senders_14d_at_discovery": 17
+    "tvl_usd_at_discovery": 1075710.17,
+    "real_swaps_14d_at_discovery": 121,
+    "swap_senders_14d_at_discovery": 10
    },
-   "other_pools": [
-    {
-     "main": false,
-     "pool_id": "0x1791fc651cc794a282e5dbcb56d0b2b38eff8754b677c8876e86901521ecc439",
-     "pool_key": {
-      "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
-      "currency1": "0xad25Ac6C84D497db898fa1E8387bf6Af3532a1c4",
-      "fee": 1000,
-      "tickSpacing": 10,
-      "hooks": "0x0000000000000000000000000000000000000000"
-     },
-     "stock_is_currency0": false,
-     "quote": {
-      "symbol": "USDG",
-      "token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
-      "decimals": 6,
-      "kind": "usdg",
-      "feed": "0x61B7e5650328764B076A108EFF5fa7282a1B9aD2",
-      "feed_decimals": 8
-     },
-     "pair": "USDG/BABA",
-     "fee_setting": "1000",
-     "hook_name": "(none)",
-     "tvl_usd_at_discovery": 58090.64,
-     "real_swaps_14d_at_discovery": 346,
-     "swap_senders_14d_at_discovery": 27
-    }
-   ],
+   "other_pools": [],
    "status": "tracked",
    "tracked_since": "2026-10-26"
   }
@@ -2901,6 +2875,12 @@
    "symbol": "V",
    "token": "0x9BFF87700337babF5099e99F322F888DafB1d551",
    "reason": "no Chainlink USD feed for this symbol in the feed directory"
+  },
+  {
+   "symbol": "DELL",
+   "token": "0x941AE714EC6D8130c7B75d67160Ca08f1e7d11Dd",
+   "feed": "0x1C6c8cADBe02E19129c39dDB92281cE4c0bf206b",
+   "reason": "no pool with TVL >= $20000, >= 100 real swaps and >= 10 senders against a token with a Chainlink USD feed"
   },
   {
    "symbol": "MXL",
@@ -3727,5 +3707,5 @@
    "reason": "no Chainlink USD feed for this symbol in the feed directory"
   }
  ],
- "last_refreshed": "2026-11-02"
+ "last_refreshed": "2026-11-09"
 }
